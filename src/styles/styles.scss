@@ -9,4 +9,13 @@ html {
 
 body {
   // border: 10px solid red;
+  position: relative;
+}
+
+main {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
 }

@@ -2,6 +2,8 @@ import * as React from "react";
 import "../styles/styles.scss";
 import puddlePopper from "../images/puddlepopper.png";
 
+import Draggable from "react-draggable";
+
 // styles
 const pageStyles = {
   color: "#232129",
@@ -25,6 +27,19 @@ const IndexPage = () => {
         <span style={headingAccentStyles}>Welcome to the lounge</span>
       </h1>
       <img src={puddlePopper} alt="Circle with lines" />
+      <Draggable
+        axis="both"
+        handle=".handle"
+        defaultPosition={{ x: 0, y: 0 }}
+        position={null}
+        grid={[25, 25]}
+        scale={1}
+      >
+        <div>
+          <div className="handle">Drag from here</div>
+          <div>This readme is really dragging on...</div>
+        </div>
+      </Draggable>
     </main>
   );
 };
