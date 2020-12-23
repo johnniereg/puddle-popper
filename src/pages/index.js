@@ -1,4 +1,5 @@
 import * as React from "react";
+import puddlePopper from "../images/puddlepopper.png";
 
 // styles
 const pageStyles = {
@@ -22,6 +23,7 @@ const IndexPage = () => {
       <h1 style={headingStyles}>
         <span style={headingAccentStyles}>Welcome to the lounge</span>
       </h1>
+      <img src={puddlePopper} alt="Circle with lines" />
     </main>
   );
 };
