@@ -1,46 +1,45 @@
 import * as React from "react";
 import "../styles/styles.scss";
-import puddlePopper from "../images/puddlepopper.png";
 
-import Draggable from "react-draggable";
+import Frame from "../components/frame";
+import Navigation from "../components/navigation";
 
-// styles
-const pageStyles = {
-  color: "#232129",
-  padding: "96px",
-  fontFamily: "-apple-system, Roboto, sans-serif, serif",
-};
-const headingStyles = {
-  marginTop: 0,
-  marginBottom: 64,
-  maxWidth: 320,
-};
-const headingAccentStyles = {
-  color: "#663399",
+// data
+const data = {
+  0: "A",
+  1: "B",
+  2: "C",
+  3: "D",
+  4: "E",
+  5: "F",
+  6: "G",
+  7: "H",
+  8: "I",
+  9: "J",
+  10: "K",
+  11: "L",
+  12: "M",
+  13: "N",
+  14: "O",
+  15: "P",
+  16: "Q",
 };
 
 const IndexPage = () => {
   return (
-    <main style={pageStyles}>
-      <title>Puddle Popper</title>
-      <h1 style={headingStyles}>
-        <span style={headingAccentStyles}>Welcome to the lounge</span>
-      </h1>
-      <img src={puddlePopper} alt="Circle with lines" />
-      <Draggable
-        axis="both"
-        handle=".handle"
-        defaultPosition={{ x: 0, y: 0 }}
-        position={null}
-        grid={[25, 25]}
-        scale={1}
-      >
-        <div>
-          <div className="handle">Drag from here</div>
-          <div>This readme is really dragging on...</div>
+    <div class="Page">
+      <nav></nav>
+      <main>
+        <div className="Title__Wrapper">
+          <h1 className="Title">Puddle Popper Lounge</h1>
         </div>
-      </Draggable>
-    </main>
+        <Frame content="Test A" />
+        <Frame content="Test B" />
+        <Frame content="Test C" />
+        <Frame content="Test D" />
+      </main>
+      <Navigation items={data} />
+    </div>
   );
 };
 

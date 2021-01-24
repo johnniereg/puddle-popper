@@ -1,21 +1,22 @@
-body,
-html {
-  margin: 0;
-  padding: 0;
-}
-* {
-  box-sizing: border-box;
-}
+@import "./util/variables.scss";
+@import "./util/fonts.scss";
+@import "./util/layout.scss";
 
-body {
-  // border: 10px solid red;
-  position: relative;
-}
+@import "./components/navigation.scss";
+@import "./components/frames.scss";
 
-main {
+.Title__Wrapper {
   position: absolute;
   top: 0;
+  left: 0;
   right: 0;
   bottom: 0;
-  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .Title {
+    color: $bg-text-color;
+    font-size: 48px;
+  }
 }
