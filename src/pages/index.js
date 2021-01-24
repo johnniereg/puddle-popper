@@ -1,6 +1,7 @@
 import * as React from "react";
 import "../styles/styles.scss";
 
+import Chat from "../components/chat";
 import Frame from "../components/frame";
 import Navigation from "../components/navigation";
 
@@ -28,7 +29,6 @@ const data = {
 const IndexPage = () => {
   return (
     <div class="Page">
-      <nav></nav>
       <main>
         <div className="Title__Wrapper">
           <h1 className="Title">Puddle Popper Lounge</h1>
@@ -37,6 +37,7 @@ const IndexPage = () => {
         <Frame content="Test B" />
         <Frame content="Test C" />
         <Frame content="Test D" />
+        <Chat />
       </main>
       <Navigation items={data} />
     </div>

@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import Draggable from "react-draggable";
 
-class Frame extends Component {
+class Chat extends Component {
   constructor(props) {
     super(props);
     this.state = {};
@@ -11,17 +11,22 @@ class Frame extends Component {
     return (
       <Draggable
         axis="both"
-        handle=".Frame"
+        handle=".Chat"
         defaultPosition={{ x: 0, y: 0 }}
         position={null}
         scale={1}
       >
-        <div className="Frame">
-          <div className="handle">{this.props.content}</div>
+        <div className="Chat">
+          <h1 className="Chat__Heading">Chat with the Bot</h1>
+          <div className="Chat__Content"></div>
+          <div className="Chat__Input">
+            <input type="text"></input>
+            <button>Send</button>
+          </div>
         </div>
       </Draggable>
     );
   }
 }
 
-export default Frame;
+export default Chat;

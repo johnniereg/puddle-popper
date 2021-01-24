@@ -2,8 +2,9 @@
 @import "./util/fonts.scss";
 @import "./util/layout.scss";
 
-@import "./components/navigation.scss";
+@import "./components/chat.scss";
 @import "./components/frames.scss";
+@import "./components/navigation.scss";
 
 .Title__Wrapper {
   position: absolute;
@@ -18,5 +19,6 @@
   .Title {
     color: $bg-text-color;
     font-size: 48px;
+    text-align: center;
   }
 }

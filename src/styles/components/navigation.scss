@@ -17,6 +17,7 @@
     background-color: $icon-bar-fill;
     border: 2px solid $icon-bar-outline;
     border-radius: 50%;
+    box-shadow: $shadow;
     cursor: pointer;
     display: flex;
     height: 75px;
@@ -31,8 +32,5 @@
     &:nth-child(even) {
       margin-top: 15px;
     }
-  }
-
-  &__Icon {
   }
 }
