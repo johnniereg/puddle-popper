@@ -1,10 +1,40 @@
 import React, { Component } from "react";
 import Draggable from "react-draggable";
 
+import PubSub from "pubsub-js";
+
 class Frame extends Component {
   constructor(props) {
     super(props);
-    this.state = {};
+    this.state = {
+      ...this.props.data,
+      visible: false,
+      zIndex: -1,
+    };
+
+    this.toggleFrame = this.toggleFrame.bind(this);
+  }
+
+  componentDidMount() {
+    console.log(this.state);
+    PubSub.subscribe("toggleFrame", this.toggleFrame);
+  }
+
+  componentWillUnmount() {
+    PubSub.unsubscribeAll();
+  }
+
+  toggleFrame(msg, data) {
+    if (data === this.state.key) {
+      this.setState((prevState) => ({
+        visible: !prevState.visible,
+        zIndex: 1,
+      }));
+    } else {
+      this.setState({
+        zIndex: -1,
+      });
+    }
   }
 
   render() {
@@ -16,8 +46,12 @@ class Frame extends Component {
         position={null}
         scale={1}
       >
-        <div className="Frame">
-          <div className="handle">{this.props.content}</div>
+        <div
+          className={this.state.visible ? "Frame" : "Frame Frame--hidden"}
+          style={{ zIndex: this.state.zIndex, backgroundColor: "#fff" }}
+        >
+          <div className="Frame__Title">{this.state.title}</div>
+          <p className="Frame__Description">{this.state.description}</p>
         </div>
       </Draggable>
     );

@@ -25,6 +25,7 @@
     "gatsby-transformer-remark": "^2.13.1",
     "gatsby-transformer-sharp": "^2.9.0",
     "node-sass": "^5.0.0",
+    "pubsub-js": "^1.9.3",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-draggable": "^4.4.3",

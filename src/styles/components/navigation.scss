@@ -33,4 +33,8 @@
       margin-top: 15px;
     }
   }
+
+  &__Button {
+    cursor: $cursor-pointer;
+  }
 }
