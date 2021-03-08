@@ -17,13 +17,12 @@ class Navigation extends Component {
   render() {
     const navItems = Object.entries(this.props.data).map(([key, exhibit]) => {
       return (
-        <li
-          className="Navigation__Item"
-          key={key}
-          data-key={key}
-          onClick={this.handleButtonClick}
-        >
-          <button className="Navigation__Button">
+        <li className="Navigation__Item" key={key}>
+          <button
+            className="Navigation__Button"
+            onClick={this.handleButtonClick}
+            data-key={key}
+          >
             <span className="Navigation__Icon">{exhibit.title}</span>
           </button>
         </li>
