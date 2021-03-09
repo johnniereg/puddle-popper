@@ -9,7 +9,7 @@ class Frame extends Component {
     this.state = {
       ...this.props.data,
       visible: false,
-      zIndex: -1,
+      zIndex: 0,
     };
 
     this.toggleFrame = this.toggleFrame.bind(this);
@@ -28,11 +28,11 @@ class Frame extends Component {
     if (data === this.state.key) {
       this.setState((prevState) => ({
         visible: !prevState.visible,
-        zIndex: 1,
+        zIndex: 10,
       }));
     } else {
       this.setState({
-        zIndex: -1,
+        zIndex: 0,
       });
     }
   }

@@ -36,5 +36,9 @@
 
   &__Button {
     cursor: $cursor-pointer;
+
+    &:hover {
+      cursor: $cursor-pointer;
+    }
   }
 }

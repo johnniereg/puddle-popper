@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 
+import Header from "../components/header";
 import Main from "../components/main";
 import Navigation from "../components/navigation";
 
@@ -36,6 +37,7 @@ class App extends Component {
   render() {
     return (
       <div className="Page">
+        <Header />
         <Main data={this.state.exhibits} />
         <Navigation data={this.state.exhibits} />
       </div>

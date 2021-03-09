@@ -10,13 +10,8 @@ class Main extends Component {
     });
 
     return (
-      <main>
-        <div className="Title__Wrapper">
-          <h1 className="Title">Puddle Popper Lounge</h1>
-        </div>
-        <div className="Frames__Wrapper" style={{ position: "relative" }}>
-          {frames}
-        </div>
+      <main className="Frame_Wrapper">
+        {frames}
         <Chat />
       </main>
     );

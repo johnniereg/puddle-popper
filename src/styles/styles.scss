@@ -4,24 +4,8 @@
 
 @import "./components/chat.scss";
 @import "./components/frames.scss";
+@import "./components/header.scss";
 @import "./components/navigation.scss";
-
-.Title__Wrapper {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-  .Title {
-    color: $bg-text-color;
-    font-size: 48px;
-    text-align: center;
-  }
-}
 
 body {
   cursor: $cursor-default;
