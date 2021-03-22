@@ -18,7 +18,8 @@ $white: #ffffff;
 
 $font-primary: Arial, sans-serif;
 
-$cursor-default: url(../images/cursors/starting_cursor.png), auto;
-$cursor-move: url(../images/cursors/grab_cursor.png), move;
-$cursor-pointer: url(../images/cursors/click_cursor.png), pointer;
-$cursor-easteregg: url(../images/cursors/easteregg_cursor.png), pointer;
+$cursor-default: url(../images/cursors/cursor_starting.png), auto;
+$cursor-move: url(../images/cursors/cursor_grab.png), move;
+$cursor-pointer: url(../images/cursors/cursor_click.png), pointer;
+$cursor-easteregg: url(../images/cursors/cursor_easter_egg.png), pointer;
+$cursor-text: url(../images/cursors/cursor_chat.png), text;
