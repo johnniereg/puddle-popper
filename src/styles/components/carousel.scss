@@ -4,4 +4,9 @@
       cursor: $cursor-pointer;
     }
   }
+
+  .slide {
+    display: flex;
+    justify-content: center;
+  }
 }

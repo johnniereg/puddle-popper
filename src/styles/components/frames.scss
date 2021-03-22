@@ -14,3 +14,23 @@
     display: none;
   }
 }
+
+.Controls {
+  position: absolute;
+  top: -30px;
+}
+
+.Details {
+  background-color: #ff0000b0;
+  bottom: 0;
+  display: flex;
+  flex-direction: column;
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+
+  &--hidden {
+    display: none;
+  }
+}
