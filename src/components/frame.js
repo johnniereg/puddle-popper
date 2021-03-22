@@ -1,8 +1,7 @@
 import React, { Component } from "react";
 import Draggable from "react-draggable";
 
-import Carousel from "@brainhubeu/react-carousel";
-import "@brainhubeu/react-carousel/lib/style.css";
+import { Carousel } from "react-responsive-carousel";
 
 import PubSub from "pubsub-js";
 
@@ -61,10 +60,29 @@ class Frame extends Component {
           className={this.state.visible ? "Frame" : "Frame Frame--hidden"}
           style={{ zIndex: this.state.zIndex, backgroundColor: "transparent" }}
         >
-          <div style={{ width: "750px" }}>
-            <Carousel plugins={["arrows"]} draggable={false}>
-              <img src={gif1} draggable="false" />
-              <img src={gif2} draggable="false" />
+          <div style={{ width: "300px" }}>
+            <Carousel
+              showIndicators={false}
+              showStatus={false}
+              showThumbs={false}
+              swipeable={false}
+            >
+              <img
+                src="https://via.placeholder.com/300/0000FF/808080?Text=Digital.com"
+                draggable="false"
+              />
+              <img
+                src="https://via.placeholder.com/300/FF0000/FFFFFF?Text=Down.com"
+                draggable="false"
+              />
+              <img
+                src="https://via.placeholder.com/300/FFFF00/000000?Text=WebsiteBuilders.com"
+                draggable="false"
+              />
+              <img
+                src="https://via.placeholder.com/300/000000/FFFFFF/?text=IPaddress.net"
+                draggable="false"
+              />
             </Carousel>
           </div>
         </div>
