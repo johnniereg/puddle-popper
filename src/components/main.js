@@ -12,7 +12,7 @@ class Main extends Component {
     return (
       <main className="Frame_Wrapper">
         {frames}
-        <Chat />
+        {/* <Chat /> */}
       </main>
     );
   }

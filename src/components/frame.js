@@ -1,7 +1,13 @@
 import React, { Component } from "react";
 import Draggable from "react-draggable";
 
+import Carousel from "@brainhubeu/react-carousel";
+import "@brainhubeu/react-carousel/lib/style.css";
+
 import PubSub from "pubsub-js";
+
+import gif1 from "../images/sarah/unnamed.gif";
+import gif2 from "../images/sarah/unnamed02.gif";
 
 class Frame extends Component {
   constructor(props) {
@@ -22,6 +28,10 @@ class Frame extends Component {
 
   componentWillUnmount() {
     PubSub.unsubscribeAll();
+  }
+
+  handleFrameClick(e) {
+    console.log(e.target);
   }
 
   toggleFrame(msg, data) {
@@ -45,13 +55,18 @@ class Frame extends Component {
         defaultPosition={{ x: 0, y: 0 }}
         position={null}
         scale={1}
+        onClick={this.handleFrameClick}
       >
         <div
           className={this.state.visible ? "Frame" : "Frame Frame--hidden"}
-          style={{ zIndex: this.state.zIndex, backgroundColor: "#fff" }}
+          style={{ zIndex: this.state.zIndex, backgroundColor: "transparent" }}
         >
-          <div className="Frame__Title">{this.state.title}</div>
-          <p className="Frame__Description">{this.state.description}</p>
+          <div style={{ width: "750px" }}>
+            <Carousel plugins={["arrows"]} draggable={false}>
+              <img src={gif1} draggable="false" />
+              <img src={gif2} draggable="false" />
+            </Carousel>
+          </div>
         </div>
       </Draggable>
     );
