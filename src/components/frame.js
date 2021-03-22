@@ -60,13 +60,15 @@ class Frame extends Component {
           className={this.state.visible ? "Frame" : "Frame Frame--hidden"}
           style={{ zIndex: this.state.zIndex, backgroundColor: "transparent" }}
         >
-          <div style={{ width: "300px" }}>
+          <div style={{ width: "500px" }}>
             <Carousel
+              dynamicHeight={true}
               showIndicators={false}
               showStatus={false}
               showThumbs={false}
               swipeable={false}
             >
+              <img src={gif1} draggable="false" />
               <img
                 src="https://via.placeholder.com/300/0000FF/808080?Text=Digital.com"
                 draggable="false"
