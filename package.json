@@ -16,6 +16,7 @@
   },
   "license": "0BSD",
   "dependencies": {
+    "@brainhubeu/react-carousel": "^1.19.26",
     "gatsby": "^2.29.2",
     "gatsby-plugin-image": "^0.3.1",
     "gatsby-plugin-react-helmet": "^3.7.0",
