@@ -4,6 +4,8 @@ import Header from "../components/header";
 import Main from "../components/main";
 import Navigation from "../components/navigation";
 
+import background from "../images/background.png";
+
 class App extends Component {
   constructor(props) {
     super(props);
@@ -36,7 +38,14 @@ class App extends Component {
 
   render() {
     return (
-      <div className="Page">
+      <div
+        className="Page"
+        style={{
+          backgroundImage: `url(${background})`,
+          backgroundSize: "cover",
+          backgroundPosition: "center center",
+        }}
+      >
         <Header />
         <Main data={this.state.exhibits} />
         <Navigation data={this.state.exhibits} />

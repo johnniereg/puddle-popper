@@ -7,11 +7,7 @@ class Header extends Component {
   }
 
   render() {
-    return (
-      <header className="Header">
-        <h1 className="Title">Puddle Popper Lounge</h1>
-      </header>
-    );
+    return <header className="Header"></header>;
   }
 }
 
