@@ -32,6 +32,11 @@ class App extends Component {
           title: "Exhibit 4",
           description: "This is an example description for an exhibit",
         },
+        4: {
+          key: 4,
+          title: "Exhibit 5",
+          description: "This is an example description for an exhibit",
+        },
       },
     };
   }
