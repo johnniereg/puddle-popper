@@ -1,10 +1,11 @@
 import React, { Component } from "react";
 import PubSub from "pubsub-js";
 
-import navBgLeft from "../images/navigation/Menu_End_Left.png";
-import navBgRight from "../images/navigation/Menu_End_Right.png";
-import navBgUp from "../images/navigation/Menu_Interior_Upper.png";
-import navBgDown from "../images/navigation/Menu_Interior_Lower.png";
+// import navBgImg from "../images/navigation/Menu_bar.png";
+import navBgLeft from "../images/navigation/Menu_End_Left_revised_noshadow.png";
+import navBgRight from "../images/navigation/Menu_End_Right_revised_noshadow.png";
+import navBgUp from "../images/navigation/Menu_Interior_Upper_revised_noshadow.png";
+import navBgDown from "../images/navigation/Menu_Interior_Lower_revised_noshadow.png";
 
 class Navigation extends Component {
   constructor(props) {
@@ -79,6 +80,7 @@ class Navigation extends Component {
 
     return (
       <nav className="Navigation">
+        {/* <img className="Navigation__Background" src={navBgImg}></img> */}
         <ul className="Navigation__List">{navItems}</ul>
       </nav>
     );

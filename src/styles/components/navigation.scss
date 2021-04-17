@@ -1,8 +1,18 @@
 .Navigation {
-  position: absolute;
   bottom: 0;
+  display: flex;
+  justify-content: center;
   left: 0;
+  position: absolute;
   right: 0;
+
+  &__Background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+  }
 
   &__List {
     display: flex;
@@ -10,6 +20,7 @@
     list-style: none;
     margin: 0 0 50px;
     padding: 0;
+    max-width: 95%;
 
     & :nth-child(even):not(:first-of-type()) {
       margin-top: 30px;
@@ -18,13 +29,28 @@
 
   &__Item {
     align-items: center;
+    background-size: contain;
+    background-repeat: no-repeat;
     display: flex;
+    filter: drop-shadow(3px 3px 1px #3f082f80);
+    height: 158px;
     justify-content: center;
-    width: 121px;
-    height: 136px;
+    -webkit-filter: drop-shadow(3px 3px 1px #3f082f80);
+
+    &--Left {
+      width: 104px;
+    }
+
+    &--Up {
+      width: 111px;
+    }
+
+    &--Right {
+      width: 104px;
+    }
 
     &--Down {
-      margin-top: 43px;
+      width: 132px;
     }
   }
 
