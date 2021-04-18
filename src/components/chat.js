@@ -4,10 +4,12 @@ import Draggable from "react-draggable";
 class Chat extends Component {
   constructor(props) {
     super(props);
+    this.botName = "Plintor Drax";
+
     this.state = {
       userName: "Lounge Visitor",
       textToSubmit: "",
-      chatLog: [{ user: "Plintor Drax", text: "Hello" }],
+      chatLog: [{ user: this.botName, text: `Hello, I am ${this.botName}` }],
     };
 
     this.onSubmit = this.onSubmit.bind(this);
@@ -28,6 +30,9 @@ class Chat extends Component {
 
   onSubmit(e) {
     e.preventDefault();
+    if (this.state.textToSubmit === "") {
+      return;
+    }
     const logEntry = {
       user: this.state.userName,
       text: this.state.textToSubmit,
@@ -50,7 +55,7 @@ class Chat extends Component {
   botReply() {
     const delayTime = Math.random() * (2000 - 750) + 750;
     const logEntry = {
-      user: "Plintor Drax",
+      user: this.botName,
       text: `${delayTime}: This is the next text for PD`,
     };
     setTimeout(() => {
@@ -82,7 +87,6 @@ class Chat extends Component {
           </div>
           <div className="Chat__Content">
             {this.state.chatLog.map((entry, index) => {
-              console.log(entry);
               return (
                 <p key={index}>
                   {entry.user}: {entry.text}
