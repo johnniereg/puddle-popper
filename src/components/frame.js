@@ -6,7 +6,6 @@ import { Carousel } from "react-responsive-carousel";
 import PubSub from "pubsub-js";
 
 import gif1 from "../images/sarah/unnamed.gif";
-import gif2 from "../images/sarah/unnamed02.gif";
 
 class Frame extends Component {
   constructor(props) {
@@ -151,20 +150,24 @@ class Frame extends Component {
               showThumbs={false}
               swipeable={false}
             >
-              <img src={gif1} draggable="false" />
+              <img alt="imageplaceholder" src={gif1} draggable="false" />
               <img
+                alt="imageplaceholder"
                 src="https://via.placeholder.com/300/0000FF/808080?Text=Slide-1"
                 draggable="false"
               />
               <img
+                alt="imageplaceholder"
                 src="https://via.placeholder.com/300/FF0000/FFFFFF?Text=Slide-2"
                 draggable="false"
               />
               <img
+                alt="imageplaceholder"
                 src="https://via.placeholder.com/300/FFFF00/000000?Text=Slide-3"
                 draggable="false"
               />
               <img
+                alt="imageplaceholder"
                 src="https://via.placeholder.com/300/000000/FFFFFF/?text=Slide-4"
                 draggable="false"
               />
