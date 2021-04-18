@@ -7,6 +7,7 @@ class Chat extends Component {
     this.botName = "Plintor Drax";
 
     this.state = {
+      botReplying: false,
       userName: "Lounge Visitor",
       textToSubmit: "",
       chatLog: [{ user: this.botName, text: `Hello, I am ${this.botName}` }],
@@ -41,7 +42,9 @@ class Chat extends Component {
       chatLog: [...prevState.chatLog, logEntry],
       textToSubmit: "",
     }));
-    this.botReply();
+    if (this.state.botReplying === false) {
+      this.botReply();
+    }
   }
 
   handleUsernameChange(e) {
@@ -58,9 +61,11 @@ class Chat extends Component {
       user: this.botName,
       text: `${delayTime}: This is the next text for PD`,
     };
+    this.setState({ botReplying: true });
     setTimeout(() => {
       this.setState((prevState) => ({
         chatLog: [...prevState.chatLog, logEntry],
+        botReplying: false,
       }));
     }, delayTime);
   }
