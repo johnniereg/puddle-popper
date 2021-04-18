@@ -19,6 +19,7 @@
     background-color: $white;
     border: 1px solid black;
     flex: 1;
+    overflow: scroll;
   }
 
   &__Input {
