@@ -36,9 +36,7 @@ class Chat extends Component {
       chatLog: [...prevState.chatLog, logEntry],
       textToSubmit: "",
     }));
-    setTimeout(() => {
-      this.botReply();
-    }, 1000);
+    this.botReply();
   }
 
   handleUsernameChange(e) {
@@ -50,13 +48,16 @@ class Chat extends Component {
   }
 
   botReply() {
+    const delayTime = Math.random() * (2000 - 750) + 750;
     const logEntry = {
       user: "Plintor Drax",
-      text: "This is the next text for PD",
+      text: `${delayTime}: This is the next text for PD`,
     };
-    this.setState((prevState) => ({
-      chatLog: [...prevState.chatLog, logEntry],
-    }));
+    setTimeout(() => {
+      this.setState((prevState) => ({
+        chatLog: [...prevState.chatLog, logEntry],
+      }));
+    }, delayTime);
   }
 
   render() {
