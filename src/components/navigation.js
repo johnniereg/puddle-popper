@@ -60,13 +60,13 @@ class Navigation extends Component {
       const classString = `Navigation__Item Navigation__Item--${additionalClass}`;
 
       return (
-        <li
-          className={classString}
-          key={key}
-          style={{
-            backgroundImage: `url(${bgImage})`,
-          }}
-        >
+        <li className={classString} key={key}>
+          <img
+            src={bgImage}
+            style={{ width: "100%", height: "auto" }}
+            alt=""
+            role="presentation"
+          ></img>
           <button
             className="Navigation__Button"
             onClick={this.handleButtonClick}

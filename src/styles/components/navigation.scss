@@ -18,7 +18,7 @@
     display: flex;
     justify-content: center;
     list-style: none;
-    margin: 0;
+    margin: 0 0 10px;
     padding: 0;
     max-width: 95%;
 
@@ -33,32 +33,27 @@
     background-repeat: no-repeat;
     display: flex;
     filter: drop-shadow(3px 3px 1px #3f082f80);
-    height: 158px;
     justify-content: center;
+    position: relative;
     -webkit-filter: drop-shadow(3px 3px 1px #3f082f80);
-
-    &--Left {
-      width: 104px;
-    }
-
-    &--Up {
-      width: 111px;
-    }
-
-    &--Right {
-      width: 104px;
-    }
-
-    &--Down {
-      width: 132px;
-    }
   }
 
   &__Button {
     cursor: $cursor-pointer;
+    position: absolute;
 
     &:hover {
       cursor: $cursor-pointer;
+    }
+
+    .Navigation__Item--Left &,
+    .Navigation__Item--Up &,
+    .Navigation__Item--Right & {
+      top: 25%;
+    }
+
+    .Navigation__Item--Down & {
+      bottom: 25%;
     }
   }
 }
