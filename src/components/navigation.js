@@ -80,7 +80,6 @@ class Navigation extends Component {
 
     return (
       <nav className="Navigation">
-        {/* <img className="Navigation__Background" src={navBgImg}></img> */}
         <ul className="Navigation__List">{navItems}</ul>
       </nav>
     );
