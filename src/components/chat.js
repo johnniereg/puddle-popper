@@ -17,7 +17,7 @@ class Chat extends Component {
       zIndex: 0,
     };
 
-    this.handleFrameClick = this.handleFrameClick.bind(this);
+    this.handleChatClick = this.handleChatClick.bind(this);
     this.toggleChat = this.toggleChat.bind(this);
     this.hideChat = this.hideChat.bind(this);
     this.sendToBack = this.sendToBack.bind(this);
@@ -63,7 +63,7 @@ class Chat extends Component {
     }
   }
 
-  handleFrameClick() {
+  handleChatClick() {
     // Bring clicked frame to front
     this.setState({
       zIndex: 10,
@@ -129,12 +129,16 @@ class Chat extends Component {
         axis="both"
         handle=".Chat"
         defaultPosition={{ x: 0, y: 0 }}
+        onMouseDown={this.handleChatClick}
         position={null}
         scale={1}
       >
         <form
           className={this.state.visible ? "Chat" : "Chat Chat--hidden"}
           onSubmit={this.onSubmit}
+          style={{
+            zIndex: this.state.zIndex,
+          }}
         >
           <h1 className="Chat__Heading">Chat with the Bot</h1>
           <button onClick={this.hideChat}>Close</button>

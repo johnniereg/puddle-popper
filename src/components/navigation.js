@@ -58,7 +58,6 @@ class Navigation extends Component {
       const bgImage = this.determineBgImage(index, exhibits.length);
       const additionalClass = this.determineBgClass(index, exhibits.length);
       const classString = `Navigation__Item Navigation__Item--${additionalClass}`;
-      console.log(key, exhibit, index);
 
       return (
         <li className={classString} key={key}>
