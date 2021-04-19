@@ -86,10 +86,13 @@ class Frame extends Component {
       cursor: "pointer",
     };
 
+    const randomX = Math.random() * (500 - 50) + 50;
+    const randomY = Math.random() * (500 - 50) + 50;
+
     return (
       <Draggable
         axis="both"
-        defaultPosition={{ x: 10, y: 10 }}
+        defaultPosition={{ x: randomX, y: randomY }}
         handle=".Frame"
         onMouseDown={this.handleFrameClick}
         position={null}

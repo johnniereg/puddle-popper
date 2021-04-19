@@ -65,11 +65,14 @@ class About extends Component {
   }
 
   render() {
+    const randomX = Math.random() * (500 - 50) + 50;
+    const randomY = Math.random() * (500 - 50) + 50;
+
     return (
       <Draggable
         axis="both"
         handle=".About"
-        defaultPosition={{ x: 0, y: 0 }}
+        defaultPosition={{ x: randomX, y: randomY }}
         onMouseDown={this.handleAboutClick}
         position={null}
         scale={1}
