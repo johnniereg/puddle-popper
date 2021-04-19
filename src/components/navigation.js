@@ -58,6 +58,7 @@ class Navigation extends Component {
       const bgImage = this.determineBgImage(index, exhibits.length);
       const additionalClass = this.determineBgClass(index, exhibits.length);
       const classString = `Navigation__Item Navigation__Item--${additionalClass}`;
+      console.log(key, exhibit, index);
 
       return (
         <li className={classString} key={key}>
@@ -72,7 +73,7 @@ class Navigation extends Component {
             onClick={this.handleButtonClick}
             data-key={key}
           >
-            <span>{key}</span>
+            <span>{exhibit.title}</span>
           </button>
         </li>
       );

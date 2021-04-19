@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import Draggable from "react-draggable";
+import PubSub from "pubsub-js";
 
 class Chat extends Component {
   constructor(props) {
@@ -7,12 +8,19 @@ class Chat extends Component {
     this.botName = "Plintor Drax";
 
     this.state = {
+      ...this.props.data,
       botReplying: false,
       userName: "Lounge Visitor",
       textToSubmit: "",
       chatLog: [{ user: this.botName, text: `Hello, I am ${this.botName}` }],
+      visible: false,
+      zIndex: 0,
     };
 
+    this.handleFrameClick = this.handleFrameClick.bind(this);
+    this.toggleChat = this.toggleChat.bind(this);
+    this.hideChat = this.hideChat.bind(this);
+    this.sendToBack = this.sendToBack.bind(this);
     this.onSubmit = this.onSubmit.bind(this);
     this.handleUsernameChange = this.handleUsernameChange.bind(this);
     this.handleTextInputChange = this.handleTextInputChange.bind(this);
@@ -21,10 +29,18 @@ class Chat extends Component {
 
   componentDidMount() {
     this.scrollToBottom();
+    PubSub.subscribe("toggleFrame", this.toggleChat);
+    PubSub.subscribe("sendToBack", this.sendToBack);
   }
+
+  componentWillUnmount() {
+    PubSub.unsubscribeAll();
+  }
+
   componentDidUpdate() {
     this.scrollToBottom();
   }
+
   scrollToBottom = () => {
     this.messagesEndRef.current.scrollIntoView({ behavior: "smooth" });
   };
@@ -44,6 +60,43 @@ class Chat extends Component {
     }));
     if (this.state.botReplying === false) {
       this.botReply();
+    }
+  }
+
+  handleFrameClick() {
+    // Bring clicked frame to front
+    this.setState({
+      zIndex: 10,
+    });
+    // Send other frames to back
+    PubSub.publish("sendToBack", this.state.key);
+  }
+
+  hideChat() {
+    this.setState({
+      visible: false,
+      zIndex: 0,
+    });
+  }
+
+  sendToBack(msg, data) {
+    if (data !== this.state.key) {
+      this.setState({
+        zIndex: 0,
+      });
+    }
+  }
+
+  toggleChat(msg, data) {
+    if (data === this.state.key) {
+      this.setState((prevState) => ({
+        visible: !prevState.visible,
+        zIndex: 10,
+      }));
+    } else {
+      this.setState({
+        zIndex: 0,
+      });
     }
   }
 
@@ -79,8 +132,12 @@ class Chat extends Component {
         position={null}
         scale={1}
       >
-        <form className="Chat" onSubmit={this.onSubmit}>
+        <form
+          className={this.state.visible ? "Chat" : "Chat Chat--hidden"}
+          onSubmit={this.onSubmit}
+        >
           <h1 className="Chat__Heading">Chat with the Bot</h1>
+          <button onClick={this.hideChat}>Close</button>
           <div className="Chat__UserName">
             <input
               name="Username"

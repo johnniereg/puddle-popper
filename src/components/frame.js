@@ -57,12 +57,6 @@ class Frame extends Component {
     }
   }
 
-  toggleDetails() {
-    this.setState((prevState) => ({
-      showDetails: !prevState.showDetails,
-    }));
-  }
-
   toggleFrame(msg, data) {
     if (data === this.state.key) {
       this.setState((prevState) => ({
@@ -74,6 +68,12 @@ class Frame extends Component {
         zIndex: 0,
       });
     }
+  }
+
+  toggleDetails() {
+    this.setState((prevState) => ({
+      showDetails: !prevState.showDetails,
+    }));
   }
 
   render() {
