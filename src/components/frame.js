@@ -83,10 +83,7 @@ class Frame extends Component {
 
   render() {
     const arrowStyles = {
-      position: "absolute",
       zIndex: this.state.zIndex + 1,
-      bottom: "10px",
-      cursor: "pointer",
     };
 
     const randomX = Math.random() * (500 - 50) + 50;
