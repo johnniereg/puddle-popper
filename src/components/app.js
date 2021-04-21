@@ -6,6 +6,8 @@ import Navigation from "../components/navigation";
 
 import background from "../images/background.png";
 
+import icon1 from "../images/icons/icon1-ds.png";
+
 class App extends Component {
   constructor(props) {
     super(props);
@@ -15,6 +17,7 @@ class App extends Component {
         0: {
           key: 0,
           title: "Exhibit 0",
+          icon: icon1,
         },
         1: {
           key: 1,

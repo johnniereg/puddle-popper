@@ -13,11 +13,33 @@
   &--hidden {
     display: none;
   }
+
+  &__Control {
+    background-size: contain;
+    height: 50px;
+    width: 50px;
+
+    &--Arrow {
+      cursor: $cursor-pointer;
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+
+    &--ArrowLeft {
+      left: -50px;
+    }
+
+    &--ArrowRight {
+      right: -50px;
+    }
+  }
 }
 
 .Controls {
-  position: absolute;
-  top: -30px;
+  display: flex;
+  justify-content: center;
+  width: 100%;
 }
 
 .Details {
@@ -32,5 +54,11 @@
 
   &--hidden {
     display: none;
+  }
+}
+
+.carousel {
+  &.carousel-slider {
+    overflow: visible;
   }
 }

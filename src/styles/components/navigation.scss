@@ -39,10 +39,16 @@
   }
 
   &__Button {
+    background: transparent;
+    border: none;
     cursor: $cursor-pointer;
+    margin: 0;
+    padding: 0;
     position: absolute;
 
-    &:hover {
+    &:hover,
+    img:hover,
+    span:hover {
       cursor: $cursor-pointer;
     }
 

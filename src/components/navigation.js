@@ -72,7 +72,15 @@ class Navigation extends Component {
             onClick={this.handleButtonClick}
             data-key={key}
           >
-            <span>{exhibit.title}</span>
+            {exhibit.icon ? (
+              <img
+                src={exhibit.icon}
+                alt=""
+                style={{ width: "100%", height: "auto" }}
+              ></img>
+            ) : (
+              <span>{exhibit.title}</span>
+            )}
           </button>
         </li>
       );
