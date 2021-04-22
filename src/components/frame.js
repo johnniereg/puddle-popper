@@ -102,7 +102,7 @@ class Frame extends Component {
           style={{
             zIndex: this.state.zIndex,
             backgroundColor: "transparent",
-            maxWidth: "66%",
+            maxWidth: "90%",
           }}
         >
           <div
