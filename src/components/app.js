@@ -12,11 +12,13 @@ class App extends Component {
   constructor(props) {
     super(props);
 
+    this.data = this.props.data;
+
     this.state = {
       navItems: {
         0: {
           key: 0,
-          title: "Exhibit 0",
+          title: "Mel Spiral",
           icon: icon1,
         },
         1: {
@@ -90,7 +92,7 @@ class App extends Component {
         }}
       >
         <Header />
-        <Main data={this.state.navItems} />
+        <Main data={this.state.navItems} images={this.props.melSpiralImages} />
         <Navigation data={this.state.navItems} />
       </div>
     );
