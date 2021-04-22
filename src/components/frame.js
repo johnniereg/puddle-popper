@@ -2,10 +2,7 @@ import React, { Component } from "react";
 import Draggable from "react-draggable";
 import Img from "gatsby-image";
 import { Carousel } from "react-responsive-carousel";
-
 import PubSub from "pubsub-js";
-
-import Images from "./images";
 
 import leftIcon from "../images/frame/left.png";
 import rightIcon from "../images/frame/right.png";
