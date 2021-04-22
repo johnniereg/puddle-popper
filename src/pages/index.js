@@ -7,7 +7,7 @@ import App from "../components/app";
 const IndexPage = () => {
   const melSpiralImages = useStaticQuery(graphql`
     query {
-      allFile(
+      melSpiral: allFile(
         filter: {
           extension: { regex: "/(jpg)|(png)|(jpeg)/" }
           relativeDirectory: { eq: "exhibits/mel-spiral" }

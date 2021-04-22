@@ -154,7 +154,7 @@ class Frame extends Component {
               swipeable={false}
             >
               {this.images &&
-                this.images.allFile.edges.map((image, index) => (
+                this.images[this.state.id].edges.map((image, index) => (
                   <Img
                     key={index}
                     fluid={image.node.childImageSharp.fluid}

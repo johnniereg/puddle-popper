@@ -18,6 +18,7 @@ class App extends Component {
       navItems: {
         0: {
           key: 0,
+          id: "melSpiral",
           title: "Mel Spiral",
           icon: icon1,
         },
