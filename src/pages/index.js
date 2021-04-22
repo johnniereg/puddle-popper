@@ -17,7 +17,7 @@ const IndexPage = () => {
           node {
             base
             childImageSharp {
-              fluid {
+              fluid(maxWidth: 1600, quality: 75) {
                 ...GatsbyImageSharpFluid
               }
             }

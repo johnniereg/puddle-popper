@@ -105,8 +105,7 @@ class Frame extends Component {
           style={{
             zIndex: this.state.zIndex,
             backgroundColor: "transparent",
-            maxHeight: "33%",
-            maxWidth: "33%",
+            maxWidth: "66%",
           }}
         >
           <div
@@ -127,7 +126,7 @@ class Frame extends Component {
               style={{ backgroundImage: `url(${closeIcon})` }}
             ></button>
           </div>
-          <div style={{ width: "300px" }}>
+          <div className="Carousel__Wrapper">
             <Carousel
               infiniteLoop={true}
               renderArrowPrev={(onClickHandler, hasPrev, label) => (
