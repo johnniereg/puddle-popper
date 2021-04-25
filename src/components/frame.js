@@ -22,10 +22,6 @@ class Frame extends Component {
       zIndex: 0,
     };
 
-    console.log(this.state);
-
-    this.images = null;
-
     this.handleFrameClick = this.handleFrameClick.bind(this);
     this.hideFrame = this.hideFrame.bind(this);
     this.sendToBack = this.sendToBack.bind(this);
@@ -131,28 +127,32 @@ class Frame extends Component {
           <div className="Carousel__Wrapper">
             <Carousel
               infiniteLoop={true}
-              renderArrowPrev={(onClickHandler, hasPrev, label) => (
-                <button
-                  type="button"
-                  className="Frame__Control Frame__Control--Arrow Frame__Control--ArrowLeft"
-                  onClick={onClickHandler}
-                  title={label}
-                  style={{ ...arrowStyles }}
-                >
-                  <img src={leftIcon}></img>
-                </button>
-              )}
-              renderArrowNext={(onClickHandler, hasNext, label) => (
-                <button
-                  type="button"
-                  className="Frame__Control  Frame__Control--Arrow Frame__Control--ArrowRight"
-                  onClick={onClickHandler}
-                  title={label}
-                  style={{ ...arrowStyles }}
-                >
-                  <img src={rightIcon}></img>
-                </button>
-              )}
+              renderArrowPrev={(onClickHandler, hasPrev, label) =>
+                hasPrev && (
+                  <button
+                    type="button"
+                    className="Frame__Control Frame__Control--Arrow Frame__Control--ArrowLeft"
+                    onClick={onClickHandler}
+                    title={label}
+                    style={{ ...arrowStyles }}
+                  >
+                    <img src={leftIcon}></img>
+                  </button>
+                )
+              }
+              renderArrowNext={(onClickHandler, hasNext, label) =>
+                hasNext && (
+                  <button
+                    type="button"
+                    className="Frame__Control  Frame__Control--Arrow Frame__Control--ArrowRight"
+                    onClick={onClickHandler}
+                    title={label}
+                    style={{ ...arrowStyles }}
+                  >
+                    <img src={rightIcon}></img>
+                  </button>
+                )
+              }
               showIndicators={false}
               showStatus={false}
               showThumbs={false}

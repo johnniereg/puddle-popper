@@ -5,7 +5,6 @@ class Images extends Component {
   constructor(props) {
     super(props);
     this.images = this.props.images;
-    console.log(this.images);
   }
 
   render() {
