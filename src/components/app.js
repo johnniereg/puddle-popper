@@ -4,9 +4,7 @@ import Header from "../components/header";
 import Main from "../components/main";
 import Navigation from "../components/navigation";
 
-import background from "../images/background.png";
-
-import icon1 from "../images/icons/icon1-ds.png";
+import background from "../images/background.jpg";
 
 class App extends Component {
   constructor(props) {
@@ -20,7 +18,6 @@ class App extends Component {
           key: 0,
           id: "melSpiral",
           title: "Mel Spiral",
-          icon: icon1,
         },
         1: {
           key: 1,
