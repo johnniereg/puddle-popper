@@ -7,8 +7,6 @@ import Chat from "../components/chat";
 class Main extends Component {
   constructor(props) {
     super(props);
-
-    console.log(this.props, "props");
   }
 
   render() {

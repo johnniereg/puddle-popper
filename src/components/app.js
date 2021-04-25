@@ -27,6 +27,8 @@ class App extends Component {
     super(props);
 
     this.data = this.props.data;
+    this.exhibitImages = this.props.exhibitImages;
+    console.log(this.exhibitImages);
 
     this.state = {
       navItems: {
@@ -120,7 +122,7 @@ class App extends Component {
         }}
       >
         <Header />
-        <Main data={this.state.navItems} images={this.props.melSpiralImages} />
+        <Main data={this.state.navItems} />
         <Navigation data={this.state.navItems} />
       </div>
     );
