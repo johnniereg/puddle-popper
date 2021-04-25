@@ -158,9 +158,10 @@ class Frame extends Component {
               {this.state.images &&
                 this.state.images.edges.map((image, index) => (
                   <Img
-                    key={index}
-                    fluid={image.node.childImageSharp.fluid}
                     alt={image.node.base.split(".")[0]} // only use section of the file extension with the filename
+                    fluid={image.node.childImageSharp.fluid}
+                    key={index}
+                    draggable={false}
                   />
                 ))}
             </Carousel>
