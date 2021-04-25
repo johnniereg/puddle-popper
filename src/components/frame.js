@@ -19,7 +19,9 @@ class Frame extends Component {
       zIndex: 0,
     };
 
-    this.images = this.props.images || null;
+    console.log(this.state);
+
+    this.images = null;
 
     this.handleFrameClick = this.handleFrameClick.bind(this);
     this.hideFrame = this.hideFrame.bind(this);
@@ -153,8 +155,8 @@ class Frame extends Component {
               showThumbs={false}
               swipeable={false}
             >
-              {this.images &&
-                this.images[this.state.id].edges.map((image, index) => (
+              {this.state.images &&
+                this.state.images.edges.map((image, index) => (
                   <Img
                     key={index}
                     fluid={image.node.childImageSharp.fluid}
