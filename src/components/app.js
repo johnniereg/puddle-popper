@@ -22,6 +22,8 @@ import angelWing from "../images/icons/angelwing2x.png";
 import about from "../images/icons/about2x.png";
 import chat from "../images/icons/chatbot2x.png";
 
+import spiderGif from "../images/exhibits/spider/spider.gif";
+
 class App extends Component {
   constructor(props) {
     super(props);

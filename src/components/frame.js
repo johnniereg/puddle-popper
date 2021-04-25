@@ -9,6 +9,9 @@ import rightIcon from "../images/frame/right.png";
 import closeIcon from "../images/frame/close.png";
 import infoIcon from "../images/frame/info.png";
 
+// Gifs
+import spiderGif from "../images/exhibits/spider/spider.gif";
+
 class Frame extends Component {
   constructor(props) {
     super(props);
@@ -156,14 +159,26 @@ class Frame extends Component {
               swipeable={false}
             >
               {this.state.images &&
-                this.state.images.edges.map((image, index) => (
-                  <Img
-                    alt={image.node.base.split(".")[0]} // only use section of the file extension with the filename
-                    fluid={image.node.childImageSharp.fluid}
-                    key={index}
-                    draggable={false}
-                  />
-                ))}
+                this.state.images.edges.map((image, index) => {
+                  if (image.node.base.includes("gif")) {
+                    return (
+                      <img
+                        alt="Spider"
+                        src={spiderGif}
+                        draggable={false}
+                        key={index}
+                      ></img>
+                    );
+                  }
+                  return (
+                    <Img
+                      alt={image.node.base.split(".")[0]} // only use section of the file extension with the filename
+                      fluid={image.node.childImageSharp.fluid}
+                      key={index}
+                      draggable={false}
+                    />
+                  );
+                })}
             </Carousel>
           </div>
           <div className="Controls" style={{ zIndex: this.state.zIndex + 3 }}>

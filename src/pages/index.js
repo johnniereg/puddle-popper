@@ -99,7 +99,7 @@ const IndexPage = () => {
 
       spider: allFile(
         filter: {
-          extension: { regex: "/(jpg)|(png)|(jpeg)/" }
+          extension: { regex: "/(jpg)|(png)|(jpeg)|(gif)/" }
           relativeDirectory: { eq: "exhibits/spider" }
         }
       ) {
@@ -109,6 +109,7 @@ const IndexPage = () => {
             childImageSharp {
               fluid(maxWidth: 1200) {
                 ...GatsbyImageSharpFluid
+                src
               }
             }
           }
