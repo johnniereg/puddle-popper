@@ -68,14 +68,15 @@ class Navigation extends Component {
             role="presentation"
           ></img>
           <button
-            className="Navigation__Button"
+            className="Navigation__Button Cursor--Pointer"
             onClick={this.handleButtonClick}
             data-key={key}
           >
             {exhibit.icon ? (
               <img
                 src={exhibit.icon}
-                alt=""
+                alt={exhibit.title}
+                className="Cursor--Pointer"
                 style={{ width: "100%", height: "auto" }}
               ></img>
             ) : (

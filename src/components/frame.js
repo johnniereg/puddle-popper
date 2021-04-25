@@ -120,7 +120,7 @@ class Frame extends Component {
           <div className="Controls" style={{ zIndex: this.state.zIndex + 3 }}>
             <button
               aria-label="Close"
-              className="Frame__Control Frame__Control--Close"
+              className="Frame__Control Frame__Control--Close Cursor--Pointer"
               onClick={this.hideFrame}
               style={{ backgroundImage: `url(${closeIcon})` }}
             ></button>
@@ -133,7 +133,7 @@ class Frame extends Component {
                   <button
                     aria-label="Carousel left"
                     type="button"
-                    className="Frame__Control Frame__Control--Arrow Frame__Control--ArrowLeft"
+                    className="Frame__Control Frame__Control--Arrow Frame__Control--ArrowLeft Cursor--Pointer"
                     onClick={onClickHandler}
                     title={label}
                     style={{ ...arrowStyles }}
@@ -146,7 +146,7 @@ class Frame extends Component {
                 hasNext && (
                   <button
                     type="button"
-                    className="Frame__Control  Frame__Control--Arrow Frame__Control--ArrowRight"
+                    className="Frame__Control  Frame__Control--Arrow Frame__Control--ArrowRight Cursor--Pointer"
                     onClick={onClickHandler}
                     title={label}
                     style={{ ...arrowStyles }}
@@ -185,7 +185,7 @@ class Frame extends Component {
           </div>
           <div className="Controls" style={{ zIndex: this.state.zIndex + 3 }}>
             <button
-              className="Frame__Control Frame__Control--Info"
+              className="Frame__Control Frame__Control--Info Cursor--Pointer"
               onClick={this.toggleDetails}
               style={{ backgroundImage: `url(${infoIcon})` }}
             ></button>

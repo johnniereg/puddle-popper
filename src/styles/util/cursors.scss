@@ -6,7 +6,8 @@
   cursor: $cursor-move;
 }
 
-.Cursors--Pointer {
+.Cursor--Pointer,
+.Cursor--Pointer:hover {
   cursor: $cursor-pointer;
 }
 
