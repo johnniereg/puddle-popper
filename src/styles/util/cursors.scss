@@ -1,20 +1,19 @@
 .Cursor--Default {
-  cursor: $cursor-default;
+  cursor: $cursor-default !important;
 }
 
 .Cursor--Move {
-  cursor: $cursor-move;
+  cursor: $cursor-move !important;
 }
 
-.Cursor--Pointer,
-.Cursor--Pointer:hover {
-  cursor: $cursor-pointer;
+.Cursor--Pointer {
+  cursor: $cursor-pointer !important;
 }
 
 .Cursor--Text {
-  cursor: $cursor-text;
+  cursor: $cursor-text !important;
 }
 
 .Cursor--EasterEgg {
-  cursor: $cursor-easteregg;
+  cursor: $cursor-easteregg !important;
 }

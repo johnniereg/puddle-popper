@@ -47,14 +47,6 @@
     position: absolute;
     width: 66%;
 
-    &:hover,
-    img,
-    img:hover,
-    span,
-    span:hover {
-      cursor: $cursor-pointer;
-    }
-
     .Navigation__Item--Left &,
     .Navigation__Item--Up &,
     .Navigation__Item--Right & {

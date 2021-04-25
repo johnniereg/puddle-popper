@@ -16,12 +16,9 @@
 
   &__Control {
     background-size: contain;
+    cursor: $cursor-pointer;
     height: 50px;
     width: 50px;
-
-    &:hover {
-      cursor: $cursor-pointer;
-    }
 
     &--Arrow {
       cursor: $cursor-pointer;
