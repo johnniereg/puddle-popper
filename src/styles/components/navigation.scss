@@ -45,6 +45,7 @@
     margin: 0;
     padding: 0;
     position: absolute;
+    width: 66%;
 
     &:hover,
     img:hover,
@@ -55,11 +56,11 @@
     .Navigation__Item--Left &,
     .Navigation__Item--Up &,
     .Navigation__Item--Right & {
-      top: 25%;
+      top: 10%;
     }
 
     .Navigation__Item--Down & {
-      bottom: 25%;
+      bottom: 0%;
     }
   }
 }

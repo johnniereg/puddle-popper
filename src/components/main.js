@@ -14,7 +14,7 @@ class Main extends Component {
   render() {
     return (
       <main className="Frame_Wrapper">
-        <Frame key={0} data={this.props.data[0]} images={this.props.images} />
+        <Frame key={0} data={this.props.data[0]} />
         <Frame key={1} data={this.props.data[1]} />
         <Frame key={2} data={this.props.data[2]} />
         <Frame key={3} data={this.props.data[3]} />
