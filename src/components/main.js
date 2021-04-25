@@ -5,10 +5,6 @@ import About from "../components/about";
 import Chat from "../components/chat";
 
 class Main extends Component {
-  constructor(props) {
-    super(props);
-  }
-
   render() {
     return (
       <main className="Frame_Wrapper">
