@@ -119,6 +119,7 @@ class Frame extends Component {
           </div>
           <div className="Controls" style={{ zIndex: this.state.zIndex + 3 }}>
             <button
+              aria-label="Close"
               className="Frame__Control Frame__Control--Close"
               onClick={this.hideFrame}
               style={{ backgroundImage: `url(${closeIcon})` }}
@@ -130,6 +131,7 @@ class Frame extends Component {
               renderArrowPrev={(onClickHandler, hasPrev, label) =>
                 hasPrev && (
                   <button
+                    aria-label="Carousel left"
                     type="button"
                     className="Frame__Control Frame__Control--Arrow Frame__Control--ArrowLeft"
                     onClick={onClickHandler}
