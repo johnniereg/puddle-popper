@@ -62,21 +62,21 @@ class Navigation extends Component {
       return (
         <li className={classString} key={key}>
           <img
+            alt=""
+            className="Navigation__Background"
             src={bgImage}
             style={{ width: "100%", height: "auto" }}
-            alt=""
-            role="presentation"
           ></img>
           <button
-            className="Navigation__Button Cursor--Pointer"
+            className="Navigation__Button"
             onClick={this.handleButtonClick}
             data-key={key}
           >
             {exhibit.icon ? (
               <img
-                src={exhibit.icon}
                 alt={exhibit.title}
-                className="Cursor--Pointer"
+                className="Navigation__Icon"
+                src={exhibit.icon}
                 style={{ width: "100%", height: "auto" }}
               ></img>
             ) : (
