@@ -175,6 +175,7 @@ class Frame extends Component {
                   return (
                     <Img
                       alt={image.node.base.split(".")[0]} // only use section of the file extension with the filename
+                      className="Frame__Image"
                       fluid={image.node.childImageSharp.fluid}
                       key={index}
                       draggable={false}
