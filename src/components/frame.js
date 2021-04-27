@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import Draggable from "react-draggable";
-import Img from "gatsby-image";
 import { GatsbyImage } from "gatsby-plugin-image";
 import { Carousel } from "react-responsive-carousel";
 import PubSub from "pubsub-js";
@@ -146,7 +145,7 @@ class Frame extends Component {
                     title={label}
                     style={{ ...arrowStyles }}
                   >
-                    <img src={leftIcon}></img>
+                    <img alt="" src={leftIcon}></img>
                   </button>
                 )
               }
@@ -159,7 +158,7 @@ class Frame extends Component {
                     title={label}
                     style={{ ...arrowStyles }}
                   >
-                    <img src={rightIcon}></img>
+                    <img alt="" src={rightIcon}></img>
                   </button>
                 )
               }
@@ -198,6 +197,7 @@ class Frame extends Component {
             style={{ zIndex: this.state.zIndex + 3 }}
           >
             <button
+              aria-label="Toggle exhibit description"
               className="Frame__Control Frame__Control--Info Cursor--Pointer"
               onClick={this.toggleDetails}
               style={{ backgroundImage: `url(${infoIcon})` }}
