@@ -45,6 +45,7 @@ class App extends Component {
               "A drawing made up of dense, cross hatched line work depicts lily pads, butterflies and eyeballs woven together to create a dense field of intersecting elements. The muted colour palette of red, blue, black and yellow creates a murky swamp of elements. Elements intersect to create movement and the appearance of floating.",
             title: "Camouflage as Organic Defence",
           },
+          orientation: "landscape",
         },
         1: {
           key: 1,
@@ -60,6 +61,7 @@ class App extends Component {
               "A large pink, sheer, layered, and shimmery tapestry is shown installed hanging from the ceiling in a room. The tapestry depicts an abstracted body silhouette, and a vein-like shape inside of this form is stuffed with wool roving elements, which make it puffy. The tapestry, which is taller than a person, is meant to function as a room divider or space definer for the lounge.",
             title: "Salad in the Bloodstream",
           },
+          orientation: "portrait",
         },
         2: {
           key: 2,
@@ -74,6 +76,7 @@ class App extends Component {
               "Photos of a large circular pillow sculpture that functions as a seat. The seat is constructed from foam and upholstered with multi-textured and variously-coloured fake furs, as well as a holographic fabric. The image created by the fabrics resembles a large yellow egg in a colourful nest. It is stuffed so that the elements are raised and puffy.",
             title: "Nest",
           },
+          orientation: "landscape",
         },
         3: {
           key: 3,
@@ -89,6 +92,7 @@ class App extends Component {
               "Set of two coloured pencil drawings displaying different worlds, creatures and objects. These elements are contained within squiggly frames which join them together like a non-linear comic.",
             title: "Worm Brain Drawings",
           },
+          orientation: "landscape",
         },
         4: {
           key: 4,
@@ -104,6 +108,7 @@ class App extends Component {
               "Set of two black ink drawings on white paper, of identical dimensions. The first drawing depicts an abstracted squatting figure. Hand drawn text wraps through the figure’s legs and reads: “MOON LIT PLEATS PETAL DENTED SLEET” . The second drawing depicts an abstracted creature. Amoeba-like organs show through the creature’s body.",
             title: "Squatting Intuitive",
           },
+          orientation: "portrait",
         },
         5: {
           key: 5,
@@ -118,6 +123,7 @@ class App extends Component {
               "Digital file of tangled bead maze toy, as often found in the kids section of waiting rooms. Instead of beads, human and frog eyeball elements move along wires. Base is woodgrain and wires are red, green, blue and yellow and extend from the base like spider legs",
             title: "Illusionism",
           },
+          orientation: "landscape",
         },
         6: {
           key: 6,
@@ -133,6 +139,7 @@ class App extends Component {
               "Photos of the artist, Mel Thibodeau, demonstrating their wearable sculpture made of multi textured, and variously coloured fake furs. While worn standing up, the sculpture extends from their head to their knees. The work is shown functioning as a seat and a wrapped pillow: Mel is pictured wearing the sculpture as a seat, while arms wrap and tie around their torso.",
             title: "Friend",
           },
+          orientation: "landscape",
         },
         7: {
           key: 7,
@@ -147,6 +154,7 @@ class App extends Component {
               "Pencil crayon drawing on white paper depicting an abstracted silhouette of a figure that appears to be part plant and part animal. The figure is coloured with a rainbow of colours blending together. Hand-drawn, stream-of-consciousness text wraps through their body and reads: “MERCURY DILUTED DEW DROP SLOW ORGANZA BURNT SIDEWALK LOZENGE LAVENDER IN BETWEEN CLUMP OF PETALS PAIN SUCCUMB”.",
             title: "BIRDSTONETREE",
           },
+          orientation: "portrait",
         },
         8: {
           key: 8,
@@ -162,6 +170,7 @@ class App extends Component {
               "Photos of a multi-textured, oversized seat cushion made of soft fleece and fake fur. The cushion is quilted in a way which resembles the texture of a brain.",
             title: "TITLE",
           },
+          orientation: "portrait",
         },
         9: {
           key: 9,
@@ -177,6 +186,7 @@ class App extends Component {
               "A large purple, sheer, layered, and shimmery tapestry is shown installed hanging from the ceiling in a room. The tapestry depicts an abstracted body silhouette, and a vein-like shape inside of this form is stuffed with wool roving elements, which make it puffy. The tapestry, which is taller than a person, is meant to function as a room divider or space definer for the lounge.",
             title: "Seaweed Angelus",
           },
+          orientation: "portrait",
         },
         10: {
           key: 10,
@@ -192,6 +202,7 @@ class App extends Component {
               "Eight fabric covered balls in varying sizes, painted and dyed to look like eyeballs from various creatures, held together by a large blue widely tied net. The sculpture is meant to be interacted with as seating and eyeballs are loosely contained so as to be reconfigured. Artist Sarah Davidson is shown sitting on sculpture like a lounge chair. Each of the six largest eyeballs are the size of an exercise ball and the two smaller ones are the size of a soccer ball.",
             title: "Web Lounge",
           },
+          orientation: "landscape",
         },
         11: {
           key: 11,
@@ -207,6 +218,7 @@ class App extends Component {
               "Photo series of a large, multi-textured quilt which is made of variously coloured fake furs and printed fabrics. The quilt features motifs of flowers, stars, worms and squiggly shapes.",
             title: "Untitled",
           },
+          orientation: "portrait",
         },
         12: {
           key: 12,
@@ -221,6 +233,7 @@ class App extends Component {
               "Digital drag and drop game featuring 3D-rendered creatures, plants, fruit, objects and furniture in a lounge-like digital space.",
             title: "LumpWorld",
           },
+          orientation: "landscape",
         },
         13: {
           key: 13,

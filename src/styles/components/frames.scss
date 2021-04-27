@@ -87,7 +87,13 @@
 }
 
 .Carousel__Wrapper {
-  max-width: 33vw;
+  &--Landscape {
+    max-width: 50vw;
+  }
+
+  &--Portrait {
+    max-width: 25vw;
+  }
 }
 
 .carousel {

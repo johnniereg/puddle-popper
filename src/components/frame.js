@@ -133,8 +133,15 @@ class Frame extends Component {
               style={{ backgroundImage: `url(${closeIcon})` }}
             ></button>
           </div>
-          <div className="Carousel__Wrapper">
+          <div
+            className={
+              this.state.orientation === "landscape"
+                ? "Carousel__Wrapper Carousel__Wrapper--Landscape"
+                : "Carousel__Wrapper Carousel__Wrapper--Portrait"
+            }
+          >
             <Carousel
+              dynamicHeight={true}
               infiniteLoop={true}
               renderArrowPrev={(onClickHandler, hasPrev, label) =>
                 hasPrev && (
