@@ -113,8 +113,14 @@ class Frame extends Component {
               zIndex: this.state.zIndex + 2,
             }}
           >
-            <div>Title</div>
-            <div>Description</div>
+            <div>
+              <p>
+                {this.state.description.artist},{" "}
+                <em>{this.state.description.title}</em>,{" "}
+                {this.state.description.materialsFormatYear}
+              </p>
+              <p>{this.state.description.text}</p>
+            </div>
           </div>
           <div
             className="Controls Controls--Top"

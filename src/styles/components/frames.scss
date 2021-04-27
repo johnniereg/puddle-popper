@@ -44,8 +44,9 @@
 .Controls {
   display: flex;
   justify-content: center;
+  left: 50%;
   position: absolute;
-  width: 100%;
+  transform: translateX(-50%);
 
   &--Top {
     top: -50px;
@@ -58,11 +59,13 @@
 
 .Details {
   background-color: #800000bf;
+  color: #fff;
   bottom: 0;
   display: flex;
   flex-direction: column;
   left: 0;
   overflow-y: scroll;
+  padding: 5px 10px;
   position: absolute;
   right: 0;
   top: 0;
