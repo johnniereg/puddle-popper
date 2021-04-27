@@ -118,6 +118,7 @@ class Frame extends Component {
                 <em>{this.state.description.title}</em>,{" "}
                 {this.state.description.materialsFormatYear}
               </p>
+              <p>-----</p>
               <p>{this.state.description.text}</p>
             </div>
           </div>
