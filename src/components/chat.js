@@ -186,7 +186,7 @@ class Chat extends Component {
     const numberOfOptions = options.length;
     const optionToUse = Math.floor(Math.random() * numberOfOptions);
 
-    if (!numberOfOptions) {
+    if (numberOfOptions) {
       quote = options[optionToUse].quote;
     }
 
