@@ -17,9 +17,7 @@ const IndexPage = () => {
           node {
             base
             childImageSharp {
-              fluid(maxWidth: 1200) {
-                ...GatsbyImageSharpFluid
-              }
+              gatsbyImageData(layout: CONSTRAINED)
             }
           }
         }
@@ -35,9 +33,7 @@ const IndexPage = () => {
           node {
             base
             childImageSharp {
-              fluid(maxWidth: 1200) {
-                ...GatsbyImageSharpFluid
-              }
+              gatsbyImageData(layout: CONSTRAINED)
             }
           }
         }
@@ -53,9 +49,7 @@ const IndexPage = () => {
           node {
             base
             childImageSharp {
-              fluid(maxWidth: 1200) {
-                ...GatsbyImageSharpFluid
-              }
+              gatsbyImageData(layout: CONSTRAINED)
             }
           }
         }
@@ -71,9 +65,7 @@ const IndexPage = () => {
           node {
             base
             childImageSharp {
-              fluid(maxWidth: 1200) {
-                ...GatsbyImageSharpFluid
-              }
+              gatsbyImageData(layout: CONSTRAINED)
             }
           }
         }
@@ -89,9 +81,7 @@ const IndexPage = () => {
           node {
             base
             childImageSharp {
-              fluid(maxWidth: 1200) {
-                ...GatsbyImageSharpFluid
-              }
+              gatsbyImageData(layout: CONSTRAINED)
             }
           }
         }
@@ -107,10 +97,7 @@ const IndexPage = () => {
           node {
             base
             childImageSharp {
-              fluid(maxWidth: 1200) {
-                ...GatsbyImageSharpFluid
-                src
-              }
+              gatsbyImageData(layout: CONSTRAINED)
             }
           }
         }
@@ -126,9 +113,7 @@ const IndexPage = () => {
           node {
             base
             childImageSharp {
-              fluid(maxWidth: 1200) {
-                ...GatsbyImageSharpFluid
-              }
+              gatsbyImageData(layout: CONSTRAINED)
             }
           }
         }
@@ -144,9 +129,7 @@ const IndexPage = () => {
           node {
             base
             childImageSharp {
-              fluid(maxWidth: 1200) {
-                ...GatsbyImageSharpFluid
-              }
+              gatsbyImageData(layout: CONSTRAINED)
             }
           }
         }
@@ -162,9 +145,7 @@ const IndexPage = () => {
           node {
             base
             childImageSharp {
-              fluid(maxWidth: 1200) {
-                ...GatsbyImageSharpFluid
-              }
+              gatsbyImageData(layout: CONSTRAINED)
             }
           }
         }
@@ -180,9 +161,7 @@ const IndexPage = () => {
           node {
             base
             childImageSharp {
-              fluid(maxWidth: 1200) {
-                ...GatsbyImageSharpFluid
-              }
+              gatsbyImageData(layout: CONSTRAINED)
             }
           }
         }
@@ -198,9 +177,7 @@ const IndexPage = () => {
           node {
             base
             childImageSharp {
-              fluid(maxWidth: 1200) {
-                ...GatsbyImageSharpFluid
-              }
+              gatsbyImageData(layout: CONSTRAINED)
             }
           }
         }
@@ -216,9 +193,7 @@ const IndexPage = () => {
           node {
             base
             childImageSharp {
-              fluid(maxWidth: 1200) {
-                ...GatsbyImageSharpFluid
-              }
+              gatsbyImageData(layout: CONSTRAINED)
             }
           }
         }
@@ -234,9 +209,7 @@ const IndexPage = () => {
           node {
             base
             childImageSharp {
-              fluid(maxWidth: 1200) {
-                ...GatsbyImageSharpFluid
-              }
+              gatsbyImageData(layout: CONSTRAINED)
             }
           }
         }

@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import Draggable from "react-draggable";
 import Img from "gatsby-image";
+import { GatsbyImage } from "gatsby-plugin-image";
 import { Carousel } from "react-responsive-carousel";
 import PubSub from "pubsub-js";
 
@@ -162,6 +163,7 @@ class Frame extends Component {
             >
               {this.state.images &&
                 this.state.images.edges.map((image, index) => {
+                  console.log(image);
                   if (image.node.base.includes("gif")) {
                     return (
                       <img
@@ -173,10 +175,10 @@ class Frame extends Component {
                     );
                   }
                   return (
-                    <Img
+                    <GatsbyImage
                       alt={image.node.base.split(".")[0]} // only use section of the file extension with the filename
                       className="Frame__Image"
-                      fluid={image.node.childImageSharp.fluid}
+                      image={image.node.childImageSharp.gatsbyImageData}
                       key={index}
                       draggable={false}
                     />
