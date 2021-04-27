@@ -116,7 +116,10 @@ class Frame extends Component {
             <div>Title</div>
             <div>Description</div>
           </div>
-          <div className="Controls" style={{ zIndex: this.state.zIndex + 3 }}>
+          <div
+            className="Controls Controls--Top"
+            style={{ zIndex: this.state.zIndex + 3 }}
+          >
             <button
               aria-label="Close"
               className="Frame__Control Frame__Control--Close Cursor--Pointer"
@@ -184,7 +187,10 @@ class Frame extends Component {
                 })}
             </Carousel>
           </div>
-          <div className="Controls" style={{ zIndex: this.state.zIndex + 3 }}>
+          <div
+            className="Controls Controls--Bottom"
+            style={{ zIndex: this.state.zIndex + 3 }}
+          >
             <button
               className="Frame__Control Frame__Control--Info Cursor--Pointer"
               onClick={this.toggleDetails}
