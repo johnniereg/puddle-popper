@@ -1,14 +1,9 @@
-.Frame__Wrapper {
-  height: 100%;
-  width: 100%;
-}
-
 .Frame {
+  background-color: transparent;
   cursor: $cursor-move;
   display: flex;
   flex-direction: column;
   position: absolute;
-  width: fit-content;
 
   &--hidden {
     display: none;
@@ -67,7 +62,7 @@
 }
 
 .Carousel__Wrapper {
-  width: 600px;
+  max-width: 33vw;
 }
 
 .carousel {

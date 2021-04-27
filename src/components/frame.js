@@ -103,8 +103,6 @@ class Frame extends Component {
           className={this.state.visible ? "Frame" : "Frame Frame--hidden"}
           style={{
             zIndex: this.state.zIndex,
-            backgroundColor: "transparent",
-            maxWidth: "90%",
           }}
         >
           <div
