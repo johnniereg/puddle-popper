@@ -53,6 +53,7 @@
   &__Button {
     background: transparent;
     border: none;
+    display: block;
     cursor: $cursor-pointer;
     margin: 0;
     padding: 0;
@@ -70,9 +71,65 @@
       width: 50%;
     }
   }
+}
 
-  &__Icon {
-    cursor: $cursor-pointer;
-    display: block;
+.Navigation__Icon {
+  cursor: $cursor-pointer;
+  display: block;
+
+  &--butterfly {
+    margin-bottom: 5px;
+    margin-left: 2px;
+  }
+
+  &--burst {
+    margin-left: 3px;
+  }
+
+  &--ribbon {
+    margin-bottom: 5px;
+    margin-left: 3px;
+  }
+
+  &--spider {
+    margin-bottom: 5px;
+    margin-right: 3px;
+  }
+
+  &--spiral {
+    margin-bottom: 2px;
+    margin-left: 2px;
+  }
+
+  &--heartFlower {
+    margin-bottom: 5px;
+    margin-left: 3px;
+  }
+
+  &--gourd {
+    margin-bottom: 1px;
+    margin-left: 3px;
+  }
+
+  &--shell {
+    margin-bottom: 5px;
+    margin-left: 1px;
+  }
+
+  &--web {
+    margin-left: 1px;
+  }
+
+  &--face {
+    margin-bottom: 5px;
+  }
+
+  &--about {
+    margin-bottom: 5px;
+    margin-left: 2px;
+  }
+
+  &--chat {
+    margin-left: 3px;
   }
 }

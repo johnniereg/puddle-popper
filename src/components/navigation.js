@@ -74,8 +74,8 @@ class Navigation extends Component {
           >
             {exhibit.icon ? (
               <img
-                alt={exhibit.title}
-                className="Navigation__Icon"
+                alt={exhibit.iconTitle}
+                className={`Navigation__Icon Navigation__Icon--${exhibit.id}`}
                 src={exhibit.icon}
                 style={{ width: "100%", height: "auto" }}
               ></img>
