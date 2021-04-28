@@ -86,12 +86,13 @@ class Frame extends Component {
       zIndex: this.state.zIndex + 1,
     };
 
-    const randomX = Math.random() * (500 - 50) + 50;
-    const randomY = Math.random() * (500 - 50) + 50;
+    const randomX = Math.random() * (300 - 50) + 50;
+    const randomY = Math.random() * (200 - 50) + 50;
 
     return (
       <Draggable
         axis="both"
+        bounds="parent"
         defaultPosition={{ x: randomX, y: randomY }}
         handle=".Frame"
         onMouseDown={this.handleFrameClick}

@@ -71,6 +71,7 @@ class About extends Component {
     return (
       <Draggable
         axis="both"
+        bounds="parent"
         handle=".About"
         defaultPosition={{ x: randomX, y: randomY }}
         onMouseDown={this.handleAboutClick}

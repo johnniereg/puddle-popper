@@ -224,6 +224,7 @@ class Chat extends Component {
     return (
       <Draggable
         axis="both"
+        bounds="parent"
         handle=".Chat"
         defaultPosition={{ x: randomX, y: randomY }}
         onMouseDown={this.handleChatClick}
