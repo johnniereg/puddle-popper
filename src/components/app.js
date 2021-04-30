@@ -5,6 +5,7 @@ import Main from "../components/main";
 import Navigation from "../components/navigation";
 
 import background from "../images/background.jpg";
+import backgroundMobile from "../images/background-mobile.jpg";
 
 import eyeball from "../images/icons/eye.png";
 import butterfly from "../images/icons/butterfly2x.png";
@@ -258,9 +259,6 @@ class App extends Component {
       <div
         className="Page"
         style={{
-          backgroundImage: `url(${background})`,
-          backgroundSize: "cover",
-          backgroundPosition: "center center",
         }}
       >
         <Header />

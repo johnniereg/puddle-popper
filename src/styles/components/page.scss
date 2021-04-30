@@ -1,0 +1,9 @@
+.Page {
+  background: url(../images/background-mobile.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  @media screen and (min-width: 768px) {
+    background-image: url(../images/background.jpg);
+  }
+}

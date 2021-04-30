@@ -4,14 +4,13 @@
 @import "./util/normalize.scss";
 @import "./util/cursors.scss";
 @import "./fonts/stylesheet.css";
-
+@import "./components/page.scss";
 @import "./components/about.scss";
 @import "./components/carousel.scss";
 @import "./components/chat.scss";
 @import "./components/frames.scss";
 @import "./components/header.scss";
 @import "./components/navigation.scss";
-
 body {
   cursor: $cursor-default;
 }
