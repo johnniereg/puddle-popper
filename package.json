@@ -16,8 +16,8 @@
   },
   "license": "0BSD",
   "dependencies": {
-    "gatsby": "^3.3.1",
-    "gatsby-image": "^3.3.0",
+    "gatsby": "^3.4.0",
+    "gatsby-image": "^3.4.0",
     "gatsby-plugin-image": "^0.3.1",
     "gatsby-plugin-react-helmet": "^3.10.0",
     "gatsby-plugin-sass": "^3.2.0",
