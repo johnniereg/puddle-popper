@@ -10,9 +10,6 @@ import rightIcon from "../images/frame/right.png";
 import closeIcon from "../images/frame/close.png";
 import infoIcon from "../images/frame/info.png";
 
-// Gifs
-import spiderGif from "../images/exhibits/spider/spider.gif";
-
 class Frame extends Component {
   constructor(props) {
     super(props);
@@ -33,15 +30,6 @@ class Frame extends Component {
   componentDidMount() {
     PubSub.subscribe("toggleFrame", this.toggleFrame);
     PubSub.subscribe("sendToBack", this.sendToBack);
-
-    const node = ReactDOM.findDOMNode(this);
-    const frameEls = node.querySelectorAll(".Frame__Image");
-
-    [...frameEls].forEach(el => {
-      console.log(el);
-      const pictureEl = el.querySelectorAll("img");
-      console.log(pictureEl.lastChild);
-    });
   }
 
   componentWillUnmount() {
