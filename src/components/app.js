@@ -255,13 +255,12 @@ class App extends Component {
   render() {
     return (
       <div className="Page" style={{}}>
-        <Header />
         <Main
           data={this.state.navItems}
           exhibits={this.props.exhibitImages}
           width={this.props.width}
         />
-        <Navigation data={this.state.navItems} width={this.props.width} /> />
+        <Navigation data={this.state.navItems} width={this.props.width} />
       </div>
     );
   }

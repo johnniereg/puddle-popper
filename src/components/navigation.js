@@ -51,6 +51,7 @@ class Navigation extends Component {
 
   render() {
     const exhibits = Object.entries(this.props.data);
+
     const navItemsDesktop = exhibits.map(([key, exhibit], index) => {
       const bgImage = this.determineBgImage(index, exhibits.length);
       const additionalClass = this.determineBgClass(index, exhibits.length);
@@ -85,11 +86,8 @@ class Navigation extends Component {
     });
 
     const navItemsMobile = exhibits.map(([key, exhibit], index) => {
-      const additionalClass = this.determineBgClass(index, exhibits.length);
-      const classString = `Navigation__Item Navigation__Item--${additionalClass}`;
-
       return (
-        <li className={classString} key={key}>
+        <li className="Navigation__Item" key={key}>
           <button
             className="Navigation__Button"
             onClick={this.handleButtonClick}
@@ -110,25 +108,43 @@ class Navigation extends Component {
       );
     });
 
-    return (
-      <nav
-        className={
-          this.props.width <= 768
-            ? "Navigation Navigation--Mobile"
-            : "Navigation Navigation--Desktop"
-        }
-      >
-        {this.props.width <= 768 ? (
+    if (this.props.width <= 768) {
+      return (
+        <nav className="Navigation Navigation--Mobile">
           <ul className="Navigation__List Navigation__List--Mobile">
-            {navItemsMobile}
+            {navItemsMobile[0]}
+            {navItemsMobile[1]}
+            {navItemsMobile[2]}
+            {navItemsMobile[3]}
           </ul>
-        ) : (
+          <ul className="Navigation__List Navigation__List--Mobile">
+            {navItemsMobile[4]}
+            {navItemsMobile[5]}
+            {navItemsMobile[6]}
+            {navItemsMobile[7]}
+          </ul>
+          <ul className="Navigation__List Navigation__List--Mobile">
+            {navItemsMobile[8]}
+            {navItemsMobile[9]}
+            {navItemsMobile[10]}
+            {navItemsMobile[11]}
+          </ul>
+          <ul className="Navigation__List Navigation__List--Mobile">
+            {navItemsMobile[12]}
+            {navItemsMobile[13]}
+            {navItemsMobile[14]}
+          </ul>
+        </nav>
+      );
+    } else {
+      return (
+        <nav className="Navigation Navigation--Desktop">
           <ul className="Navigation__List Navigation__List--Desktop">
             {navItemsDesktop}
           </ul>
-        )}
-      </nav>
-    );
+        </nav>
+      );
+    }
   }
 }
 

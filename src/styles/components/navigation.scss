@@ -13,15 +13,26 @@
 }
 
 .Navigation__List {
-  display: grid;
+  display: flex;
   justify-content: center;
   list-style: none;
-  margin: 0 0 10px;
   max-width: 95%;
   padding: 0;
 
+  &--Mobile {
+    background-image: url(../images/navigation/Mobile_Menu_Bar_2x_8bit.png);
+    background-size: contain;
+    background-position: center center;
+    background-repeat: no-repeat;
+    display: flex;
+    height: 25%;
+    margin: 0;
+    width: 100%;
+  }
+
   &--Desktop {
     display: none;
+    margin: 0 0 10px;
   }
 
   @media screen and (min-width: 769px) {
