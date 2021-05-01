@@ -10,12 +10,7 @@ import navBgDown from "../images/navigation/Menu_Interior_Lower_revised_noshadow
 class Navigation extends Component {
   constructor(props) {
     super(props);
-    this.state = {
-      isMobile: false
-    };
   }
-
-  componentDidMount() {}
 
   handleButtonClick(event) {
     const key = parseInt(event.currentTarget.getAttribute("data-key"));
@@ -56,7 +51,7 @@ class Navigation extends Component {
 
   render() {
     const exhibits = Object.entries(this.props.data);
-    const navItems = exhibits.map(([key, exhibit], index) => {
+    const navItemsDesktop = exhibits.map(([key, exhibit], index) => {
       const bgImage = this.determineBgImage(index, exhibits.length);
       const additionalClass = this.determineBgClass(index, exhibits.length);
       const classString = `Navigation__Item Navigation__Item--${additionalClass}`;
@@ -89,9 +84,49 @@ class Navigation extends Component {
       );
     });
 
+    const navItemsMobile = exhibits.map(([key, exhibit], index) => {
+      const additionalClass = this.determineBgClass(index, exhibits.length);
+      const classString = `Navigation__Item Navigation__Item--${additionalClass}`;
+
+      return (
+        <li className={classString} key={key}>
+          <button
+            className="Navigation__Button"
+            onClick={this.handleButtonClick}
+            data-key={key}
+          >
+            {exhibit.icon ? (
+              <img
+                alt={exhibit.iconTitle}
+                className={`Navigation__Icon Navigation__Icon--${exhibit.id}`}
+                src={exhibit.icon}
+                style={{ width: "100%", height: "auto" }}
+              ></img>
+            ) : (
+              <span>{exhibit.title}</span>
+            )}
+          </button>
+        </li>
+      );
+    });
+
     return (
-      <nav className="Navigation">
-        <ul className="Navigation__List">{navItems}</ul>
+      <nav
+        className={
+          this.props.width <= 768
+            ? "Navigation Navigation--Mobile"
+            : "Navigation Navigation--Desktop"
+        }
+      >
+        {this.props.width <= 768 ? (
+          <ul className="Navigation__List Navigation__List--Mobile">
+            {navItemsMobile}
+          </ul>
+        ) : (
+          <ul className="Navigation__List Navigation__List--Desktop">
+            {navItemsDesktop}
+          </ul>
+        )}
       </nav>
     );
   }

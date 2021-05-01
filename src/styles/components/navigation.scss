@@ -10,66 +10,82 @@
   @media screen and (max-width: 767px) {
     top: 0;
   }
+}
 
-  &__List {
+.Navigation__List {
+  display: grid;
+  justify-content: center;
+  list-style: none;
+  margin: 0 0 10px;
+  max-width: 95%;
+  padding: 0;
+
+  &--Desktop {
+    display: none;
+  }
+
+  @media screen and (min-width: 769px) {
     display: flex;
-    flex-wrap: wrap;
+    flex-wrap: no-wrap;
     justify-content: center;
-    list-style: none;
     margin: 0 0 10px;
-    padding: 0;
     max-width: 95%;
-
-    @media screen and (min-width: 768px) {
-      flex-wrap: nowrap;
-    }
-
-    & :nth-child(even):not(:first-of-type()) {
-      margin-top: 30px;
-    }
-  }
-
-  &__Item {
-    align-items: center;
-    background-size: contain;
-    background-repeat: no-repeat;
-    display: flex;
-    filter: drop-shadow(3px 3px 1px #3f082f80);
-    -webkit-filter: drop-shadow(3px 3px 1px #3f082f80);
-    justify-content: center;
-    position: relative;
-    width: 24%;
-
-    @media screen and (min-width: 768px) {
-      width: auto;
-    }
-  }
-
-  &__Background {
-    height: auto;
-    width: 100%;
-  }
-
-  &__Button {
-    background: transparent;
-    border: none;
-    display: block;
-    cursor: $cursor-pointer;
-    margin: 0;
     padding: 0;
-    position: absolute;
-    width: 66%;
 
-    .Navigation__Item--Left &,
-    .Navigation__Item--Up &,
-    .Navigation__Item--Right & {
-      top: 10%;
+    &--Mobile {
+      display: none;
     }
 
-    .Navigation__Item--Down & {
-      bottom: 5%;
-      width: 50%;
+    &--Desktop {
+      display: flex;
     }
+  }
+
+  & :nth-child(even):not(:first-of-type()) {
+    margin-top: 30px;
+  }
+}
+
+.Navigation__Item {
+  align-items: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  display: flex;
+  filter: drop-shadow(3px 3px 1px #3f082f80);
+  -webkit-filter: drop-shadow(3px 3px 1px #3f082f80);
+  justify-content: center;
+  position: relative;
+  width: 24%;
+
+  @media screen and (min-width: 768px) {
+    width: auto;
+  }
+}
+
+.Navigation__Background {
+  height: auto;
+  width: 100%;
+}
+
+.Navigation__Button {
+  background: transparent;
+  border: none;
+  display: block;
+  cursor: $cursor-pointer;
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  width: 66%;
+
+  .Navigation__Item--Left &,
+  .Navigation__Item--Up &,
+  .Navigation__Item--Right & {
+    top: 10%;
+  }
+
+  .Navigation__Item--Down & {
+    bottom: 5%;
+    width: 50%;
   }
 }
 
