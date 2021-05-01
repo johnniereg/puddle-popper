@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import ReactDOM from "react-dom";
 import Draggable from "react-draggable";
 import { GatsbyImage } from "gatsby-plugin-image";
 import { Carousel } from "react-responsive-carousel";
@@ -19,7 +20,7 @@ class Frame extends Component {
       ...this.props.data,
       showDetails: false,
       visible: false,
-      zIndex: 0,
+      zIndex: 0
     };
 
     this.handleFrameClick = this.handleFrameClick.bind(this);
@@ -32,6 +33,15 @@ class Frame extends Component {
   componentDidMount() {
     PubSub.subscribe("toggleFrame", this.toggleFrame);
     PubSub.subscribe("sendToBack", this.sendToBack);
+
+    const node = ReactDOM.findDOMNode(this);
+    const frameEls = node.querySelectorAll(".Frame__Image");
+
+    [...frameEls].forEach(el => {
+      console.log(el);
+      const pictureEl = el.querySelectorAll("img");
+      console.log(pictureEl.lastChild);
+    });
   }
 
   componentWillUnmount() {
@@ -41,7 +51,7 @@ class Frame extends Component {
   handleFrameClick() {
     // Bring clicked frame to front
     this.setState({
-      zIndex: 10,
+      zIndex: 10
     });
     // Send other frames to back
     PubSub.publish("sendToBack", this.state.key);
@@ -50,40 +60,40 @@ class Frame extends Component {
   hideFrame() {
     this.setState({
       visible: false,
-      zIndex: 0,
+      zIndex: 0
     });
   }
 
   sendToBack(msg, data) {
     if (data !== this.state.key) {
       this.setState({
-        zIndex: 0,
+        zIndex: 0
       });
     }
   }
 
   toggleFrame(msg, data) {
     if (data === this.state.key) {
-      this.setState((prevState) => ({
+      this.setState(prevState => ({
         visible: !prevState.visible,
-        zIndex: 10,
+        zIndex: 10
       }));
     } else {
       this.setState({
-        zIndex: 0,
+        zIndex: 0
       });
     }
   }
 
   toggleDetails() {
-    this.setState((prevState) => ({
-      showDetails: !prevState.showDetails,
+    this.setState(prevState => ({
+      showDetails: !prevState.showDetails
     }));
   }
 
   render() {
     const arrowStyles = {
-      zIndex: this.state.zIndex + 1,
+      zIndex: this.state.zIndex + 1
     };
 
     const randomX = Math.random() * (300 - 50) + 50;
@@ -102,7 +112,7 @@ class Frame extends Component {
         <div
           className={this.state.visible ? "Frame" : "Frame Frame--hidden"}
           style={{
-            zIndex: this.state.zIndex,
+            zIndex: this.state.zIndex
           }}
         >
           <div
@@ -110,7 +120,7 @@ class Frame extends Component {
               this.state.showDetails ? "Details" : "Details Details--hidden"
             }
             style={{
-              zIndex: this.state.zIndex + 2,
+              zIndex: this.state.zIndex + 2
             }}
           >
             <div>
@@ -178,12 +188,12 @@ class Frame extends Component {
             >
               {this.state.images &&
                 this.state.images.edges.map((image, index) => {
-                  console.log(image);
                   if (image.node.base.includes("gif")) {
                     return (
                       <img
                         alt="Spider"
-                        src={spiderGif}
+                        className="Frame__Image"
+                        src={image.node.publicURL}
                         draggable={false}
                         key={index}
                       ></img>

@@ -96,9 +96,7 @@ const IndexPage = () => {
         edges {
           node {
             base
-            childImageSharp {
-              gatsbyImageData(layout: CONSTRAINED)
-            }
+            publicURL
           }
         }
       }

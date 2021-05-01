@@ -1,4 +1,9 @@
 module.exports = {
+  siteMetadata: {
+    title: `Puddle Popper Lounge`,
+    siteUrl: `https://lounge.puddlepopper.com`,
+    description: `Welcome to the Puddle Popper Lounge`
+  },
   plugins: [
     "gatsby-plugin-sass",
     "gatsby-plugin-image",
@@ -9,19 +14,19 @@ module.exports = {
       resolve: "gatsby-source-filesystem",
       options: {
         name: "images",
-        path: "./src/images/",
+        path: "./src/images/"
       },
-      __key: "images",
+      __key: "images"
     },
     {
       resolve: "gatsby-source-filesystem",
       options: {
         name: "pages",
-        path: "./src/pages/",
+        path: "./src/pages/"
       },
-      __key: "pages",
+      __key: "pages"
     },
     "gatsby-plugin-sharp",
-    "gatsby-transformer-sharp",
-  ],
+    "gatsby-transformer-sharp"
+  ]
 };
