@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import ReactDOM from "react-dom";
 import Draggable from "react-draggable";
 import { GatsbyImage } from "gatsby-plugin-image";
 import { Carousel } from "react-responsive-carousel";

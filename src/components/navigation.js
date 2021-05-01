@@ -10,7 +10,9 @@ import navBgDown from "../images/navigation/Menu_Interior_Lower_revised_noshadow
 class Navigation extends Component {
   constructor(props) {
     super(props);
-    this.state = {};
+    this.state = {
+      isMobile: false
+    };
   }
 
   componentDidMount() {}
