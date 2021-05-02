@@ -256,10 +256,12 @@ class Chat extends Component {
           }}
         >
           <div className="Chat__Upper">
-            <div className="InputWrapper">
+            <div className="Chat__UserWrapper">
+              <img src={topLeft}></img>
+
               <input
                 aria-label="Username"
-                className="Chat__User"
+                className="Chat__Input Chat__Input--User"
                 name="Username"
                 onChange={this.handleUsernameChange}
                 placeholder="Username"
@@ -267,8 +269,12 @@ class Chat extends Component {
                 value={this.state.userName}
               ></input>
             </div>
-            <button type="input" onClick={this.hideChat}>
-              Close
+            <button
+              aria-label="Close Chat"
+              classNam="Chat__Close"
+              onClick={this.hideChat}
+            >
+              <img alt="Close Chat" src={topRight}></img>
             </button>
           </div>
           <div className="Chat__Content">
@@ -283,13 +289,19 @@ class Chat extends Component {
             <div ref={this.messagesEndRef}></div>
           </div>
           <div className="Chat__Lower">
-            <input
-              type="text"
-              onChange={this.handleTextInputChange}
-              onKeyPress={this.handleKeyPress}
-              value={this.state.textToSubmit}
-            ></input>
-            <button type="submit">Send</button>
+            <div class="Chat__InputWrapper">
+              <img src={bottomLeft}></img>
+              <input
+                className="Chat__Input Chat__Input--Text"
+                type="text"
+                onChange={this.handleTextInputChange}
+                onKeyPress={this.handleKeyPress}
+                value={this.state.textToSubmit}
+              ></input>
+            </div>
+            <button type="submit">
+              <img src={bottomRight}></img>
+            </button>
           </div>
         </form>
       </Draggable>
