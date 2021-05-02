@@ -1,8 +1,12 @@
 .Chat {
   display: flex;
   flex-direction: column;
-  height: 400px;
+  position: absolute;
   width: 600px;
+
+  .Handle {
+    cursor: $cursor-move;
+  }
 
   &--hidden {
     display: none;
@@ -29,8 +33,33 @@
 
   &__Content {
     background-color: #fffef2;
+    cursor: $cursor-text;
     flex: 1;
+    min-height: 400px;
     overflow-y: scroll;
+
+    .Chat__Entry {
+      font-family: "IBM Plex Mono";
+      font-size: 19px;
+      line-height: 23px;
+      margin-bottom: 13px;
+
+      &--Bot {
+        color: #0000ff;
+      }
+
+      &--User {
+        color: #f0295e;
+      }
+    }
+
+    .Entry__User {
+      font-weight: bold;
+    }
+
+    .Entry__Text {
+      font-weight: regular;
+    }
   }
 
   &__Lower {
@@ -42,9 +71,16 @@
   }
 
   &__Input {
+    cursor: $cursor-text;
     left: 30px;
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
+  }
+
+  &__Close,
+  &__Submit {
+    cursor: $cursor-pointer;
+    padding: 0;
   }
 }

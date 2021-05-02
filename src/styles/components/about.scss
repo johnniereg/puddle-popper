@@ -2,6 +2,7 @@
   background-color: transparent;
   cursor: $cursor-move;
   padding: 0;
+  position: absolute;
   width: 600px;
 
   @media screen and (max-width: 768px) {
@@ -36,6 +37,7 @@
 
 .About__Content {
   background-color: #fffef2;
+  cursor: $cursor-text;
   font-family: "IBM Plex Mono";
   overflow-y: scroll;
   padding: 22px 27px;

@@ -25,7 +25,7 @@ class Chat extends Component {
           quote: "They open their eyes at night, underground."
         },
         {
-          quote: `“because of the Moon;<br>because it’s in my nature;<br>because it’s against nature”`
+          quote: `“because of the Moon; / because it’s in my nature; / because it’s against nature”`
         },
         {
           quote: "Go lay an egg!"
@@ -38,16 +38,16 @@ class Chat extends Component {
           quote: "My Feelings for the sun are complex. Beyond me."
         },
         {
-          quote: `I thought long and hard “how can I purify myself of the sun’s glow.”<br>Then I thought so simply … I will bury myself in the earth!`
+          quote: `I thought long and hard “how can I purify myself of the sun’s glow.” / Then I thought so simply … I will bury myself in the earth!`
         },
         {
           quote: `The future is already full; It is much older and larger than our present; and we are the aliens in it.`
         },
         {
-          quote: `There is no end<br>To what a living world<br>Will demand of you.`
+          quote: `There is no end / To what a living world / Will demand of you.`
         },
         {
-          quote: `We are Earthseed<br>The life that perceives itself<br>Changing.`
+          quote: `We are Earthseed / The life that perceives itself / Changing.`
         },
         {
           quote:
@@ -241,7 +241,7 @@ class Chat extends Component {
       <Draggable
         axis="both"
         bounds="parent"
-        handle=".Chat"
+        handle=".Handle"
         defaultPosition={defaultPosition}
         disabled={this.state.width <= 768 ? true : false}
         onMouseDown={this.handleChatClick}
@@ -257,8 +257,12 @@ class Chat extends Component {
         >
           <div className="Chat__Upper">
             <div className="Chat__UserWrapper">
-              <img src={topLeft}></img>
-
+              <img
+                alt=""
+                className="Handle"
+                draggable="false"
+                src={topLeft}
+              ></img>
               <input
                 aria-label="Username"
                 className="Chat__Input Chat__Input--User"
@@ -271,18 +275,29 @@ class Chat extends Component {
             </div>
             <button
               aria-label="Close Chat"
-              classNam="Chat__Close"
+              className="Chat__Close Cursor--Pointer"
               onClick={this.hideChat}
             >
-              <img alt="Close Chat" src={topRight}></img>
+              <img alt="Close Chat" draggable="false" src={topRight}></img>
             </button>
           </div>
-          <div className="Chat__Content">
+          <div className="Chat__Content Cursor--Text">
             {this.state.chatLog.map((entry, index) => {
               return (
-                <p key={index}>
-                  <span>{entry.user}: </span>
-                  <span>{entry.text}</span>
+                <p
+                  key={index}
+                  className={
+                    entry.user == this.botName
+                      ? "Chat__Entry Chat__Entry--Bot"
+                      : "Chat__Entry Chat__Entry--User"
+                  }
+                >
+                  <span className="Entry__User">
+                    {"<"}
+                    {entry.user}
+                    {">"}{" "}
+                  </span>
+                  <span className="Entry__Text">{entry.text}</span>
                 </p>
               );
             })}
@@ -290,7 +305,12 @@ class Chat extends Component {
           </div>
           <div className="Chat__Lower">
             <div class="Chat__InputWrapper">
-              <img src={bottomLeft}></img>
+              <img
+                alt=""
+                className="Handle"
+                draggable="false"
+                src={bottomLeft}
+              ></img>
               <input
                 className="Chat__Input Chat__Input--Text"
                 type="text"
@@ -299,8 +319,12 @@ class Chat extends Component {
                 value={this.state.textToSubmit}
               ></input>
             </div>
-            <button type="submit">
-              <img src={bottomRight}></img>
+            <button
+              aria-label="Submit Chat Text"
+              className="Chat__Submit Cursor--Pointer"
+              type="submit"
+            >
+              <img draggable="false" src={bottomRight}></img>
             </button>
           </div>
         </form>

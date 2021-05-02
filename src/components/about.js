@@ -80,7 +80,7 @@ class About extends Component {
       <Draggable
         axis="both"
         bounds="parent"
-        handle=".About"
+        handle=".Handle"
         defaultPosition={defaultPosition}
         disabled={this.state.width <= 768 ? true : false}
         onMouseDown={this.handleAboutClick}
@@ -94,18 +94,16 @@ class About extends Component {
           }}
         >
           <div className="About__Upper">
-            <div className="ImageWrapper">
+            <div className="ImageWrapper Handle">
               <img alt="About" draggable="false" src={topLeft}></img>
             </div>
-            <div className="ImageWrapper">
-              <img
-                alt="Close"
-                className="About__Close"
-                draggable="false"
-                src={topRight}
-                onClick={this.hideAbout}
-              ></img>
-            </div>
+            <button
+              aria-label="Close About"
+              className="About__Close"
+              onClick={this.hideAbout}
+            >
+              <img alt="Close" draggable="false" src={topRight}></img>
+            </button>
           </div>
           <div className="About__Content">
             <h1>Welcome to the Puddle Popper Lounge! </h1>
@@ -219,7 +217,7 @@ class About extends Component {
               <a href="https://www.instagram.com/armpitfreak">@armpitfreak</a>
             </p>
           </div>
-          <div className="About__Lower">
+          <div className="About__Lower Handle">
             <img alt="" draggable="false" src={bottom}></img>
           </div>
         </div>
