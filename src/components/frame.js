@@ -107,24 +107,26 @@ class Frame extends Component {
             zIndex: this.state.zIndex
           }}
         >
-          <div
-            className={
-              this.state.showDetails ? "Details" : "Details Details--hidden"
-            }
-            style={{
-              zIndex: this.state.zIndex + 2
-            }}
-          >
-            <div>
-              <p>
-                {this.state.description.artist},{" "}
-                <em>{this.state.description.title}</em>,{" "}
-                {this.state.description.materialsFormatYear}
-              </p>
-              <p>-----</p>
-              <p>{this.state.description.text}</p>
+          {this.state.description && (
+            <div
+              className={
+                this.state.showDetails ? "Details" : "Details Details--hidden"
+              }
+              style={{
+                zIndex: this.state.zIndex + 2
+              }}
+            >
+              <div>
+                <p>
+                  {this.state.description.artist},{" "}
+                  <em>{this.state.description.title}</em>,{" "}
+                  {this.state.description.materialsFormatYear}
+                </p>
+                <p>-----</p>
+                <p>{this.state.description.text}</p>
+              </div>
             </div>
-          </div>
+          )}
           <div
             className="Controls Controls--Top"
             style={{ zIndex: this.state.zIndex + 3 }}
@@ -190,6 +192,9 @@ class Frame extends Component {
                         key={index}
                       ></img>
                     );
+                  }
+                  if (image.node.base.includes("mp4")) {
+                    return <video key={index}></video>;
                   }
                   return (
                     <GatsbyImage

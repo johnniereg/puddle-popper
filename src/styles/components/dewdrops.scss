@@ -1,0 +1,55 @@
+.Dewdrops {
+  bottom: 0;
+  display: block;
+  left: 0;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+.Dewdrop__Item {
+  position: absolute;
+
+  &--1 {
+    left: 8%;
+    bottom: 18%;
+  }
+
+  &--2 {
+    left: 15%;
+    bottom: 25%;
+  }
+
+  &--3 {
+    left: 20%;
+    bottom: 30%;
+  }
+
+  &--4 {
+    left: 35%;
+    bottom: 20%;
+  }
+
+  &--5 {
+    right: 10%;
+    top: 30%;
+  }
+
+  &--6 {
+    right: 20%;
+    top: 10%;
+  }
+
+  &--7 {
+    right: 30%;
+    top: 15%;
+  }
+
+  &--8 {
+    right: 40%;
+    top: 60%;
+  }
+}
