@@ -250,6 +250,23 @@ const IndexPage = () => {
           }
         }
       }
+
+      easterEggs: allFile(
+        filter: {
+          extension: { regex: "/(jpg)|(png)|(jpeg)|(mp4)/" }
+          relativeDirectory: { eq: "exhibits/easterEggs" }
+        }
+      ) {
+        edges {
+          node {
+            base
+            publicURL
+            childImageSharp {
+              gatsbyImageData(layout: CONSTRAINED)
+            }
+          }
+        }
+      }
     }
   `);
 
