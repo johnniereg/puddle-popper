@@ -6,6 +6,13 @@
   flex-direction: column;
   position: absolute;
 
+  @media screen and (max-width: 768px) {
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 75vw;
+  }
+
   &--hidden {
     display: none;
   }
@@ -87,12 +94,14 @@
 }
 
 .Carousel__Wrapper {
-  &--Landscape {
-    max-width: 50vw;
-  }
+  @media screen and (min-width: 768px) {
+    &--Landscape {
+      max-width: 50vw;
+    }
 
-  &--Portrait {
-    max-width: 25vw;
+    &--Portrait {
+      max-width: 25vw;
+    }
   }
 }
 

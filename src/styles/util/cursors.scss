@@ -7,7 +7,7 @@
 }
 
 .Cursor--Pointer {
-  // cursor: $cursor-pointer !important;
+  cursor: $cursor-pointer !important;
 }
 
 .Cursor--Text {
@@ -16,4 +16,8 @@
 
 .Cursor--EasterEgg {
   cursor: $cursor-easteregg !important;
+}
+
+body {
+  cursor: $cursor-default;
 }

@@ -16,6 +16,7 @@ class Frame extends Component {
       ...this.props.data,
       showDetails: false,
       visible: false,
+      width: this.props.width,
       zIndex: 0
     };
 
@@ -86,11 +87,17 @@ class Frame extends Component {
     const randomX = Math.random() * (300 - 50) + 50;
     const randomY = Math.random() * (200 - 50) + 50;
 
+    const defaultPosition =
+      this.state.width > 768 ? { x: randomX, y: randomY } : {};
+
+    console.log(defaultPosition);
+
     return (
       <Draggable
         axis="both"
         bounds="parent"
-        defaultPosition={{ x: randomX, y: randomY }}
+        defaultPosition={defaultPosition}
+        disabled={this.state.width <= 768 ? true : false}
         handle=".Frame"
         onMouseDown={this.handleFrameClick}
         position={null}

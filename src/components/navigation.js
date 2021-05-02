@@ -10,6 +10,13 @@ import navBgDown from "../images/navigation/Menu_Interior_Lower_revised_noshadow
 class Navigation extends Component {
   constructor(props) {
     super(props);
+
+    this.state = {
+      mobileMenuVisible: false
+    };
+
+    this.hideMobileMenu = this.hideMobileMenu.bind(this);
+    this.showMobileMenu = this.showMobileMenu.bind(this);
   }
 
   handleButtonClick(event) {
@@ -47,6 +54,20 @@ class Navigation extends Component {
     }
 
     return additionalClass;
+  }
+
+  hideMobileMenu() {
+    console.log("hide mobile menu");
+    this.setState({
+      mobileMenuVisible: false
+    });
+  }
+
+  showMobileMenu() {
+    console.log("hide mobile menu");
+    this.setState({
+      mobileMenuVisible: true
+    });
   }
 
   render() {
@@ -111,29 +132,78 @@ class Navigation extends Component {
     if (this.props.width <= 768) {
       return (
         <nav className="Navigation Navigation--Mobile">
-          <ul className="Navigation__List Navigation__List--Mobile">
+          <ul
+            className={
+              this.state.mobileMenuVisible
+                ? "Navigation__List Navigation__List--Mobile"
+                : "Navigation__List Navigation__List--Mobile Hidden"
+            }
+          >
             {navItemsMobile[0]}
             {navItemsMobile[1]}
             {navItemsMobile[2]}
             {navItemsMobile[3]}
           </ul>
-          <ul className="Navigation__List Navigation__List--Mobile">
+          <ul
+            className={
+              this.state.mobileMenuVisible
+                ? "Navigation__List Navigation__List--Mobile"
+                : "Navigation__List Navigation__List--Mobile Hidden"
+            }
+          >
             {navItemsMobile[4]}
             {navItemsMobile[5]}
             {navItemsMobile[6]}
             {navItemsMobile[7]}
           </ul>
-          <ul className="Navigation__List Navigation__List--Mobile">
+          <ul
+            className={
+              this.state.mobileMenuVisible
+                ? "Navigation__List Navigation__List--Mobile"
+                : "Navigation__List Navigation__List--Mobile Hidden"
+            }
+          >
             {navItemsMobile[8]}
             {navItemsMobile[9]}
             {navItemsMobile[10]}
             {navItemsMobile[11]}
           </ul>
-          <ul className="Navigation__List Navigation__List--Mobile">
+          <ul
+            className={
+              this.state.mobileMenuVisible
+                ? "Navigation__List Navigation__List--Mobile"
+                : "Navigation__List Navigation__List--Mobile Hidden"
+            }
+          >
             {navItemsMobile[12]}
             {navItemsMobile[13]}
             {navItemsMobile[14]}
+            <li className="Navigation__Item" key={15}>
+              <button
+                aria-label="Hide Menu"
+                className="Navigation__Button"
+                onClick={this.hideMobileMenu}
+                data-key={15}
+              >
+                <img
+                  alt="Hide Menu"
+                  className={`Navigation__Icon Navigation__Icon--mobileMenu`}
+                  style={{ width: "100%", height: "auto" }}
+                ></img>
+              </button>
+            </li>
           </ul>
+          <button
+            aria-label="Show Menu"
+            className="Navigation__Button"
+            onClick={this.showMobileMenu}
+          >
+            <img
+              alt="Show Menu"
+              className={`Navigation__Icon Navigation__Icon--mobileMenu`}
+              style={{ width: "100%", height: "auto" }}
+            ></img>
+          </button>
         </nav>
       );
     } else {

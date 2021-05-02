@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 
-import Header from "../components/header";
 import Main from "../components/main";
 import Navigation from "../components/navigation";
 

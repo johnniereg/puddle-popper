@@ -3,6 +3,7 @@
 @import "./util/layout.scss";
 @import "./util/normalize.scss";
 @import "./util/cursors.scss";
+@import "./util/util.scss";
 @import "./fonts/stylesheet.css";
 @import "./components/page.scss";
 @import "./components/about.scss";
@@ -11,6 +12,3 @@
 @import "./components/frames.scss";
 @import "./components/header.scss";
 @import "./components/navigation.scss";
-body {
-  cursor: $cursor-default;
-}
