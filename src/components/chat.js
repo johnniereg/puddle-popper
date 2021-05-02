@@ -2,6 +2,11 @@ import React, { Component } from "react";
 import Draggable from "react-draggable";
 import PubSub from "pubsub-js";
 
+import topLeft from "../images/chat/top_bar_solid.png";
+import topRight from "../images/chat/close_button_with_X.png";
+import bottomLeft from "../images/chat/bottom_bar_solid.png";
+import bottomRight from "../images/chat/send_button_with_text.png";
+
 class Chat extends Component {
   constructor(props) {
     super(props);
@@ -95,6 +100,7 @@ class Chat extends Component {
     this.hideChat = this.hideChat.bind(this);
     this.sendToBack = this.sendToBack.bind(this);
     this.onSubmit = this.onSubmit.bind(this);
+    this.handleKeyPress = this.handleKeyPress.bind(this);
     this.handleUsernameChange = this.handleUsernameChange.bind(this);
     this.handleTextInputChange = this.handleTextInputChange.bind(this);
     this.messagesEndRef = React.createRef();
@@ -181,6 +187,12 @@ class Chat extends Component {
     this.setState({ textToSubmit: e.target.value });
   }
 
+  handleKeyPress(e) {
+    if (e.key === "Enter") {
+      this.onSubmit(e);
+    }
+  }
+
   generateReply() {
     let quote = "...";
     const options = this.state.replyOptions;
@@ -243,15 +255,21 @@ class Chat extends Component {
             zIndex: this.state.zIndex
           }}
         >
-          <h1 className="Chat__Heading">Chat with the Bot</h1>
-          <div className="Chat__UserName">
-            <input
-              name="Username"
-              type="text"
-              onChange={this.handleUsernameChange}
-              value={this.state.userName}
-            ></input>
-            <label htmlFor="Username">Name</label>
+          <div className="Chat__Upper">
+            <div className="InputWrapper">
+              <input
+                aria-label="Username"
+                className="Chat__User"
+                name="Username"
+                onChange={this.handleUsernameChange}
+                placeholder="Username"
+                type="text"
+                value={this.state.userName}
+              ></input>
+            </div>
+            <button type="input" onClick={this.hideChat}>
+              Close
+            </button>
           </div>
           <div className="Chat__Content">
             {this.state.chatLog.map((entry, index) => {
@@ -264,14 +282,14 @@ class Chat extends Component {
             })}
             <div ref={this.messagesEndRef}></div>
           </div>
-          <div className="Chat__Input">
+          <div className="Chat__Lower">
             <input
               type="text"
               onChange={this.handleTextInputChange}
+              onKeyPress={this.handleKeyPress}
               value={this.state.textToSubmit}
             ></input>
             <button type="submit">Send</button>
-            <button onClick={this.hideChat}>Close</button>
           </div>
         </form>
       </Draggable>
