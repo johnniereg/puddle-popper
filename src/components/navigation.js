@@ -15,8 +15,7 @@ class Navigation extends Component {
       mobileMenuVisible: false
     };
 
-    this.hideMobileMenu = this.hideMobileMenu.bind(this);
-    this.showMobileMenu = this.showMobileMenu.bind(this);
+    this.toggleMobileMenu = this.toggleMobileMenu.bind(this);
   }
 
   handleButtonClick(event) {
@@ -56,18 +55,10 @@ class Navigation extends Component {
     return additionalClass;
   }
 
-  hideMobileMenu() {
-    console.log("hide mobile menu");
-    this.setState({
-      mobileMenuVisible: false
-    });
-  }
-
-  showMobileMenu() {
-    console.log("hide mobile menu");
-    this.setState({
-      mobileMenuVisible: true
-    });
+  toggleMobileMenu() {
+    this.setState(prevState => ({
+      mobileMenuVisible: !prevState.mobileMenuVisible
+    }));
   }
 
   render() {
@@ -178,28 +169,14 @@ class Navigation extends Component {
             {navItemsMobile[12]}
             {navItemsMobile[13]}
             {navItemsMobile[14]}
-            <li className="Navigation__Item" key={15}>
-              <button
-                aria-label="Hide Menu"
-                className="Navigation__Button"
-                onClick={this.hideMobileMenu}
-                data-key={15}
-              >
-                <img
-                  alt="Hide Menu"
-                  className={`Navigation__Icon Navigation__Icon--mobileMenu`}
-                  style={{ width: "100%", height: "auto" }}
-                ></img>
-              </button>
-            </li>
           </ul>
           <button
-            aria-label="Show Menu"
+            aria-label="Toggle Menu"
             className="Navigation__Button"
-            onClick={this.showMobileMenu}
+            onClick={this.toggleMobileMenu}
           >
             <img
-              alt="Show Menu"
+              alt="Toggle Menu"
               className={`Navigation__Icon Navigation__Icon--mobileMenu`}
               style={{ width: "100%", height: "auto" }}
             ></img>
