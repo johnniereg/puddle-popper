@@ -6,6 +6,14 @@
   position: absolute;
   width: 600px;
 
+  @media screen and (max-width: 768px) {
+    height: 90%;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 90%;
+  }
+
   .Handle {
     cursor: $cursor-move;
   }
@@ -13,81 +21,96 @@
   &--hidden {
     display: none;
   }
+}
 
-  &__Upper {
-    display: flex;
-    margin-bottom: 0px;
-    position: relative;
+.Chat__Upper {
+  display: flex;
+  margin-bottom: 0px;
+  position: relative;
 
-    @media screen and (min-width: 769px) {
-      height: 72px;
-    }
-
-    .ImageWrapper {
-      display: inherit;
-    }
-
-    img {
-      height: auto;
-      width: 100%;
-    }
+  @media screen and (min-width: 769px) {
+    height: 72px;
   }
 
-  &__Content {
-    background-color: #fffef2;
-    cursor: $cursor-text;
-    flex: 1;
-    min-height: 400px;
-    overflow-y: scroll;
-    padding: 27px;
+  .ImageWrapper {
+    display: inherit;
+  }
 
-    .Chat__Entry {
-      font-family: "IBM Plex Mono";
-      font-size: 19px;
-      line-height: 23px;
-      margin-bottom: 13px;
+  img {
+    height: auto;
+    width: 100%;
+  }
+}
 
-      &--Bot {
-        color: #0000ff;
-      }
+.Chat__Content {
+  background-color: #fffef2;
+  cursor: $cursor-text;
+  height: 400px;
+  overflow-y: scroll;
+  padding: 22px 27px;
 
-      &--User {
-        color: #f0295e;
-      }
+  .Chat__Entry {
+    font-family: "IBM Plex Mono";
+    font-size: 19px;
+    line-height: 23px;
+    margin: 0 0 13px;
+
+    &--Bot {
+      color: #0000ff;
     }
 
-    .Entry__User {
-      font-weight: bold;
-    }
-
-    .Entry__Text {
-      font-weight: regular;
+    &--User {
+      color: #f0295e;
     }
   }
 
-  &__Lower {
-    display: flex;
+  .Entry__User {
+    font-weight: bold;
   }
 
-  &__InputWrapper {
-    position: relative;
+  .Entry__Text {
+    font-weight: regular;
   }
+}
 
-  &__Input {
-    color: #8cbf8c;
-    cursor: $cursor-text;
-    font-family: "OCR A Std";
-    font-size: 25px;
-    left: 30px;
-    line-height: 25px;
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-  }
+.Chat__Lower {
+  display: flex;
 
-  &__Close,
-  &__Submit {
-    cursor: $cursor-pointer;
-    padding: 0;
+  img {
+    height: auto;
+    width: 100%;
   }
+}
+
+.Chat__InputWrapper {
+  position: relative;
+}
+
+.Chat__Input {
+  color: #8cbf8c;
+  cursor: $cursor-text;
+  font-family: "OCR A Std";
+  font-size: 25px;
+  left: 30px;
+  line-height: 25px;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  max-width: 50%;
+
+  @media screen and (max-width: 768px) {
+    font-size: 16px;
+    line-height: 18px;
+  }
+}
+
+.Chat__UserWrapper {
+  display: inherit;
+}
+
+.Chat__Close,
+.Chat__Submit {
+  display: inherit;
+  cursor: $cursor-pointer;
+  padding: 0;
 }
