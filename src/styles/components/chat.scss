@@ -37,6 +37,7 @@
     flex: 1;
     min-height: 400px;
     overflow-y: scroll;
+    padding: 27px;
 
     .Chat__Entry {
       font-family: "IBM Plex Mono";
@@ -71,8 +72,12 @@
   }
 
   &__Input {
+    color: #8cbf8c;
     cursor: $cursor-text;
+    font-family: "OCR A Std";
+    font-size: 25px;
     left: 30px;
+    line-height: 25px;
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
