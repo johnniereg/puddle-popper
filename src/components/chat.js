@@ -304,7 +304,7 @@ class Chat extends Component {
             <div ref={this.messagesEndRef}></div>
           </div>
           <div className="Chat__Lower">
-            <div class="Chat__InputWrapper">
+            <div className="Chat__InputWrapper">
               <img
                 alt=""
                 className="Handle"
