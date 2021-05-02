@@ -90,8 +90,6 @@ class Frame extends Component {
     const defaultPosition =
       this.state.width > 768 ? { x: randomX, y: randomY } : {};
 
-    console.log(defaultPosition);
-
     return (
       <Draggable
         axis="both"

@@ -1,7 +1,82 @@
 .About {
+  background-color: transparent;
+  cursor: $cursor-move;
+  padding: 0;
   position: absolute;
+  width: 600px;
+
+  @media screen and (max-width: 768px) {
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+  }
 
   &--hidden {
     display: none;
   }
+}
+
+.About__Upper {
+  display: flex;
+  // height: 72px;
+  margin-bottom: 0px;
+
+  @media screen and (min-width: 769px) {
+    height: 72px;
+  }
+
+  .ImageWrapper {
+    display: inherit;
+  }
+
+  img {
+    height: auto;
+    width: 100%;
+  }
+}
+
+.About__Content {
+  background-color: #fffef2;
+  font-family: "IBM Plex Mono";
+  overflow-y: scroll;
+  padding: 22px 27px;
+  max-height: 400px;
+
+  &:before {
+    width: 50px;
+  }
+
+  h1 {
+    border-bottom: 2px dashed #800000;
+    color: #800000;
+    font-size: 24px;
+    line-height: 24px;
+    margin: 0 0 27px;
+    padding-bottom: 10px;
+  }
+
+  p {
+    font-size: 19px;
+    line-height: 23px;
+    margin: 0 0 17px;
+  }
+
+  a {
+    color: inherit;
+  }
+}
+
+.About__Lower {
+  background-color: transparent;
+
+  img {
+    height: auto;
+    width: 100%;
+  }
+}
+
+.About__Close {
+  cursor: $cursor-pointer;
+  padding: 0;
 }

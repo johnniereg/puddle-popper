@@ -2,6 +2,10 @@ import React, { Component } from "react";
 import Draggable from "react-draggable";
 import PubSub from "pubsub-js";
 
+import bottom from "../images/about/bottom_bar.png";
+import topLeft from "../images/about/top_bar_with_About.png";
+import topRight from "../images/about/close_button_with_x.png";
+
 class About extends Component {
   constructor(props) {
     super(props);
@@ -9,7 +13,8 @@ class About extends Component {
     this.state = {
       ...this.props.data,
       visible: false,
-      zIndex: 0,
+      width: this.props.width,
+      zIndex: 0
     };
 
     this.hideAbout = this.hideAbout.bind(this);
@@ -30,7 +35,7 @@ class About extends Component {
   handleAboutClick() {
     // Bring clicked frame to front
     this.setState({
-      zIndex: 10,
+      zIndex: 10
     });
     // Send other frames to back
     PubSub.publish("sendToBack", this.state.key);
@@ -39,41 +44,45 @@ class About extends Component {
   hideAbout() {
     this.setState({
       visible: false,
-      zIndex: 0,
+      zIndex: 0
     });
   }
 
   sendToBack(msg, data) {
     if (data !== this.state.key) {
       this.setState({
-        zIndex: 0,
+        zIndex: 0
       });
     }
   }
 
   toggleAbout(msg, data) {
     if (data === this.state.key) {
-      this.setState((prevState) => ({
+      this.setState(prevState => ({
         visible: !prevState.visible,
-        zIndex: 10,
+        zIndex: 10
       }));
     } else {
       this.setState({
-        zIndex: 0,
+        zIndex: 0
       });
     }
   }
 
   render() {
-    const randomX = Math.random() * (500 - 50) + 50;
-    const randomY = Math.random() * (500 - 50) + 50;
+    const randomX = Math.random() * (300 - 50) + 50;
+    const randomY = Math.random() * (200 - 50) + 50;
+
+    const defaultPosition =
+      this.state.width > 768 ? { x: randomX, y: randomY } : {};
 
     return (
       <Draggable
         axis="both"
         bounds="parent"
         handle=".About"
-        defaultPosition={{ x: randomX, y: randomY }}
+        defaultPosition={defaultPosition}
+        disabled={this.state.width <= 768 ? true : false}
         onMouseDown={this.handleAboutClick}
         position={null}
         scale={1}
@@ -81,18 +90,26 @@ class About extends Component {
         <div
           className={this.state.visible ? "About" : "About About--hidden"}
           style={{
-            backgroundColor: "white",
-            maxHeight: "400px",
-            maxWidth: "400px",
-            overflowY: "scroll",
-            padding: "10px",
-            zIndex: this.state.zIndex,
+            zIndex: this.state.zIndex
           }}
         >
-          <button onClick={this.hideAbout}>Close</button>
+          <div className="About__Upper">
+            <div className="ImageWrapper">
+              <img alt="About" draggable="false" src={topLeft}></img>
+            </div>
+            <div className="ImageWrapper">
+              <img
+                alt="Close"
+                className="About__Close"
+                draggable="false"
+                src={topRight}
+                onClick={this.hideAbout}
+              ></img>
+            </div>
+          </div>
           <div className="About__Content">
             <h1>Welcome to the Puddle Popper Lounge! </h1>
-            <p>
+            <p style={{ color: "#0000ff" }}>
               <strong>PUDDLE POPPER</strong> slips through realities towards our
               desires, passing between description, invention and idealisation
               to wiggle around truths. Puddle Popper merges forms to create a
@@ -101,7 +118,7 @@ class About extends Component {
               open up, limbs are put part way through, and then all the way
               through, and new bodies are observed and created.
             </p>
-            <p>
+            <p style={{ color: "#007000" }}>
               Consisting of soft sculptures, 3D animations, drawings, and other
               eggs, The Puddle Popper Lounge is meant to function both as an art
               work and as an interactive installation for the 2021 Vancouver
@@ -109,7 +126,7 @@ class About extends Component {
               in 2020, the Lounge transformed into an online space after that
               edition of VANCAF was cancelled.
             </p>
-            <p>
+            <p style={{ color: "#f0295e" }}>
               Puddle Popper is an artist collective formed in 2015 in Vancouver
               by artists Sarah Davidson, Juli Majer, Sonja Ratkay and Mel
               Thibodeau. Through interactive sculpture installations, we propose
@@ -117,20 +134,20 @@ class About extends Component {
               interact: themes of embodiment, comfort, queerness, and ecology
               are the basis for playful, collaborative world-building.
             </p>
-            <p>
+            <p style={{ color: "#0000ff" }}>
               Puddle Popper enlisted the help of artist/designer Brennan Kelly,
               web developer Johnnie Regalado, and 3D artist Scott Lougheed to
               realize our ideas in the digital realm.
             </p>
-            <p>
+            <p style={{ color: "#007000" }}>
               <a href="http://www.puddlepopper.com">puddlepopper.com</a>
             </p>
-            <p>
+            <p style={{ color: "#f0295e" }}>
               <a href="https://www.instagram.com/puddlepopper/">
                 @puddlepopper
               </a>
             </p>
-            <p>
+            <p style={{ color: "#0000ff" }}>
               <strong>SARAH DAVIDSON</strong> works primarily between drawing
               and painting to create compositions in which shadowy, biomorphic
               figures and delicate, foliated fragments mingle. While she often
@@ -142,13 +159,13 @@ class About extends Component {
               space of undoing. In swampy, saturated tones, her works wonder:
               who’s looking at who, and how?
             </p>
-            <p>
+            <p style={{ color: "#0000ff" }}>
               <a href="https://www.sarahdavidson.ca/">sarahdavidson.ca</a>
             </p>
-            <p>
+            <p style={{ color: "#0000ff" }}>
               <a href="https://www.instagram.com/triceradee/">@triceradee</a>
             </p>
-            <p>
+            <p style={{ color: "#007000" }}>
               <strong>JULI MAJER</strong> is an artist whose work explores
               heightened emotional and psychological states, imagined worlds,
               and peculiar modes of existence. Investigating fictional
@@ -157,13 +174,13 @@ class About extends Component {
               inarticulate textures which emerge from relationships between her
               characters, symbols, objects, and environments.
             </p>
-            <p>
+            <p style={{ color: "#007000" }}>
               <a href="http://julimajer.net/">julimajer.net</a>
             </p>
-            <p>
+            <p style={{ color: "#007000" }}>
               <a href="https://www.instagram.com/julimajer">@julimajer</a>
             </p>
-            <p>
+            <p style={{ color: "#f0295e" }}>
               <strong>SONJA RATKAY</strong> navigates unconscious and conscious
               drives through which she aims to process thoughts alongside
               viewers. Ratkay’s bodily art exists on the threshold of interior
@@ -175,15 +192,15 @@ class About extends Component {
               text-as-image, she creates choreographed movements between body
               and mind, a pathway for feelings and thoughts to travel.
             </p>
-            <p>
+            <p style={{ color: "#f0295e" }}>
               <a href="https://sonjaratkay.com/">sonjaratkay.com</a>
             </p>
-            <p>
+            <p style={{ color: "#f0295e" }}>
               <a href="https://www.instagram.com/destructiveapple/">
                 @destructiveapple
               </a>
             </p>
-            <p>
+            <p style={{ color: "#0000ff" }}>
               Through tactile sculptures meant to be both observed and
               interacted with, <strong>MEL THIBODEAU</strong>’s work squirms
               around the question ‘what is a body?’ Their vocabulary of soft
@@ -195,12 +212,15 @@ class About extends Component {
               gender, wink at desire, and ponder fleshy realities both familiar
               and alien.
             </p>
-            <p>
+            <p style={{ color: "#0000ff" }}>
               <a href="https://melthibodeau.com">melthibodeau.com</a>
             </p>
-            <p>
+            <p style={{ color: "#0000ff" }}>
               <a href="https://www.instagram.com/armpitfreak">@armpitfreak</a>
             </p>
+          </div>
+          <div className="About__Lower">
+            <img alt="" draggable="false" src={bottom}></img>
           </div>
         </div>
       </Draggable>
