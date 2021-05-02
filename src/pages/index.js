@@ -4,10 +4,15 @@ import { useStaticQuery, graphql } from "gatsby"; // to query for image data
 
 import App from "../components/app";
 
-const getWidth = () =>
-  window.innerWidth ||
-  document.documentElement.clientWidth ||
-  document.body.clientWidth;
+const getWidth = () => {
+  const mobileBreakpoint = 769;
+
+  if (typeof window !== "undefined") {
+    return window.innerWidth;
+  } else {
+    return mobileBreakpoint;
+  }
+};
 
 function useCurrentWidth() {
   // save current window width in the state object
