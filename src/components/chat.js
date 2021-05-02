@@ -287,7 +287,7 @@ class Chat extends Component {
                 <p
                   key={index}
                   className={
-                    entry.user == this.botName
+                    entry.user === this.botName
                       ? "Chat__Entry Chat__Entry--Bot"
                       : "Chat__Entry Chat__Entry--User"
                   }
@@ -324,7 +324,11 @@ class Chat extends Component {
               className="Chat__Submit Cursor--Pointer"
               type="submit"
             >
-              <img draggable="false" src={bottomRight}></img>
+              <img
+                alt="Submit Chat Text"
+                draggable="false"
+                src={bottomRight}
+              ></img>
             </button>
           </div>
         </form>
