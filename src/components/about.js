@@ -94,7 +94,7 @@ class About extends Component {
           }}
         >
           <div className="About__Upper">
-            <div className="ImageWrapper Handle">
+            <div className="ImageWrapper Handle Cursor--Move">
               <img alt="About" draggable="false" src={topLeft}></img>
             </div>
             <button
@@ -217,7 +217,7 @@ class About extends Component {
               <a href="https://www.instagram.com/armpitfreak">@armpitfreak</a>
             </p>
           </div>
-          <div className="About__Lower Handle">
+          <div className="About__Lower Handle Cursor--Move">
             <img alt="" draggable="false" src={bottom}></img>
           </div>
         </div>
