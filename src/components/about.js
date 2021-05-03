@@ -138,10 +138,12 @@ class About extends Component {
               realize our ideas in the digital realm.
             </p>
             <p style={{ color: "#007000" }}>
-              <a href="http://www.puddlepopper.com">puddlepopper.com</a>
+              <a target="_blank" href="http://www.puddlepopper.com">
+                puddlepopper.com
+              </a>
             </p>
             <p style={{ color: "#f0295e" }}>
-              <a href="https://www.instagram.com/puddlepopper/">
+              <a target="_blank" href="https://www.instagram.com/puddlepopper/">
                 @puddlepopper
               </a>
             </p>
@@ -158,10 +160,14 @@ class About extends Component {
               who’s looking at who, and how?
             </p>
             <p style={{ color: "#0000ff" }}>
-              <a href="https://www.sarahdavidson.ca/">sarahdavidson.ca</a>
+              <a target="_blank" href="https://www.sarahdavidson.ca/">
+                sarahdavidson.ca
+              </a>
             </p>
             <p style={{ color: "#0000ff" }}>
-              <a href="https://www.instagram.com/triceradee/">@triceradee</a>
+              <a target="_blank" href="https://www.instagram.com/triceradee/">
+                @triceradee
+              </a>
             </p>
             <p style={{ color: "#007000" }}>
               <strong>JULI MAJER</strong> is an artist whose work explores
@@ -173,10 +179,14 @@ class About extends Component {
               characters, symbols, objects, and environments.
             </p>
             <p style={{ color: "#007000" }}>
-              <a href="http://julimajer.net/">julimajer.net</a>
+              <a target="_blank" href="http://julimajer.net/">
+                julimajer.net
+              </a>
             </p>
             <p style={{ color: "#007000" }}>
-              <a href="https://www.instagram.com/julimajer">@julimajer</a>
+              <a target="_blank" href="https://www.instagram.com/julimajer">
+                @julimajer
+              </a>
             </p>
             <p style={{ color: "#f0295e" }}>
               <strong>SONJA RATKAY</strong> navigates unconscious and conscious
@@ -191,10 +201,15 @@ class About extends Component {
               and mind, a pathway for feelings and thoughts to travel.
             </p>
             <p style={{ color: "#f0295e" }}>
-              <a href="https://sonjaratkay.com/">sonjaratkay.com</a>
+              <a target="_blank" href="https://sonjaratkay.com/">
+                sonjaratkay.com
+              </a>
             </p>
             <p style={{ color: "#f0295e" }}>
-              <a href="https://www.instagram.com/destructiveapple/">
+              <a
+                target="_blank"
+                href="https://www.instagram.com/destructiveapple/"
+              >
                 @destructiveapple
               </a>
             </p>
@@ -211,10 +226,14 @@ class About extends Component {
               and alien.
             </p>
             <p style={{ color: "#0000ff" }}>
-              <a href="https://melthibodeau.com">melthibodeau.com</a>
+              <a target="_blank" href="https://melthibodeau.com">
+                melthibodeau.com
+              </a>
             </p>
             <p style={{ color: "#0000ff" }}>
-              <a href="https://www.instagram.com/armpitfreak">@armpitfreak</a>
+              <a target="_blank" href="https://www.instagram.com/armpitfreak">
+                @armpitfreak
+              </a>
             </p>
           </div>
           <div className="About__Lower Handle Cursor--Move">
