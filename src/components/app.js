@@ -85,10 +85,10 @@ class App extends Component {
           description: {
             artist: "Juli Majer",
             materialsFormatYear:
-              "coloured pencil on vellum, 6.5” x 9.25”, 2021",
+              "mixed fabrics and polyester stuffing, 2’ x 2’ x 4”, 2021",
             text:
-              "Set of two coloured pencil drawings displaying different worlds, creatures and objects. These elements are contained within squiggly frames which join them together like a non-linear comic.",
-            title: "Worm Brain Drawings"
+              "Photos of a multi-textured, oversized seat cushion made of soft fleece and fake fur. The cushion is quilted in a way which resembles the texture of a brain.",
+            title: "Untitled"
           },
           orientation: "landscape"
         },
@@ -163,10 +163,10 @@ class App extends Component {
           description: {
             artist: "Juli Majer",
             materialsFormatYear:
-              "mixed fabrics and polyester stuffing, 2’ x 2’ x 4”, 2021",
+              "coloured pencil on vellum, 6.5” x 9.25”, 2021",
             text:
-              "Photos of a multi-textured, oversized seat cushion made of soft fleece and fake fur. The cushion is quilted in a way which resembles the texture of a brain.",
-            title: "TITLE"
+              "Set of two coloured pencil drawings displaying different worlds, creatures and objects. These elements are contained within squiggly frames which join them together like a non-linear comic.",
+            title: "Worm Brain Drawings"
           },
           orientation: "portrait"
         },
