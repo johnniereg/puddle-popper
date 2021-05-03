@@ -221,17 +221,19 @@ class Frame extends Component {
                 })}
             </Carousel>
           </div>
-          <div
-            className="Controls Controls--Bottom"
-            style={{ zIndex: this.state.zIndex + 3 }}
-          >
-            <button
-              aria-label="Toggle exhibit description"
-              className="Frame__Control Frame__Control--Info Cursor--Pointer"
-              onClick={this.toggleDetails}
-              style={{ backgroundImage: `url(${infoIcon})` }}
-            ></button>
-          </div>
+          {this.state.description && (
+            <div
+              className="Controls Controls--Bottom"
+              style={{ zIndex: this.state.zIndex + 3 }}
+            >
+              <button
+                aria-label="Toggle exhibit description"
+                className="Frame__Control Frame__Control--Info Cursor--Pointer"
+                onClick={this.toggleDetails}
+                style={{ backgroundImage: `url(${infoIcon})` }}
+              ></button>
+            </div>
+          )}
         </div>
       </Draggable>
     );
