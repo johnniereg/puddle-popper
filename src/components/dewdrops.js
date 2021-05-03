@@ -22,7 +22,6 @@ class Dewdrops extends Component {
   }
 
   handleButtonClick(event) {
-    console.log("handle button click");
     const key = parseInt(event.currentTarget.getAttribute("data-key"));
     PubSub.publish("toggleFrame", key);
   }

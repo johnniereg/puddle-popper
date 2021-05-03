@@ -194,7 +194,20 @@ class Frame extends Component {
                     );
                   }
                   if (image.node.base.includes("mp4")) {
-                    return <video key={index}></video>;
+                    return (
+                      <video
+                        autoPlay
+                        muted
+                        loop
+                        src={image.node.publicURL}
+                        key={index}
+                      >
+                        <source
+                          src={image.node.publicURL}
+                          type="video/mp4"
+                        ></source>
+                      </video>
+                    );
                   }
                   return (
                     <GatsbyImage
