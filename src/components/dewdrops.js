@@ -39,6 +39,7 @@ class Dewdrops extends Component {
           >
             <img
               alt="Hidden easter egg link"
+              className="animate-flicker"
               src={this.state.icons[index]}
             ></img>
           </button>
