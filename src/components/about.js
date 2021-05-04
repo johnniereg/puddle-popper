@@ -246,7 +246,6 @@ class About extends Component {
             <div
               style={{
                 display: "flex",
-                justifyContent: "center",
                 width: "100%"
               }}
             >
