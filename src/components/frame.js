@@ -90,6 +90,16 @@ class Frame extends Component {
     const defaultPosition =
       this.state.width > 768 ? { x: randomX, y: randomY } : {};
 
+    const sortedImages = this.state.images.edges.sort((a, b) => {
+      if (a.node.base < b.node.base) {
+        return -1;
+      }
+      if (a.node.base > b.node.base) {
+        return 1;
+      }
+      return 0;
+    });
+
     return (
       <Draggable
         axis="both"
@@ -181,7 +191,7 @@ class Frame extends Component {
               swipeable={false}
             >
               {this.state.images &&
-                this.state.images.edges.map((image, index) => {
+                sortedImages.map((image, index) => {
                   if (image.node.base.includes("gif")) {
                     return (
                       <img

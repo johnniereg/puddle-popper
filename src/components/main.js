@@ -114,7 +114,6 @@ class Main extends Component {
 
   render() {
     const easterEggFrames = this.state.easterEggs.map((easterEgg, index) => {
-      console.log(easterEgg, index);
       const frameData = this.generateEasterEggFrameData(easterEgg, index);
       return (
         <Frame key={frameData.key} data={frameData} width={this.props.width} />
