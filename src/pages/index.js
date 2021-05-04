@@ -127,7 +127,7 @@ const IndexPage = () => {
 
       spider: allFile(
         filter: {
-          extension: { regex: "/(jpg)|(png)|(jpeg)|(gif)/" }
+          extension: { regex: "/(jpg)|(png)|(jpeg)|(gif)|(mp4)/" }
           relativeDirectory: { eq: "exhibits/spider" }
         }
       ) {
