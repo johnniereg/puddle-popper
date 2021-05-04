@@ -28,7 +28,6 @@ class Dewdrops extends Component {
 
   render() {
     const dewDrops = this.state.items.map((item, index) => {
-      console.log(item);
       const key = 15 + index;
       return (
         <li key={index} className={`Dewdrop__Item Dewdrop__Item--${index + 1}`}>

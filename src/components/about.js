@@ -6,6 +6,8 @@ import bottom from "../images/about/bottom_bar.png";
 import topLeft from "../images/about/top_bar_with_About.png";
 import topRight from "../images/about/close_button_with_x.png";
 
+import tentacle from "../images/about/tentaclecrop.jpg";
+
 class About extends Component {
   constructor(props) {
     super(props);
@@ -147,6 +149,14 @@ class About extends Component {
               web developer Johnnie Regalado, and 3D artist Scott Lougheed to
               realize our ideas in the digital realm.
             </p>
+
+            <div style={{ marginBottom: "17px", width: "100%" }}>
+              <img
+                style={{ height: "auto", width: "100%" }}
+                alt="Scarves hanging like tentacles"
+                src={tentacle}
+              ></img>
+            </div>
 
             <p style={{ color: "#0000ff" }}>
               <strong>
