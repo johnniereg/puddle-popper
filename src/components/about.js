@@ -107,14 +107,24 @@ class About extends Component {
           </div>
           <div className="About__Content">
             <h1>Welcome to the Puddle Popper Lounge! </h1>
+
             <p style={{ color: "#0000ff" }}>
-              <strong>PUDDLE POPPER</strong> slips through realities towards our
-              desires, passing between description, invention and idealisation
-              to wiggle around truths. Puddle Popper merges forms to create a
-              set-like world featuring invented beings, humanoids, tentacles and
-              unreadable text. Appendages transform. Colour is revised. Portals
-              open up, limbs are put part way through, and then all the way
-              through, and new bodies are observed and created.
+              <strong>
+                <a
+                  target="_blank"
+                  href="http://www.puddlepopper.com"
+                  rel="noreferrer"
+                >
+                  PUDDLE POPPER
+                </a>
+              </strong>{" "}
+              slips through realities towards our desires, passing between
+              description, invention and idealisation to wiggle around truths.
+              Puddle Popper merges forms to create a set-like world featuring
+              invented beings, humanoids, tentacles and unreadable text.
+              Appendages transform. Colour is revised. Portals open up, limbs
+              are put part way through, and then all the way through, and new
+              bodies are observed and created.
             </p>
             <p style={{ color: "#007000" }}>
               Consisting of soft sculptures, 3D animations, drawings, and other
@@ -137,103 +147,89 @@ class About extends Component {
               web developer Johnnie Regalado, and 3D artist Scott Lougheed to
               realize our ideas in the digital realm.
             </p>
-            <p style={{ color: "#007000" }}>
-              <a target="_blank" href="http://www.puddlepopper.com">
-                puddlepopper.com
-              </a>
-            </p>
-            <p style={{ color: "#f0295e" }}>
-              <a target="_blank" href="https://www.instagram.com/puddlepopper/">
-                @puddlepopper
-              </a>
-            </p>
+
             <p style={{ color: "#0000ff" }}>
-              <strong>SARAH DAVIDSON</strong> works primarily between drawing
-              and painting to create compositions in which shadowy, biomorphic
-              figures and delicate, foliated fragments mingle. While she often
-              draws directly from ‘nature’, her drawings diffract distinctions
-              between embodied self and other through a queer ecological lens:
-              critters and space collapse in upon one another, suggesting a
-              permeable web. Both the eye and the mind work towards the
-              known--animals, plants, brush marks, lines--but are caught in a
-              space of undoing. In swampy, saturated tones, her works wonder:
-              who’s looking at who, and how?
+              <strong>
+                <a
+                  target="_blank"
+                  href="https://www.sarahdavidson.ca/"
+                  rel="noreferrer"
+                >
+                  SARAH DAVIDSON
+                </a>
+              </strong>{" "}
+              works primarily between drawing and painting to create
+              compositions in which shadowy, biomorphic figures and delicate,
+              foliated fragments mingle. While she often draws directly from
+              ‘nature’, her drawings diffract distinctions between embodied self
+              and other through a queer ecological lens: critters and space
+              collapse in upon one another, suggesting a permeable web. Both the
+              eye and the mind work towards the known--animals, plants, brush
+              marks, lines--but are caught in a space of undoing. In swampy,
+              saturated tones, her works wonder: who’s looking at who, and how?
             </p>
-            <p style={{ color: "#0000ff" }}>
-              <a target="_blank" href="https://www.sarahdavidson.ca/">
-                sarahdavidson.ca
-              </a>
-            </p>
-            <p style={{ color: "#0000ff" }}>
-              <a target="_blank" href="https://www.instagram.com/triceradee/">
-                @triceradee
-              </a>
-            </p>
+
             <p style={{ color: "#007000" }}>
-              <strong>JULI MAJER</strong> is an artist whose work explores
-              heightened emotional and psychological states, imagined worlds,
-              and peculiar modes of existence. Investigating fictional
-              microcosms through drawing, sculpture, and comics, Majer weaves
-              together visceral abstractions, somatic sensations, and
-              inarticulate textures which emerge from relationships between her
-              characters, symbols, objects, and environments.
+              <strong>
+                <a
+                  target="_blank"
+                  href="http://julimajer.net/"
+                  rel="noreferrer"
+                >
+                  JULI MAJER
+                </a>
+              </strong>{" "}
+              is an artist whose work explores heightened emotional and
+              psychological states, imagined worlds, and peculiar modes of
+              existence. Investigating fictional microcosms through drawing,
+              sculpture, and comics, Majer weaves together visceral
+              abstractions, somatic sensations, and inarticulate textures which
+              emerge from relationships between her characters, symbols,
+              objects, and environments.
             </p>
-            <p style={{ color: "#007000" }}>
-              <a target="_blank" href="http://julimajer.net/">
-                julimajer.net
-              </a>
-            </p>
-            <p style={{ color: "#007000" }}>
-              <a target="_blank" href="https://www.instagram.com/julimajer">
-                @julimajer
-              </a>
-            </p>
+
             <p style={{ color: "#f0295e" }}>
-              <strong>SONJA RATKAY</strong> navigates unconscious and conscious
-              drives through which she aims to process thoughts alongside
-              viewers. Ratkay’s bodily art exists on the threshold of interior
-              and exterior realms, and evokes liminal states of being, populated
-              by known and unknown symbols. Her work spans many mediums from ink
-              drawings, to multi-sensory elements--such as smell--that are known
-              to trigger memories, and most recently textile works. Through
-              repetition of motifs including abstracted bodies and
-              text-as-image, she creates choreographed movements between body
-              and mind, a pathway for feelings and thoughts to travel.
+              <strong>
+                <a
+                  target="_blank"
+                  href="https://sonjaratkay.com/"
+                  rel="noreferrer"
+                >
+                  SONJA RATKAY
+                </a>
+              </strong>{" "}
+              navigates unconscious and conscious drives through which she aims
+              to process thoughts alongside viewers. Ratkay’s bodily art exists
+              on the threshold of interior and exterior realms, and evokes
+              liminal states of being, populated by known and unknown symbols.
+              Her work spans many mediums from ink drawings, to multi-sensory
+              elements--such as smell--that are known to trigger memories, and
+              most recently textile works. Through repetition of motifs
+              including abstracted bodies and text-as-image, she creates
+              choreographed movements between body and mind, a pathway for
+              feelings and thoughts to travel.
             </p>
-            <p style={{ color: "#f0295e" }}>
-              <a target="_blank" href="https://sonjaratkay.com/">
-                sonjaratkay.com
-              </a>
-            </p>
-            <p style={{ color: "#f0295e" }}>
-              <a
-                target="_blank"
-                href="https://www.instagram.com/destructiveapple/"
-              >
-                @destructiveapple
-              </a>
-            </p>
+
             <p style={{ color: "#0000ff" }}>
               Through tactile sculptures meant to be both observed and
-              interacted with, <strong>MEL THIBODEAU</strong>’s work squirms
-              around the question ‘what is a body?’ Their vocabulary of soft
-              forms is often bound by colourful ropes, grommets, and plush
-              chains. Feelings of nostalgic comfort and the uncanny are fostered
-              by a combination of toylike textures and half-recognizable body
-              parts, eluding exact description and hovering somewhere between
-              person and thing. These partial and abstracted forms unsettle
-              gender, wink at desire, and ponder fleshy realities both familiar
-              and alien.
-            </p>
-            <p style={{ color: "#0000ff" }}>
-              <a target="_blank" href="https://melthibodeau.com">
-                melthibodeau.com
-              </a>
-            </p>
-            <p style={{ color: "#0000ff" }}>
-              <a target="_blank" href="https://www.instagram.com/armpitfreak">
-                @armpitfreak
-              </a>
+              interacted with,{" "}
+              <strong>
+                <a
+                  target="_blank"
+                  href="https://melthibodeau.com"
+                  rel="noreferrer"
+                >
+                  MEL THIBODEAU
+                </a>
+              </strong>
+              ’s work squirms around the question ‘what is a body?’ Their
+              vocabulary of soft forms is often bound by colourful ropes,
+              grommets, and plush chains. Feelings of nostalgic comfort and the
+              uncanny are fostered by a combination of toylike textures and
+              half-recognizable body parts, eluding exact description and
+              hovering somewhere between person and thing. These partial and
+              abstracted forms unsettle gender, wink at desire, and ponder
+              fleshy realities both familiar and alien.
             </p>
           </div>
           <div className="About__Lower Handle Cursor--Move">
