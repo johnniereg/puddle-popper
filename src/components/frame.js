@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import ReactDOM from "react-dom";
 import Draggable from "react-draggable";
 import { GatsbyImage } from "gatsby-plugin-image";
 import { Carousel } from "react-responsive-carousel";
@@ -63,18 +62,10 @@ class Frame extends Component {
 
   toggleFrame(msg, data) {
     if (data === this.state.key) {
-      this.setState(
-        prevState => (
-          {
-            visible: !prevState.visible,
-            zIndex: 10
-          },
-          () => {
-            const frameEl = ReactDOM.findDOMNode(this);
-            frameEl.querySelector("carousel").focus();
-          }
-        )
-      );
+      this.setState(prevState => ({
+        visible: !prevState.visible,
+        zIndex: 10
+      }));
     } else {
       this.setState({
         zIndex: 0

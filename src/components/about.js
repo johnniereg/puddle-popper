@@ -7,6 +7,7 @@ import topLeft from "../images/about/top_bar_with_About.png";
 import topRight from "../images/about/close_button_with_x.png";
 
 import tentacle from "../images/about/tentaclecrop.jpg";
+import canadaCouncil from "../images/about/CCA_RGB_black_e.png";
 
 class About extends Component {
   constructor(props) {
@@ -241,6 +242,20 @@ class About extends Component {
               abstracted forms unsettle gender, wink at desire, and ponder
               fleshy realities both familiar and alien.
             </p>
+
+            <div
+              style={{
+                display: "flex",
+                justifyContent: "center",
+                width: "100%"
+              }}
+            >
+              <img
+                alt="Canada Council Logo"
+                src={canadaCouncil}
+                style={{ height: "auto", width: "50%" }}
+              ></img>
+            </div>
           </div>
           <div className="About__Lower Handle Cursor--Move">
             <img alt="" draggable="false" src={bottom}></img>
