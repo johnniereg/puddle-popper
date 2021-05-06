@@ -19,10 +19,30 @@
   }
 }
 
+.LumpWorld__Upper,
+.LumpWorld__Main,
+.LumpWorld__Lower {
+  border: 1px solid black;
+}
+
 .LumpWorld__Upper {
+  display: flex;
+  justify-content: space-between;
 }
 
 .LumpWorld__Main {
+  display: flex;
+  height: 400px;
+
+  &--Left {
+    background-color: grey;
+    flex-grow: 1;
+  }
+
+  &--Right {
+    background-color: red;
+    width: 33%;
+  }
 }
 
 .LumpWorld__Lower {
