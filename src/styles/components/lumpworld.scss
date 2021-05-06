@@ -1,0 +1,29 @@
+.LumpWorld {
+  filter: drop-shadow(3px 3px 1px #3f082f80);
+  -webkit-filter: drop-shadow(3px 3px 1px #3f082f80);
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  width: 600px;
+
+  @media screen and (max-width: 768px) {
+    height: 90%;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 90%;
+  }
+
+  &--hidden {
+    display: none;
+  }
+}
+
+.LumpWorld__Upper {
+}
+
+.LumpWorld__Main {
+}
+
+.LumpWorld__Lower {
+}

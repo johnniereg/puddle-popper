@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 
 import Frame from "../components/frame";
+import LumpWorld from "../components/lumpworld";
 import About from "../components/about";
 import Chat from "../components/chat";
 import Dewdrops from "../components/dewdrops";
@@ -135,7 +136,11 @@ class Main extends Component {
         <Frame key={9} data={this.props.data[9]} width={this.props.width} />
         <Frame key={10} data={this.props.data[10]} width={this.props.width} />
         <Frame key={11} data={this.props.data[11]} width={this.props.width} />
-        <Frame key={12} data={this.props.data[12]} width={this.props.width} />
+        <LumpWorld
+          key={12}
+          data={this.props.data[12]}
+          width={this.props.width}
+        />
         <About key={13} data={this.props.data[13]} width={this.props.width} />
         <Chat key={14} data={this.props.data[14]} width={this.props.width} />
         {easterEggFrames}
