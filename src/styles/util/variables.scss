@@ -18,11 +18,8 @@ $white: #ffffff;
 
 $font-primary: Arial, sans-serif;
 
-$cursor-default: url(../images/cursors/cursor_starting_hint_60px.png) 10 24,
-  auto;
-$cursor-move: url(../images/cursors/cursor_grab_hint_60px.png) 24 13, move;
-$cursor-pointer: url(../images/cursors/cursor_click_hint_60px.png) 30 10,
-  pointer;
-$cursor-easteregg: url(../images/cursors/cursor_easteregg_hint_60px.png) 30 10,
-  pointer;
-$cursor-text: url(../images/cursors/cursor_type_60px.png) 30 10, text;
+$cursor-default: url(../images/cursors/cursor_default.png) 10 24, auto;
+$cursor-move: url(../images/cursors/cursor_grab.png) 24 13, move;
+$cursor-pointer: url(../images/cursors/cursor_click.png) 30 10, pointer;
+$cursor-easteregg: url(../images/cursors/cursor_easteregg.png) 30 10, pointer;
+$cursor-text: url(../images/cursors/cursor_text.png) 30 10, text;
