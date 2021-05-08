@@ -16,14 +16,14 @@
     left: 0;
     bottom: 0;
     box-shadow: inset 0 0 75px 0 #fef302;
-    -webkit-animation: flickerAnimation 5s infinite;
-    -moz-animation: flickerAnimation 5s infinite;
-    -o-animation: flickerAnimation 5s infinite;
-    animation: flickerAnimation 5s infinite;
+    -webkit-animation: glowAnimation 5s infinite;
+    -moz-animation: glowAnimation 5s infinite;
+    -o-animation: glowAnimation 5s infinite;
+    animation: glowAnimation 5s infinite;
   }
 }
 
-@keyframes flickerAnimation {
+@keyframes glowAnimation {
   0% {
     opacity: 1;
   }
@@ -34,7 +34,7 @@
     opacity: 1;
   }
 }
-@-o-keyframes flickerAnimation {
+@-o-keyframes glowAnimation {
   0% {
     opacity: 1;
   }
@@ -45,7 +45,7 @@
     opacity: 1;
   }
 }
-@-moz-keyframes flickerAnimation {
+@-moz-keyframes glowAnimation {
   0% {
     opacity: 1;
   }
@@ -56,7 +56,7 @@
     opacity: 1;
   }
 }
-@-webkit-keyframes flickerAnimation {
+@-webkit-keyframes glowAnimation {
   0% {
     opacity: 1;
   }
@@ -68,8 +68,8 @@
   }
 }
 .animate-flicker {
-  -webkit-animation: flickerAnimation 5s infinite;
-  -moz-animation: flickerAnimation 5s infinite;
-  -o-animation: flickerAnimation 5s infinite;
-  animation: flickerAnimation 5s infinite;
+  -webkit-animation: glowAnimation 5s infinite;
+  -moz-animation: glowAnimation 5s infinite;
+  -o-animation: glowAnimation 5s infinite;
+  animation: glowAnimation 5s infinite;
 }

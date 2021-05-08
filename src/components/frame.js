@@ -20,7 +20,7 @@ class Frame extends Component {
       showDetails: false,
       visible: false,
       width: this.props.width,
-      zIndex: 0
+      zIndex: 2
     };
 
     this.handleFrameClick = this.handleFrameClick.bind(this);
@@ -51,14 +51,14 @@ class Frame extends Component {
   hideFrame() {
     this.setState({
       visible: false,
-      zIndex: 0
+      zIndex: 2
     });
   }
 
   sendToBack(msg, data) {
     if (data !== this.state.key) {
       this.setState({
-        zIndex: 0
+        zIndex: 2
       });
     }
   }
@@ -71,7 +71,7 @@ class Frame extends Component {
       }));
     } else {
       this.setState({
-        zIndex: 0
+        zIndex: 2
       });
     }
   }

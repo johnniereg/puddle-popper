@@ -10,7 +10,7 @@ class LumpWorld extends Component {
       ...this.props.data,
       visible: false,
       width: this.props.width,
-      zIndex: 0
+      zIndex: 2
     };
 
     this.hideLumpWorld = this.hideLumpWorld.bind(this);
@@ -41,14 +41,14 @@ class LumpWorld extends Component {
   hideLumpWorld() {
     this.setState({
       visible: false,
-      zIndex: 0
+      zIndex: 2
     });
   }
 
   sendToBack(msg, data) {
     if (data !== this.state.key) {
       this.setState({
-        zIndex: 0
+        zIndex: 2
       });
     }
   }
@@ -61,7 +61,7 @@ class LumpWorld extends Component {
       }));
     } else {
       this.setState({
-        zIndex: 0
+        zIndex: 2
       });
     }
   }
