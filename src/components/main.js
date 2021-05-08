@@ -52,7 +52,7 @@ class Main extends Component {
         orientation: "portrait"
       },
       PP_EasterEgg_Quote: {
-        orientation: "landscape"
+        orientation: "portrait"
       },
       sarah_easteregg1: {
         description: {

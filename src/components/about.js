@@ -243,6 +243,9 @@ class About extends Component {
               fleshy realities both familiar and alien.
             </p>
 
+            <p style={{ color: "#007000" }}>
+              We acknowledge the support of the Canada Council for the Arts.
+            </p>
             <div
               style={{
                 display: "flex",
