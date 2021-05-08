@@ -82,6 +82,7 @@ class LumpWorld extends Component {
 
     this.hideLumpWorld = this.hideLumpWorld.bind(this);
     this.handleLumpWorldClick = this.handleLumpWorldClick.bind(this);
+    this.handleButtonClick = this.handleButtonClick.bind(this);
     this.toggleLumpWorld = this.toggleLumpWorld.bind(this);
     this.toggleDetails = this.toggleDetails.bind(this);
     this.sendToBack = this.sendToBack.bind(this);
@@ -140,8 +141,13 @@ class LumpWorld extends Component {
   }
 
   handleButtonClick(e) {
-    e.preventDefault();
     const key = e.currentTarget.getAttribute("data-button-id");
+    const objects = this.state.objects;
+    objects[key].inPlay = true;
+
+    this.setState({
+      objects: objects
+    });
   }
 
   render() {
@@ -171,7 +177,7 @@ class LumpWorld extends Component {
           }}
         >
           <div className="LumpWorld__Upper Handle">
-            <div className="LumpWorld__Upper--Left">
+            <div className="LumpWorld__Upper--Left Handle">
               <button
                 aria-label="Show background 1"
                 className="LumpWorld__BackgroundToggle Cursor--Pointer"
@@ -185,7 +191,7 @@ class LumpWorld extends Component {
                 2
               </button>
             </div>
-            <div className="LumpWorld__Upper--Left">
+            <div className="LumpWorld__Upper--Right Handle">
               <button
                 aria-label="Close Exhibit"
                 className="LumpWorld__Close Cursor--Pointer"
