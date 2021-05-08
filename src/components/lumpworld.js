@@ -42,38 +42,38 @@ class LumpWorld extends Component {
     this.state = {
       ...this.props.data,
       objects: [
-        obj1,
-        obj2,
-        obj3,
-        obj4,
-        obj5,
-        obj6,
-        obj7,
-        obj8,
-        obj9,
-        obj10,
-        obj11,
-        obj12,
-        obj13,
-        obj14,
-        obj15,
-        obj16,
-        obj17,
-        obj18,
-        obj19,
-        obj20,
-        obj21,
-        obj22,
-        obj23,
-        obj24,
-        obj25,
-        obj26,
-        obj27,
-        obj28,
-        obj29,
-        obj30,
-        obj31,
-        obj32
+        { id: 0, inPlay: false, img: obj1 },
+        { id: 1, inPlay: false, img: obj2 },
+        { id: 2, inPlay: false, img: obj3 },
+        { id: 3, inPlay: false, img: obj4 },
+        { id: 4, inPlay: false, img: obj5 },
+        { id: 5, inPlay: false, img: obj6 },
+        { id: 6, inPlay: false, img: obj7 },
+        { id: 7, inPlay: false, img: obj8 },
+        { id: 8, inPlay: false, img: obj9 },
+        { id: 9, inPlay: false, img: obj10 },
+        { id: 10, inPlay: false, img: obj11 },
+        { id: 11, inPlay: false, img: obj12 },
+        { id: 12, inPlay: false, img: obj13 },
+        { id: 13, inPlay: false, img: obj14 },
+        { id: 14, inPlay: false, img: obj15 },
+        { id: 15, inPlay: false, img: obj16 },
+        { id: 16, inPlay: false, img: obj17 },
+        { id: 17, inPlay: false, img: obj18 },
+        { id: 18, inPlay: false, img: obj19 },
+        { id: 19, inPlay: false, img: obj20 },
+        { id: 20, inPlay: false, img: obj21 },
+        { id: 21, inPlay: false, img: obj22 },
+        { id: 22, inPlay: false, img: obj23 },
+        { id: 23, inPlay: false, img: obj24 },
+        { id: 24, inPlay: false, img: obj25 },
+        { id: 25, inPlay: false, img: obj26 },
+        { id: 26, inPlay: false, img: obj27 },
+        { id: 27, inPlay: false, img: obj28 },
+        { id: 28, inPlay: false, img: obj29 },
+        { id: 29, inPlay: false, img: obj30 },
+        { id: 30, inPlay: false, img: obj31 },
+        { id: 31, inPlay: false, img: obj32 }
       ],
       visible: false,
       width: this.props.width,
@@ -139,6 +139,11 @@ class LumpWorld extends Component {
     }));
   }
 
+  handleButtonClick(e) {
+    e.preventDefault();
+    const key = e.currentTarget.getAttribute("data-button-id");
+  }
+
   render() {
     const randomX = Math.random() * (300 - 50) + 50;
     const randomY = Math.random() * (200 - 50) + 50;
@@ -150,7 +155,7 @@ class LumpWorld extends Component {
       <Draggable
         axis="both"
         bounds="parent"
-        handle=".LumpWorld"
+        handle=".Handle"
         defaultPosition={defaultPosition}
         disabled={this.state.width <= 768 ? true : false}
         onMouseDown={this.handleLumpWorldClick}
@@ -165,7 +170,7 @@ class LumpWorld extends Component {
             zIndex: this.state.zIndex
           }}
         >
-          <div className="LumpWorld__Upper">
+          <div className="LumpWorld__Upper Handle">
             <div className="LumpWorld__Upper--Left">
               <button
                 aria-label="Show background 1"
@@ -190,14 +195,52 @@ class LumpWorld extends Component {
               </button>
             </div>
           </div>
+
           <div className="LumpWorld__Main">
-            <div className="LumpWorld__Main--Left"></div>
+            <div className="LumpWorld__Main--Left">
+              {this.state.objects.map((obj, index) => {
+                return (
+                  <Draggable
+                    axis="both"
+                    bounds="parent"
+                    handle=".LumpWorld__Object"
+                    position={null}
+                    scale={1}
+                  >
+                    <div
+                      className={
+                        obj.inPlay
+                          ? `LumpWorld__Object`
+                          : `LumpWorld__Object Hidden`
+                      }
+                      key={index}
+                    >
+                      <img
+                        alt={`Lump World object number ${index}`}
+                        draggable={false}
+                        src={obj.img}
+                      ></img>
+                    </div>
+                  </Draggable>
+                );
+              })}
+            </div>
+
             <div className="LumpWorld__Main--Right">
               <ul className="LumpWorld__Icons">
                 {this.state.objects.map((obj, index) => {
                   return (
                     <li className="LumpWorld__Icon" key={index}>
-                      <img src={obj}></img>
+                      <button
+                        className="Cursor--Pointer"
+                        data-button-id={index}
+                        onClick={this.handleButtonClick}
+                      >
+                        <img
+                          alt={`Lump World object number ${index}`}
+                          src={obj.img}
+                        ></img>
+                      </button>
                     </li>
                   );
                 })}

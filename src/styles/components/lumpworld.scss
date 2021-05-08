@@ -41,6 +41,7 @@
 
   &--Right {
     background-color: red;
+    overflow-y: scroll;
     width: 33%;
   }
 }
@@ -50,13 +51,22 @@
   flex-wrap: wrap;
   list-style: none;
   margin: 0;
-  overflow-y: scroll;
-
   padding: 0;
 }
 
 .LumpWorld__Icon {
   flex: 1 1 25%;
+
+  img {
+    height: auto;
+    width: 100%;
+  }
+}
+
+.LumpWorld__Object {
+  height: 50px;
+  position: absolute;
+  width: 50px;
 
   img {
     height: auto;
