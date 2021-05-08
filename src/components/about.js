@@ -17,7 +17,7 @@ class About extends Component {
       ...this.props.data,
       visible: false,
       width: this.props.width,
-      zIndex: 0
+      zIndex: 2
     };
 
     this.hideAbout = this.hideAbout.bind(this);
@@ -47,14 +47,14 @@ class About extends Component {
   hideAbout() {
     this.setState({
       visible: false,
-      zIndex: 0
+      zIndex: 2
     });
   }
 
   sendToBack(msg, data) {
     if (data !== this.state.key) {
       this.setState({
-        zIndex: 0
+        zIndex: 2
       });
     }
   }
@@ -67,7 +67,7 @@ class About extends Component {
       }));
     } else {
       this.setState({
-        zIndex: 0
+        zIndex: 2
       });
     }
   }
