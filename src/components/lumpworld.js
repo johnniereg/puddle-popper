@@ -35,12 +35,16 @@ import obj30 from "../images/lumpworld/objects/LWObj30.png";
 import obj31 from "../images/lumpworld/objects/LWObj31.png";
 import obj32 from "../images/lumpworld/objects/LWObj32.png";
 
+import bgDay from "../images/lumpworld/LumpWorld_Background_Day_2x.jpg";
+import bgNight from "../images/lumpworld/LumpWorld_Background_Night_2x.jpg";
+
 class LumpWorld extends Component {
   constructor(props) {
     super(props);
 
     this.state = {
       ...this.props.data,
+      bg: "day",
       objects: [
         { id: 0, inPlay: false, img: obj1 },
         { id: 1, inPlay: false, img: obj2 },
@@ -85,6 +89,7 @@ class LumpWorld extends Component {
     this.handleButtonClick = this.handleButtonClick.bind(this);
     this.toggleLumpWorld = this.toggleLumpWorld.bind(this);
     this.toggleDetails = this.toggleDetails.bind(this);
+    this.updateBg = this.updateBg.bind(this);
     this.sendToBack = this.sendToBack.bind(this);
   }
 
@@ -150,6 +155,15 @@ class LumpWorld extends Component {
     });
   }
 
+  updateBg(e) {
+    const bgType = e.currentTarget.getAttribute("data-bg-type");
+    console.log("bgType clicked", bgType);
+
+    this.setState({
+      bg: bgType
+    });
+  }
+
   render() {
     const randomX = Math.random() * (300 - 50) + 50;
     const randomY = Math.random() * (200 - 50) + 50;
@@ -181,12 +195,16 @@ class LumpWorld extends Component {
               <button
                 aria-label="Show background 1"
                 className="LumpWorld__BackgroundToggle Cursor--Pointer"
+                data-bg-type="day"
+                onClick={this.updateBg}
               >
                 1
               </button>
               <button
                 aria-label="Show background 2"
                 className="LumpWorld__BackgroundToggle Cursor--Pointer"
+                data-bg-type="night"
+                onClick={this.updateBg}
               >
                 2
               </button>
@@ -203,23 +221,29 @@ class LumpWorld extends Component {
           </div>
 
           <div className="LumpWorld__Main">
-            <div className="LumpWorld__Main--Left">
+            <div
+              className={
+                this.state.bg === "day"
+                  ? `LumpWorld__Main--Left BackgroundDay`
+                  : `LumpWorld__Main--Left BackgroundNight`
+              }
+            >
               {this.state.objects.map((obj, index) => {
                 return (
                   <Draggable
                     axis="both"
                     bounds="parent"
                     handle=".LumpWorld__Object"
+                    key={index}
                     position={null}
                     scale={1}
                   >
                     <div
                       className={
                         obj.inPlay
-                          ? `LumpWorld__Object`
-                          : `LumpWorld__Object Hidden`
+                          ? `LumpWorld__Object Cursor--Pointer`
+                          : `LumpWorld__Object Cursor--Pointer Hidden`
                       }
-                      key={index}
                     >
                       <img
                         alt={`Lump World object number ${index}`}
