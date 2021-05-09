@@ -247,10 +247,15 @@ class LumpWorld extends Component {
               }
             >
               {this.state.objects.map((obj, index) => {
+                const objRandomX = Math.random() * (50 - 5) + 5;
+                const objRandomY = Math.random() * (50 - 5) + 5;
+                const startPosition = { x: objRandomX, y: objRandomY };
+
                 return (
                   <Draggable
                     axis="both"
                     bounds="parent"
+                    defaultPosition={startPosition}
                     handle=".LumpWorld__Object"
                     key={index}
                     position={null}
