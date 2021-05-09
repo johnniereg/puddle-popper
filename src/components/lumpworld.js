@@ -238,8 +238,8 @@ class LumpWorld extends Component {
                     <div
                       className={
                         obj.inPlay
-                          ? `LumpWorld__Object Cursor--Drag`
-                          : `LumpWorld__Object Cursor--Drag Hidden`
+                          ? `LumpWorld__Object Cursor--Move`
+                          : `LumpWorld__Object Cursor--Move Hidden`
                       }
                     >
                       <img

@@ -65,7 +65,11 @@
 }
 
 .LumpWorld__Icon {
+  align-items: center;
+  display: flex;
   flex: 1 1 25%;
+  flex-direction: column;
+  justify-content: center;
 
   img {
     height: auto;
