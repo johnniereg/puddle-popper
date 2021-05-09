@@ -5,7 +5,6 @@ import PubSub from "pubsub-js";
 import topLeft from "../images/lumpworld/LW_bar_top.png";
 import topRight from "../images/lumpworld/LW_button_close.png";
 import bottom from "../images/lumpworld/LW_bar_bottom.png";
-import divider from "../images/lumpworld/LW_vertical_divider.png";
 import btnDay from "../images/lumpworld/LW_button_day.png";
 import btnNight from "../images/lumpworld/LW_button_night.png";
 import btnAbout from "../images/lumpworld/LW_button_about.png";
@@ -158,7 +157,13 @@ class LumpWorld extends Component {
   }
 
   hideLumpWorld() {
+    const objects = this.state.objects;
+    objects.forEach(obj => {
+      obj.inPlay = false;
+    });
+
     this.setState({
+      objects: objects,
       visible: false,
       zIndex: 2
     });
