@@ -116,7 +116,9 @@ class Frame extends Component {
       >
         <div
           className={
-            this.state.visible ? "Frame Handle" : "Frame Handle Frame--hidden"
+            this.state.visible
+              ? `Frame Frame--${this.state.orientation} Handle`
+              : `Frame Frame--${this.state.orientation} Frame--hidden  Handle`
           }
           style={{
             zIndex: this.state.zIndex
