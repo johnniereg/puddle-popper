@@ -50,6 +50,13 @@ class LumpWorld extends Component {
     this.state = {
       ...this.props.data,
       bg: "day",
+      description: {
+        artist: "Juli Majer collaboration with Scott Lougheed",
+        materialsFormatYear: "digital interactive game, 2021",
+        text:
+          "Digital drag and drop game featuring 3D-rendered creatures, plants, fruit, objects and furniture in a lounge-like digital space.",
+        title: "LumpWorld"
+      },
       objects: [
         { id: 0, inPlay: false, img: obj1 },
         { id: 1, inPlay: false, img: obj2 },
@@ -84,6 +91,7 @@ class LumpWorld extends Component {
         { id: 30, inPlay: false, img: obj31 },
         { id: 31, inPlay: false, img: obj32 }
       ],
+      showDetails: false,
       visible: false,
       width: this.props.width,
       zIndex: 2
@@ -264,6 +272,26 @@ class LumpWorld extends Component {
                   </Draggable>
                 );
               })}
+
+              {this.state.description && (
+                <div
+                  className={
+                    this.state.showDetails
+                      ? "Details"
+                      : "Details Details--hidden"
+                  }
+                >
+                  <div>
+                    <p>
+                      {this.state.description.artist},{" "}
+                      <em>{this.state.description.title}</em>,{" "}
+                      {this.state.description.materialsFormatYear}
+                    </p>
+                    <p>-----</p>
+                    <p>{this.state.description.text}</p>
+                  </div>
+                </div>
+              )}
             </div>
 
             <div className="LumpWorld__Main--Right">
