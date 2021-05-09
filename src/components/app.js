@@ -69,7 +69,7 @@ class App extends Component {
           iconTitle: "Burst",
           description: {
             artist: "Mel Thibodeau",
-            materialsFormatYear: "mixed fabrics and foam, 36” x 36” x 6”, 2021",
+            materialsFormatYear: "mixed fabrics and foam, 36”x36”x6”, 2021",
             text:
               "Photos of a large circular pillow sculpture that functions as a seat. The seat is constructed from foam and upholstered with multi-textured and variously-coloured fake furs, as well as a holographic fabric. The image created by the fabrics resembles a large yellow egg in a colourful nest. It is stuffed so that the elements are raised and puffy.",
             title: "Nest"
@@ -85,7 +85,7 @@ class App extends Component {
           description: {
             artist: "Juli Majer",
             materialsFormatYear:
-              "mixed fabrics and polyester stuffing, 2’ x 2’ x 4”, 2021",
+              "mixed fabrics and polyester stuffing, 2’x2’x4”, 2021",
             text:
               "Photos of a multi-textured, oversized seat cushion made of soft fleece and fake fur. The cushion is quilted in a way which resembles the texture of a brain.",
             title: "Untitled"
@@ -103,7 +103,7 @@ class App extends Component {
             materialsFormatYear:
               "Ink drawing on paper, in, 2021 and Soft Shell, Ink drawing on paper, in, 2021",
             text:
-              "Set of two black ink drawings on white paper, of identical dimensions. The first drawing depicts an abstracted squatting figure. Hand drawn text wraps through the figure’s legs and reads: “MOON LIT PLEATS PETAL DENTED SLEET” . The second drawing depicts an abstracted creature. Amoeba-like organs show through the creature’s body.",
+              "Set of two black ink drawings on white paper, of identical dimensions. The first drawing depicts an abstracted squatting figure. Hand drawn text wraps through the figure’s legs and reads: “MOON LIT PLEATS PETAL DENTED SLEET”. The second drawing depicts an abstracted creature. Amoeba-like organs show through the creature’s body.",
             title: "Squatting Intuitive"
           },
           orientation: "portrait"
@@ -211,7 +211,7 @@ class App extends Component {
           description: {
             artist: "Mel Thibodeau & Juli Majer",
             materialsFormatYear:
-              "mixed fabrics and polyester stuffing, 48” x 72” , 2021",
+              "mixed fabrics and polyester stuffing, 48” x 72”, 2021",
             text:
               "Photo series of a large, multi-textured quilt which is made of variously coloured fake furs and printed fabrics. The quilt features motifs of flowers, stars, worms and squiggly shapes.",
             title: "Untitled"
