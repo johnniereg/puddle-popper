@@ -9,7 +9,7 @@ import rightIcon from "../images/frame/right.png";
 import closeIcon from "../images/frame/close.png";
 import infoIcon from "../images/frame/info.png";
 
-import spiderVideo from "../images/exhibits/spider/spider_video.mp4";
+import spiderVideo from "../images/exhibits/spider/spider.mp4";
 import melVideo from "../images/exhibits/easterEggs/mel_easteregg1.mp4";
 
 class Frame extends Component {
@@ -211,7 +211,7 @@ class Frame extends Component {
                       ></img>
                     );
                   }
-                  if (image.node.base.includes("spider_video.mp4")) {
+                  if (image.node.base.includes("spider")) {
                     return (
                       <video autoPlay muted loop key={index}>
                         <source src={spiderVideo} type="video/mp4"></source>
