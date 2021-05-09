@@ -1,9 +1,11 @@
 .Frame {
-  background-color: transparent;
+  background-color: #e0c8e0;
+  border-radius: 25px;
   box-shadow: $shadow;
   cursor: $cursor-move;
   display: flex;
   flex-direction: column;
+  padding: 50px;
   position: absolute;
 
   @media screen and (max-width: 768px) {
@@ -56,11 +58,11 @@
   transform: translateX(-50%);
 
   &--Top {
-    top: -50px;
+    top: 0px;
   }
 
   &--Bottom {
-    bottom: -55px;
+    bottom: 0px;
   }
 }
 
