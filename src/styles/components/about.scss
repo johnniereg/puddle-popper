@@ -39,24 +39,36 @@
   }
 }
 
+.About__ContentWrapper {
+  display: flex;
+
+  &:after,
+  &:before {
+    background-image: url(../images/about/left_bar.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    content: "";
+    display: block;
+    height: 358px;
+    width: 42px;
+  }
+}
+
 .About__Content {
   background-color: #fffef2;
   cursor: $cursor-text;
   font-family: "IBM Plex Mono", monospace;
-  height: 400px;
+  height: 358px;
   overflow-y: scroll;
   padding: 22px 27px;
-
-  &:before {
-    width: 50px;
-  }
+  width: 516px;
 
   h1 {
     color: #800000;
-    font-size: 24px;
+    font-size: 18px;
     font-weight: 500;
-    line-height: 24px;
-    margin: 0 0 27px;
+    line-height: 20px;
+    margin: 0 0 17px;
     padding-bottom: 10px;
     text-decoration: underline;
     text-decoration-style: dashed;
@@ -64,8 +76,8 @@
   }
 
   p {
-    font-size: 19px;
-    line-height: 23px;
+    font-size: 16px;
+    line-height: 20px;
     margin: 0 0 17px;
   }
 
