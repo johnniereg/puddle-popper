@@ -330,6 +330,9 @@ class LumpWorld extends Component {
                       ? "Details"
                       : "Details Details--hidden"
                   }
+                  style={{
+                    zIndex: "100"
+                  }}
                 >
                   <div>
                     <p>
@@ -343,7 +346,7 @@ class LumpWorld extends Component {
                 </div>
               )}
             </div>
-
+            <div className="LumpWorld__Main--Divider"></div>
             <div className="LumpWorld__Main--Right">
               <ul className="LumpWorld__Icons">
                 {this.state.objects.map((obj, index) => {
