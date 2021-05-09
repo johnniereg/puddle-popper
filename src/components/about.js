@@ -73,11 +73,11 @@ class About extends Component {
   }
 
   render() {
-    const randomX = Math.random() * (300 - 50) + 50;
-    const randomY = Math.random() * (200 - 50) + 50;
+    const randomX = Math.random() * (200 - 20) + 20;
+    const randomY = Math.random() * (100 - 20) + 20;
 
     const defaultPosition =
-      this.state.width > 768 ? { x: randomX, y: randomY } : {};
+      this.state.width > 768 ? { x: randomX, y: randomY } : { x: 10, y: 10 };
 
     return (
       <Draggable
