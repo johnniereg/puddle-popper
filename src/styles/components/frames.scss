@@ -5,7 +5,7 @@
   cursor: $cursor-move;
   display: flex;
   flex-direction: column;
-  padding: 50px;
+  padding: 35px;
   position: absolute;
 
   @media screen and (max-width: 768px) {
@@ -22,22 +22,24 @@
   &__Control {
     background-size: contain;
     cursor: $cursor-pointer;
-    height: 50px;
-    width: 50px;
+    height: 35px;
+    width: 35px;
 
     &--Arrow {
       cursor: $cursor-pointer;
+      height: 50px;
+      padding: 0;
       position: absolute;
       top: 50%;
       transform: translateY(-50%);
     }
 
     &--ArrowLeft {
-      left: -50px;
+      left: -35px;
     }
 
     &--ArrowRight {
-      right: -50px;
+      right: -35px;
     }
   }
 
