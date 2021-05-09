@@ -194,7 +194,8 @@ class LumpWorld extends Component {
   handleButtonClick(e) {
     const key = e.currentTarget.getAttribute("data-button-id");
     const objects = this.state.objects;
-    objects[key].inPlay = true;
+    const isInPlay = objects[key].inPlay;
+    objects[key].inPlay = !isInPlay;
 
     this.setState({
       objects: objects
@@ -203,7 +204,6 @@ class LumpWorld extends Component {
 
   updateBg(e) {
     const bgType = e.currentTarget.getAttribute("data-bg-type");
-    console.log("bgType clicked", bgType);
 
     this.setState({
       bg: bgType
