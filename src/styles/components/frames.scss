@@ -1,11 +1,13 @@
 $bevel-highlight: #fffacc;
+$bevel-highlight2: #f3e6d3;
 $bevel-shadow: #72378d;
 
 .Frame {
   background-color: #e0c8e0;
   border-radius: 15px;
-  box-shadow: inset 0 0 10px 1px $bevel-shadow,
-    inset 0 0 20px 3px $bevel-highlight, $shadow;
+  box-shadow: inset 0 0 5px 2px $bevel-shadow,
+    inset 0 0 5px 3px $bevel-highlight, inset 0 0 10px 3px $bevel-highlight2,
+    $shadow;
   cursor: $cursor-move;
   display: flex;
   flex-direction: column;
@@ -83,7 +85,7 @@ $bevel-shadow: #72378d;
   font-weight: 500;
   left: 0;
   line-height: 20px;
-  margin: 45px;
+  margin: 50px;
   overflow-y: auto;
   padding: 15px;
   position: absolute;
@@ -103,7 +105,8 @@ $bevel-shadow: #72378d;
 }
 
 .Carousel__Wrapper {
-  box-shadow: 0 0 10px 2px $bevel-shadow, 0 0 20px 3px $bevel-highlight;
+  box-shadow: 0 0 5px 2px $bevel-shadow, 0 0 5px 3px $bevel-highlight2,
+    0 0 10px 3px $bevel-highlight;
 
   @media screen and (min-width: 768px) {
     &--Landscape {
