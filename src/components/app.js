@@ -55,6 +55,7 @@ class App extends Component {
             artist: "Sonja Ratkay",
             materialsFormatYear:
               "Organza, wool roving, thread and metal dowels, 55 x 100 in, 2021",
+            photoCredit: "Photography by Edwin Isford",
             text:
               "A large pink, sheer, layered, and shimmery tapestry is shown installed hanging from the ceiling in a room. The tapestry depicts an abstracted body silhouette, and a vein-like shape inside of this form is stuffed with wool roving elements, which make it puffy. The tapestry, which is taller than a person, is meant to function as a room divider or space definer for the lounge.",
             title: "Salad in the Bloodstream"
@@ -101,7 +102,8 @@ class App extends Component {
           description: {
             artist: "Sonja Ratkay",
             materialsFormatYear:
-              "Ink drawing on paper, in, 2021 and Soft Shell, Ink drawing on paper, in, 2021",
+              "Ink drawing on paper, 9 x 12 in, 2021 and Soft Shell, Ink drawing on paper, in, 2021",
+            photoCredit: "Photography by Edwin Isford",
             text:
               "Set of two black ink drawings on white paper, of identical dimensions. The first drawing depicts an abstracted squatting figure. Hand drawn text wraps through the figure’s legs and reads: “MOON LIT PLEATS PETAL DENTED SLEET”. The second drawing depicts an abstracted creature. Amoeba-like organs show through the creature’s body.",
             title: "Squatting Intuitive"
@@ -147,7 +149,9 @@ class App extends Component {
           iconTitle: "Heart Flower",
           description: {
             artist: "Sonja Ratkay",
-            materialsFormatYear: "pencil crayon drawing on paper, in 2021",
+            materialsFormatYear:
+              "pencil crayon drawing on paper, 9 x 12 in, 2021",
+            photoCredit: "Photography by Edwin Isford",
             text:
               "Pencil crayon drawing on white paper depicting an abstracted silhouette of a figure that appears to be part plant and part animal. The figure is coloured with a rainbow of colours blending together. Hand-drawn, stream-of-consciousness text wraps through their body and reads: “MERCURY DILUTED DEW DROP SLOW ORGANZA BURNT SIDEWALK LOZENGE LAVENDER IN BETWEEN CLUMP OF PETALS PAIN SUCCUMB”.",
             title: "BIRDSTONETREE"
@@ -180,6 +184,7 @@ class App extends Component {
             artist: "Sonja Ratkay",
             materialsFormatYear:
               "Organza, wool roving, thread and metal dowels, 55 x 100 in, 2021",
+            photoCredit: "Photography by Edwin Isford",
             text:
               "A large purple, sheer, layered, and shimmery tapestry is shown installed hanging from the ceiling in a room. The tapestry depicts an abstracted body silhouette, and a vein-like shape inside of this form is stuffed with wool roving elements, which make it puffy. The tapestry, which is taller than a person, is meant to function as a room divider or space definer for the lounge.",
             title: "Seaweed Angelus"

@@ -139,6 +139,9 @@ class Frame extends Component {
                   <em>{this.state.description.title}</em>,{" "}
                   {this.state.description.materialsFormatYear}
                 </p>
+                {this.state.description.photoCredit && (
+                  <p>{this.state.description.photoCredit}</p>
+                )}
                 <p>-----</p>
                 <p>{this.state.description.text}</p>
               </div>
