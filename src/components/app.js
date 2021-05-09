@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Helmet } from "react-helmet";
 
 import Main from "../components/main";
 import Navigation from "../components/navigation";
@@ -258,7 +259,12 @@ class App extends Component {
 
   render() {
     return (
-      <div className="Page" style={{}}>
+      <div className="Page">
+        <Helmet>
+          <meta charSet="utf-8" />
+          <title>Puddle Popper Lounge</title>
+          <link rel="canonical" href="https://lounge.puddlepopper.com" />
+        </Helmet>
         <Main
           data={this.state.navItems}
           exhibits={this.props.exhibitImages}
