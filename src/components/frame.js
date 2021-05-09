@@ -109,13 +109,15 @@ class Frame extends Component {
         bounds="parent"
         defaultPosition={defaultPosition}
         disabled={this.state.width <= 768 ? true : false}
-        handle=".Frame"
+        handle=".Handle"
         onMouseDown={this.handleFrameClick}
         position={null}
         scale={1}
       >
         <div
-          className={this.state.visible ? "Frame" : "Frame Frame--hidden"}
+          className={
+            this.state.visible ? "Frame Handle" : "Frame Handle Frame--hidden"
+          }
           style={{
             zIndex: this.state.zIndex
           }}
@@ -154,8 +156,8 @@ class Frame extends Component {
           <div
             className={
               this.state.orientation === "landscape"
-                ? "Carousel__Wrapper Carousel__Wrapper--Landscape"
-                : "Carousel__Wrapper Carousel__Wrapper--Portrait"
+                ? "Carousel__Wrapper Carousel__Wrapper--Landscape Cursor--Default"
+                : "Carousel__Wrapper Carousel__Wrapper--Portrait Cursor--Default"
             }
           >
             <Carousel
