@@ -43,6 +43,39 @@ import obj30 from "../images/lumpworld/objects/LWObj30.png";
 import obj31 from "../images/lumpworld/objects/LWObj31.png";
 import obj32 from "../images/lumpworld/objects/LWObj32.png";
 
+import icon1 from "../images/lumpworld/icons/LWIcon01.png";
+import icon2 from "../images/lumpworld/icons/LWIcon02.png";
+import icon3 from "../images/lumpworld/icons/LWIcon03.png";
+import icon4 from "../images/lumpworld/icons/LWIcon04.png";
+import icon5 from "../images/lumpworld/icons/LWIcon05.png";
+import icon6 from "../images/lumpworld/icons/LWIcon06.png";
+import icon7 from "../images/lumpworld/icons/LWIcon07.png";
+import icon8 from "../images/lumpworld/icons/LWIcon08.png";
+import icon9 from "../images/lumpworld/icons/LWIcon09.png";
+import icon10 from "../images/lumpworld/icons/LWIcon10.png";
+import icon11 from "../images/lumpworld/icons/LWIcon11.png";
+import icon12 from "../images/lumpworld/icons/LWIcon12.png";
+import icon13 from "../images/lumpworld/icons/LWIcon13.png";
+import icon14 from "../images/lumpworld/icons/LWIcon14.png";
+import icon15 from "../images/lumpworld/icons/LWIcon15.png";
+import icon16 from "../images/lumpworld/icons/LWIcon16.png";
+import icon17 from "../images/lumpworld/icons/LWIcon17.png";
+import icon18 from "../images/lumpworld/icons/LWIcon18.png";
+import icon19 from "../images/lumpworld/icons/LWIcon19.png";
+import icon20 from "../images/lumpworld/icons/LWIcon20.png";
+import icon21 from "../images/lumpworld/icons/LWIcon21.png";
+import icon22 from "../images/lumpworld/icons/LWIcon22.png";
+import icon23 from "../images/lumpworld/icons/LWIcon23.png";
+import icon24 from "../images/lumpworld/icons/LWIcon24.png";
+import icon25 from "../images/lumpworld/icons/LWIcon25.png";
+import icon26 from "../images/lumpworld/icons/LWIcon26.png";
+import icon27 from "../images/lumpworld/icons/LWIcon27.png";
+import icon28 from "../images/lumpworld/icons/LWIcon28.png";
+import icon29 from "../images/lumpworld/icons/LWIcon29.png";
+import icon30 from "../images/lumpworld/icons/LWIcon30.png";
+import icon31 from "../images/lumpworld/icons/LWIcon31.png";
+import icon32 from "../images/lumpworld/icons/LWIcon32.png";
+
 class LumpWorld extends Component {
   constructor(props) {
     super(props);
@@ -58,38 +91,38 @@ class LumpWorld extends Component {
         title: "LumpWorld"
       },
       objects: [
-        { id: 0, inPlay: false, img: obj1 },
-        { id: 1, inPlay: false, img: obj2 },
-        { id: 2, inPlay: false, img: obj3 },
-        { id: 3, inPlay: false, img: obj4 },
-        { id: 4, inPlay: false, img: obj5 },
-        { id: 5, inPlay: false, img: obj6 },
-        { id: 6, inPlay: false, img: obj7 },
-        { id: 7, inPlay: false, img: obj8 },
-        { id: 8, inPlay: false, img: obj9 },
-        { id: 9, inPlay: false, img: obj10 },
-        { id: 10, inPlay: false, img: obj11 },
-        { id: 11, inPlay: false, img: obj12 },
-        { id: 12, inPlay: false, img: obj13 },
-        { id: 13, inPlay: false, img: obj14 },
-        { id: 14, inPlay: false, img: obj15 },
-        { id: 15, inPlay: false, img: obj16 },
-        { id: 16, inPlay: false, img: obj17 },
-        { id: 17, inPlay: false, img: obj18 },
-        { id: 18, inPlay: false, img: obj19 },
-        { id: 19, inPlay: false, img: obj20 },
-        { id: 20, inPlay: false, img: obj21 },
-        { id: 21, inPlay: false, img: obj22 },
-        { id: 22, inPlay: false, img: obj23 },
-        { id: 23, inPlay: false, img: obj24 },
-        { id: 24, inPlay: false, img: obj25 },
-        { id: 25, inPlay: false, img: obj26 },
-        { id: 26, inPlay: false, img: obj27 },
-        { id: 27, inPlay: false, img: obj28 },
-        { id: 28, inPlay: false, img: obj29 },
-        { id: 29, inPlay: false, img: obj30 },
-        { id: 30, inPlay: false, img: obj31 },
-        { id: 31, inPlay: false, img: obj32 }
+        { id: 0, inPlay: false, icon: icon1, img: obj1 },
+        { id: 1, inPlay: false, icon: icon2, img: obj2 },
+        { id: 2, inPlay: false, icon: icon3, img: obj3 },
+        { id: 3, inPlay: false, icon: icon4, img: obj4 },
+        { id: 4, inPlay: false, icon: icon5, img: obj5 },
+        { id: 5, inPlay: false, icon: icon6, img: obj6 },
+        { id: 6, inPlay: false, icon: icon7, img: obj7 },
+        { id: 7, inPlay: false, icon: icon8, img: obj8 },
+        { id: 8, inPlay: false, icon: icon9, img: obj9 },
+        { id: 9, inPlay: false, icon: icon10, img: obj10 },
+        { id: 10, inPlay: false, icon: icon11, img: obj11 },
+        { id: 11, inPlay: false, icon: icon12, img: obj12 },
+        { id: 12, inPlay: false, icon: icon13, img: obj13 },
+        { id: 13, inPlay: false, icon: icon14, img: obj14 },
+        { id: 14, inPlay: false, icon: icon15, img: obj15 },
+        { id: 15, inPlay: false, icon: icon16, img: obj16 },
+        { id: 16, inPlay: false, icon: icon17, img: obj17 },
+        { id: 17, inPlay: false, icon: icon18, img: obj18 },
+        { id: 18, inPlay: false, icon: icon19, img: obj19 },
+        { id: 19, inPlay: false, icon: icon20, img: obj20 },
+        { id: 20, inPlay: false, icon: icon21, img: obj21 },
+        { id: 21, inPlay: false, icon: icon22, img: obj22 },
+        { id: 22, inPlay: false, icon: icon23, img: obj23 },
+        { id: 23, inPlay: false, icon: icon24, img: obj24 },
+        { id: 24, inPlay: false, icon: icon25, img: obj25 },
+        { id: 25, inPlay: false, icon: icon26, img: obj26 },
+        { id: 26, inPlay: false, icon: icon27, img: obj27 },
+        { id: 27, inPlay: false, icon: icon28, img: obj28 },
+        { id: 28, inPlay: false, icon: icon29, img: obj29 },
+        { id: 29, inPlay: false, icon: icon30, img: obj30 },
+        { id: 30, inPlay: false, icon: icon31, img: obj31 },
+        { id: 31, inPlay: false, icon: icon32, img: obj32 }
       ],
       showDetails: false,
       visible: false,
@@ -271,7 +304,7 @@ class LumpWorld extends Component {
                       <img
                         alt={`Lump World object number ${index}`}
                         draggable={false}
-                        src={obj.img}
+                        src={obj.icon}
                       ></img>
                     </div>
                   </Draggable>
@@ -311,7 +344,7 @@ class LumpWorld extends Component {
                       >
                         <img
                           alt={`Lump World object number ${index}`}
-                          src={obj.img}
+                          src={obj.icon}
                         ></img>
                       </button>
                     </li>
