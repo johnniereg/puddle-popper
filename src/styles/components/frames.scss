@@ -5,11 +5,11 @@ $bevel-shadow: #72378d;
   background-color: #e0c8e0;
   border-radius: 15px;
   box-shadow: inset 0 0 10px 1px $bevel-shadow,
-    inset 0 0 20px 2px $bevel-highlight, $shadow;
+    inset 0 0 20px 3px $bevel-highlight, $shadow;
   cursor: $cursor-move;
   display: flex;
   flex-direction: column;
-  padding: 45px;
+  padding: 50px;
   position: absolute;
 
   @media screen and (max-width: 768px) {
@@ -39,11 +39,11 @@ $bevel-shadow: #72378d;
     }
 
     &--ArrowLeft {
-      left: -40px;
+      left: -45px;
     }
 
     &--ArrowRight {
-      right: -40px;
+      right: -45px;
     }
   }
 
@@ -64,11 +64,11 @@ $bevel-shadow: #72378d;
   transform: translateX(-50%);
 
   &--Top {
-    top: 5px;
+    top: 7px;
   }
 
   &--Bottom {
-    bottom: 5px;
+    bottom: 7px;
   }
 }
 
@@ -103,7 +103,7 @@ $bevel-shadow: #72378d;
 }
 
 .Carousel__Wrapper {
-  box-shadow: 0 0 10px 2px $bevel-shadow, 0 0 20px 2px $bevel-highlight;
+  box-shadow: 0 0 10px 2px $bevel-shadow, 0 0 20px 3px $bevel-highlight;
 
   @media screen and (min-width: 768px) {
     &--Landscape {
@@ -117,6 +117,8 @@ $bevel-shadow: #72378d;
 }
 
 .carousel {
+  box-shadow: 0 0 3px 0 $bevel-highlight;
+
   &.carousel-slider {
     overflow: visible;
   }
