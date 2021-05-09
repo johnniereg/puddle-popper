@@ -35,9 +35,6 @@ import obj30 from "../images/lumpworld/objects/LWObj30.png";
 import obj31 from "../images/lumpworld/objects/LWObj31.png";
 import obj32 from "../images/lumpworld/objects/LWObj32.png";
 
-import bgDay from "../images/lumpworld/LumpWorld_Background_Day_2x.jpg";
-import bgNight from "../images/lumpworld/LumpWorld_Background_Night_2x.jpg";
-
 class LumpWorld extends Component {
   constructor(props) {
     super(props);
@@ -241,8 +238,8 @@ class LumpWorld extends Component {
                     <div
                       className={
                         obj.inPlay
-                          ? `LumpWorld__Object Cursor--Pointer`
-                          : `LumpWorld__Object Cursor--Pointer Hidden`
+                          ? `LumpWorld__Object Cursor--Drag`
+                          : `LumpWorld__Object Cursor--Drag Hidden`
                       }
                     >
                       <img
