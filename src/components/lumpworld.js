@@ -304,7 +304,7 @@ class LumpWorld extends Component {
                       <img
                         alt={`Lump World object number ${index}`}
                         draggable={false}
-                        src={obj.icon}
+                        src={obj.img}
                       ></img>
                     </div>
                   </Draggable>
