@@ -42,7 +42,7 @@
 .About__Content {
   background-color: #fffef2;
   cursor: $cursor-text;
-  font-family: "IBM Plex Mono";
+  font-family: "IBM Plex Mono", monospace;
   height: 400px;
   overflow-y: scroll;
   padding: 22px 27px;
