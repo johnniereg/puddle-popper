@@ -281,27 +281,29 @@ class Chat extends Component {
               <img alt="Close Chat" draggable="false" src={topRight}></img>
             </button>
           </div>
-          <div className="Chat__Content Cursor--Text">
-            {this.state.chatLog.map((entry, index) => {
-              return (
-                <p
-                  key={index}
-                  className={
-                    entry.user === this.botName
-                      ? "Chat__Entry Chat__Entry--Bot"
-                      : "Chat__Entry Chat__Entry--User"
-                  }
-                >
-                  <span className="Entry__User">
-                    {"<"}
-                    {entry.user}
-                    {">"}{" "}
-                  </span>
-                  <span className="Entry__Text">{entry.text}</span>
-                </p>
-              );
-            })}
-            <div ref={this.messagesEndRef}></div>
+          <div className="Chat__ContentWrapper">
+            <div className="Chat__Content Cursor--Text">
+              {this.state.chatLog.map((entry, index) => {
+                return (
+                  <p
+                    key={index}
+                    className={
+                      entry.user === this.botName
+                        ? "Chat__Entry Chat__Entry--Bot"
+                        : "Chat__Entry Chat__Entry--User"
+                    }
+                  >
+                    <span className="Entry__User">
+                      {"<"}
+                      {entry.user}
+                      {">"}{" "}
+                    </span>
+                    <span className="Entry__Text">{entry.text}</span>
+                  </p>
+                );
+              })}
+              <div ref={this.messagesEndRef}></div>
+            </div>
           </div>
           <div className="Chat__Lower">
             <div className="Chat__InputWrapper">
