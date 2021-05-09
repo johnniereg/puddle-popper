@@ -2,6 +2,14 @@ import React, { Component } from "react";
 import Draggable from "react-draggable";
 import PubSub from "pubsub-js";
 
+import topLeft from "../images/lumpworld/LW_bar_top.png";
+import topRight from "../images/lumpworld/LW_button_close.png";
+import bottom from "../images/lumpworld/LW_bar_bottom.png";
+import divider from "../images/lumpworld/LW_vertical_divider.png";
+import btnDay from "../images/lumpworld/LW_button_day.png";
+import btnNight from "../images/lumpworld/LW_button_night.png";
+import btnAbout from "../images/lumpworld/LW_button_about.png";
+
 import obj1 from "../images/lumpworld/objects/LWObj01.png";
 import obj2 from "../images/lumpworld/objects/LWObj02.png";
 import obj3 from "../images/lumpworld/objects/LWObj03.png";
@@ -189,22 +197,27 @@ class LumpWorld extends Component {
         >
           <div className="LumpWorld__Upper Handle">
             <div className="LumpWorld__Upper--Left Handle">
-              <button
-                aria-label="Show background 1"
-                className="LumpWorld__BackgroundToggle Cursor--Pointer"
-                data-bg-type="day"
-                onClick={this.updateBg}
-              >
-                1
-              </button>
-              <button
-                aria-label="Show background 2"
-                className="LumpWorld__BackgroundToggle Cursor--Pointer"
-                data-bg-type="night"
-                onClick={this.updateBg}
-              >
-                2
-              </button>
+              <img alt="" draggable={false} src={topLeft}></img>
+              <div className="LumpWorld__ButtonWrapper">
+                <button
+                  alt="Toggle background to day"
+                  aria-label="Show background 1"
+                  className="LumpWorld__BackgroundToggle LumpWorld__Button Cursor--Pointer"
+                  data-bg-type="day"
+                  onClick={this.updateBg}
+                >
+                  <img alt="" src={btnDay}></img>
+                </button>
+                <button
+                  alt="Toggle background to night"
+                  aria-label="Show background 2"
+                  className="LumpWorld__BackgroundToggle LumpWorld__Button Cursor--Pointer"
+                  data-bg-type="night"
+                  onClick={this.updateBg}
+                >
+                  <img alt="" draggable={false} src={btnNight}></img>
+                </button>
+              </div>
             </div>
             <div className="LumpWorld__Upper--Right Handle">
               <button
@@ -212,7 +225,7 @@ class LumpWorld extends Component {
                 className="LumpWorld__Close Cursor--Pointer"
                 onClick={this.hideLumpWorld}
               >
-                Close Lump World
+                <img alt="Close" draggable={false} src={topRight}></img>
               </button>
             </div>
           </div>
@@ -274,14 +287,17 @@ class LumpWorld extends Component {
               </ul>
             </div>
           </div>
-          <div className="LumpWorld__Lower Cursor--Pointer">
-            <button
-              aria-label="Show Details"
-              className="LumpWorld__Details"
-              onClick={this.toggleDetails}
-            >
-              ?
-            </button>
+          <div className="LumpWorld__Lower Handle">
+            <img alt="" draggable={false} src={bottom}></img>
+            <div className="LumpWorld__ButtonWrapper">
+              <button
+                aria-label="Show Details"
+                className="LumpWorld__Details LumpWorld__Button Cursor--Pointer"
+                onClick={this.toggleDetails}
+              >
+                <img alt="About" src={btnAbout}></img>
+              </button>
+            </div>
           </div>
         </div>
       </Draggable>
