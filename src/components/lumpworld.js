@@ -90,39 +90,40 @@ class LumpWorld extends Component {
         title: "LumpWorld"
       },
       objects: [
-        { id: 0, inPlay: false, icon: icon1, img: obj1 },
-        { id: 1, inPlay: false, icon: icon2, img: obj2 },
-        { id: 2, inPlay: false, icon: icon3, img: obj3 },
-        { id: 3, inPlay: false, icon: icon4, img: obj4 },
-        { id: 4, inPlay: false, icon: icon5, img: obj5 },
-        { id: 5, inPlay: false, icon: icon6, img: obj6 },
-        { id: 6, inPlay: false, icon: icon7, img: obj7 },
-        { id: 7, inPlay: false, icon: icon8, img: obj8 },
-        { id: 8, inPlay: false, icon: icon9, img: obj9 },
-        { id: 9, inPlay: false, icon: icon10, img: obj10 },
-        { id: 10, inPlay: false, icon: icon11, img: obj11 },
-        { id: 11, inPlay: false, icon: icon12, img: obj12 },
-        { id: 12, inPlay: false, icon: icon13, img: obj13 },
-        { id: 13, inPlay: false, icon: icon14, img: obj14 },
-        { id: 14, inPlay: false, icon: icon15, img: obj15 },
-        { id: 15, inPlay: false, icon: icon16, img: obj16 },
-        { id: 16, inPlay: false, icon: icon17, img: obj17 },
-        { id: 17, inPlay: false, icon: icon18, img: obj18 },
-        { id: 18, inPlay: false, icon: icon19, img: obj19 },
-        { id: 19, inPlay: false, icon: icon20, img: obj20 },
-        { id: 20, inPlay: false, icon: icon21, img: obj21 },
-        { id: 21, inPlay: false, icon: icon22, img: obj22 },
-        { id: 22, inPlay: false, icon: icon23, img: obj23 },
-        { id: 23, inPlay: false, icon: icon24, img: obj24 },
-        { id: 24, inPlay: false, icon: icon25, img: obj25 },
-        { id: 25, inPlay: false, icon: icon26, img: obj26 },
-        { id: 26, inPlay: false, icon: icon27, img: obj27 },
-        { id: 27, inPlay: false, icon: icon28, img: obj28 },
-        { id: 28, inPlay: false, icon: icon29, img: obj29 },
-        { id: 29, inPlay: false, icon: icon30, img: obj30 },
-        { id: 30, inPlay: false, icon: icon31, img: obj31 },
-        { id: 31, inPlay: false, icon: icon32, img: obj32 }
+        { id: 0, inPlay: false, icon: icon1, img: obj1, zIndex: 0 },
+        { id: 1, inPlay: false, icon: icon2, img: obj2, zIndex: 0 },
+        { id: 2, inPlay: false, icon: icon3, img: obj3, zIndex: 0 },
+        { id: 3, inPlay: false, icon: icon4, img: obj4, zIndex: 0 },
+        { id: 4, inPlay: false, icon: icon5, img: obj5, zIndex: 0 },
+        { id: 5, inPlay: false, icon: icon6, img: obj6, zIndex: 0 },
+        { id: 6, inPlay: false, icon: icon7, img: obj7, zIndex: 0 },
+        { id: 7, inPlay: false, icon: icon8, img: obj8, zIndex: 0 },
+        { id: 8, inPlay: false, icon: icon9, img: obj9, zIndex: 0 },
+        { id: 9, inPlay: false, icon: icon10, img: obj10, zIndex: 0 },
+        { id: 10, inPlay: false, icon: icon11, img: obj11, zIndex: 0 },
+        { id: 11, inPlay: false, icon: icon12, img: obj12, zIndex: 0 },
+        { id: 12, inPlay: false, icon: icon13, img: obj13, zIndex: 0 },
+        { id: 13, inPlay: false, icon: icon14, img: obj14, zIndex: 0 },
+        { id: 14, inPlay: false, icon: icon15, img: obj15, zIndex: 0 },
+        { id: 15, inPlay: false, icon: icon16, img: obj16, zIndex: 0 },
+        { id: 16, inPlay: false, icon: icon17, img: obj17, zIndex: 0 },
+        { id: 17, inPlay: false, icon: icon18, img: obj18, zIndex: 0 },
+        { id: 18, inPlay: false, icon: icon19, img: obj19, zIndex: 0 },
+        { id: 19, inPlay: false, icon: icon20, img: obj20, zIndex: 0 },
+        { id: 20, inPlay: false, icon: icon21, img: obj21, zIndex: 0 },
+        { id: 21, inPlay: false, icon: icon22, img: obj22, zIndex: 0 },
+        { id: 22, inPlay: false, icon: icon23, img: obj23, zIndex: 0 },
+        { id: 23, inPlay: false, icon: icon24, img: obj24, zIndex: 0 },
+        { id: 24, inPlay: false, icon: icon25, img: obj25, zIndex: 0 },
+        { id: 25, inPlay: false, icon: icon26, img: obj26, zIndex: 0 },
+        { id: 26, inPlay: false, icon: icon27, img: obj27, zIndex: 0 },
+        { id: 27, inPlay: false, icon: icon28, img: obj28, zIndex: 0 },
+        { id: 28, inPlay: false, icon: icon29, img: obj29, zIndex: 0 },
+        { id: 29, inPlay: false, icon: icon30, img: obj30, zIndex: 0 },
+        { id: 30, inPlay: false, icon: icon31, img: obj31, zIndex: 0 },
+        { id: 31, inPlay: false, icon: icon32, img: obj32, zIndex: 0 }
       ],
+      objectsInPlay: 0,
       showDetails: false,
       visible: false,
       width: this.props.width,
@@ -160,6 +161,7 @@ class LumpWorld extends Component {
     const objects = this.state.objects;
     objects.forEach(obj => {
       obj.inPlay = false;
+      obj.zIndex = 0;
     });
 
     this.setState({
@@ -201,10 +203,12 @@ class LumpWorld extends Component {
     const objects = this.state.objects;
     const isInPlay = objects[key].inPlay;
     objects[key].inPlay = !isInPlay;
+    objects[key]["zIndex"] = this.state.objectsInPlay + this.state.zIndex;
 
-    this.setState({
-      objects: objects
-    });
+    this.setState(prevState => ({
+      objects: objects,
+      objectsInPlay: prevState.objectsInPlay + 1
+    }));
   }
 
   updateBg(e) {
@@ -305,6 +309,9 @@ class LumpWorld extends Component {
                           ? `LumpWorld__Object Cursor--Move`
                           : `LumpWorld__Object Cursor--Move Hidden`
                       }
+                      style={{
+                        zIndex: obj.zIndex
+                      }}
                     >
                       <img
                         alt={`Lump World object number ${index}`}
