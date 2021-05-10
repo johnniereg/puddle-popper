@@ -193,17 +193,6 @@ class Frame extends Component {
           >
             {this.state.images &&
               sortedImages.map((image, index) => {
-                if (image.node.base.includes("gif")) {
-                  return (
-                    <img
-                      alt="Spider"
-                      className="Frame__Image"
-                      src={image.node.publicURL}
-                      draggable={false}
-                      key={index}
-                    ></img>
-                  );
-                }
                 if (image.node.base.includes("spider")) {
                   return (
                     <video autoPlay muted loop key={index}>
