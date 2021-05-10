@@ -23,6 +23,7 @@ class Navigation extends Component {
   }
 
   handleButtonClick(event) {
+    event.preventDefault();
     const key = parseInt(event.currentTarget.getAttribute("data-key"));
     PubSub.publish("toggleFrame", key);
   }

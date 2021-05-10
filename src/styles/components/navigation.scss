@@ -112,11 +112,14 @@
   background: transparent;
   border: none;
   display: block;
-  cursor: $cursor-pointer;
   margin: 0;
   padding: 0;
   position: absolute;
   width: 66%;
+
+  @media screen and (min-width: 769px) {
+    cursor: $cursor-pointer;
+  }
 
   .Navigation__Item--Left &,
   .Navigation__Item--Up &,
@@ -131,8 +134,11 @@
 }
 
 .Navigation__Icon {
-  cursor: $cursor-pointer;
   display: block;
+
+  @media screen and (min-width: 769px) {
+    cursor: $cursor-pointer;
+  }
 
   &--butterfly {
     margin-bottom: 5px;

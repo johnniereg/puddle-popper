@@ -205,7 +205,6 @@ class Frame extends Component {
                   );
                 }
                 if (image.node.base.includes("spider")) {
-                  console.log("includes spider");
                   return (
                     <video autoPlay muted loop key={index}>
                       <source src={spiderVideo} type="video/mp4"></source>
