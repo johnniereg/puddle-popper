@@ -240,6 +240,7 @@ class Frame extends Component {
         <Draggable
           axis="both"
           bounds="parent"
+          cancel={".Carousel__Wrapper"}
           defaultPosition={defaultPosition}
           disabled={this.state.width <= 768 ? true : false}
           handle=".Handle"
