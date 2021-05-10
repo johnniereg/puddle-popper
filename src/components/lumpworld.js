@@ -226,163 +226,169 @@ class LumpWorld extends Component {
     const defaultPosition =
       this.state.width > 768 ? { x: randomX, y: randomY } : { x: 10, y: 10 };
 
-    return (
-      <Draggable
-        axis="both"
-        bounds="parent"
-        handle=".Handle"
-        defaultPosition={defaultPosition}
-        disabled={this.state.width <= 768 ? true : false}
-        onMouseDown={this.handleLumpWorldClick}
-        position={null}
-        scale={1}
+    const lumpWorldEl = (
+      <div
+        className={
+          this.state.visible ? "LumpWorld" : "LumpWorld LumpWorld--hidden"
+        }
+        style={{
+          zIndex: this.state.zIndex
+        }}
       >
-        <div
-          className={
-            this.state.visible ? "LumpWorld" : "LumpWorld LumpWorld--hidden"
-          }
-          style={{
-            zIndex: this.state.zIndex
-          }}
-        >
-          <div className="LumpWorld__Upper Handle">
-            <div className="LumpWorld__Upper--Left Handle">
-              <img alt="" draggable={false} src={topLeft}></img>
-              <div className="LumpWorld__ButtonWrapper">
-                <button
-                  alt="Toggle background to day"
-                  aria-label="Show background 1"
-                  className="LumpWorld__BackgroundToggle LumpWorld__Button Cursor--Pointer"
-                  data-bg-type="day"
-                  onClick={this.updateBg}
-                >
-                  <img alt="" src={btnDay}></img>
-                </button>
-                <button
-                  alt="Toggle background to night"
-                  aria-label="Show background 2"
-                  className="LumpWorld__BackgroundToggle LumpWorld__Button Cursor--Pointer"
-                  data-bg-type="night"
-                  onClick={this.updateBg}
-                >
-                  <img alt="" draggable={false} src={btnNight}></img>
-                </button>
-              </div>
-            </div>
-            <div className="LumpWorld__Upper--Right Handle">
+        <div className="LumpWorld__Upper Handle">
+          <div className="LumpWorld__Upper--Left Handle">
+            <img alt="" draggable={false} src={topLeft}></img>
+            <div className="LumpWorld__ButtonWrapper">
               <button
-                aria-label="Close Exhibit"
-                className="LumpWorld__Close Cursor--Pointer"
-                onClick={this.hideLumpWorld}
+                alt="Toggle background to day"
+                aria-label="Show background 1"
+                className="LumpWorld__BackgroundToggle LumpWorld__Button Cursor--Pointer"
+                data-bg-type="day"
+                onClick={this.updateBg}
               >
-                <img alt="Close" draggable={false} src={topRight}></img>
+                <img alt="" src={btnDay}></img>
+              </button>
+              <button
+                alt="Toggle background to night"
+                aria-label="Show background 2"
+                className="LumpWorld__BackgroundToggle LumpWorld__Button Cursor--Pointer"
+                data-bg-type="night"
+                onClick={this.updateBg}
+              >
+                <img alt="" draggable={false} src={btnNight}></img>
               </button>
             </div>
           </div>
-
-          <div className="LumpWorld__Main">
-            <div
-              className={
-                this.state.bg === "day"
-                  ? `LumpWorld__Main--Left BackgroundDay`
-                  : `LumpWorld__Main--Left BackgroundNight`
-              }
+          <div className="LumpWorld__Upper--Right Handle">
+            <button
+              aria-label="Close Exhibit"
+              className="LumpWorld__Close Cursor--Pointer"
+              onClick={this.hideLumpWorld}
             >
-              {this.state.objects.map((obj, index) => {
-                const objRandomX = Math.random() * (50 - 5) + 5;
-                const objRandomY = Math.random() * (50 - 5) + 5;
-                const startPosition = { x: objRandomX, y: objRandomY };
+              <img alt="Close" draggable={false} src={topRight}></img>
+            </button>
+          </div>
+        </div>
 
-                return (
-                  <Draggable
-                    axis="both"
-                    bounds="parent"
-                    defaultPosition={startPosition}
-                    handle=".LumpWorld__Object"
-                    key={index}
-                    position={null}
-                    scale={1}
+        <div className="LumpWorld__Main">
+          <div
+            className={
+              this.state.bg === "day"
+                ? `LumpWorld__Main--Left BackgroundDay`
+                : `LumpWorld__Main--Left BackgroundNight`
+            }
+          >
+            {this.state.objects.map((obj, index) => {
+              const objRandomX = Math.random() * (50 - 5) + 5;
+              const objRandomY = Math.random() * (50 - 5) + 5;
+              const startPosition = { x: objRandomX, y: objRandomY };
+
+              return (
+                <Draggable
+                  axis="both"
+                  bounds="parent"
+                  defaultPosition={startPosition}
+                  handle=".LumpWorld__Object"
+                  key={index}
+                  position={null}
+                  scale={1}
+                >
+                  <div
+                    className={
+                      obj.inPlay
+                        ? `LumpWorld__Object Cursor--Move`
+                        : `LumpWorld__Object Cursor--Move Hidden`
+                    }
+                    style={{
+                      zIndex: obj.zIndex
+                    }}
                   >
-                    <div
-                      className={
-                        obj.inPlay
-                          ? `LumpWorld__Object Cursor--Move`
-                          : `LumpWorld__Object Cursor--Move Hidden`
-                      }
-                      style={{
-                        zIndex: obj.zIndex
-                      }}
+                    <img
+                      alt={`Lump World object number ${index}`}
+                      draggable={false}
+                      src={obj.img}
+                    ></img>
+                  </div>
+                </Draggable>
+              );
+            })}
+
+            {this.state.description && (
+              <div
+                className={
+                  this.state.showDetails ? "Details" : "Details Details--hidden"
+                }
+                style={{
+                  zIndex: "100"
+                }}
+              >
+                <div>
+                  <p>
+                    {this.state.description.artist},{" "}
+                    <em>{this.state.description.title}</em>,{" "}
+                    {this.state.description.materialsFormatYear}
+                  </p>
+                  <p>-----</p>
+                  <p>{this.state.description.text}</p>
+                </div>
+              </div>
+            )}
+          </div>
+          <div className="LumpWorld__Main--Divider"></div>
+          <div className="LumpWorld__Main--Right">
+            <ul className="LumpWorld__Icons">
+              {this.state.objects.map((obj, index) => {
+                return (
+                  <li className="LumpWorld__Icon" key={index}>
+                    <button
+                      className="Cursor--Pointer"
+                      data-button-id={index}
+                      onClick={this.handleButtonClick}
                     >
                       <img
                         alt={`Lump World object number ${index}`}
-                        draggable={false}
-                        src={obj.img}
+                        src={obj.icon}
                       ></img>
-                    </div>
-                  </Draggable>
+                    </button>
+                  </li>
                 );
               })}
-
-              {this.state.description && (
-                <div
-                  className={
-                    this.state.showDetails
-                      ? "Details"
-                      : "Details Details--hidden"
-                  }
-                  style={{
-                    zIndex: "100"
-                  }}
-                >
-                  <div>
-                    <p>
-                      {this.state.description.artist},{" "}
-                      <em>{this.state.description.title}</em>,{" "}
-                      {this.state.description.materialsFormatYear}
-                    </p>
-                    <p>-----</p>
-                    <p>{this.state.description.text}</p>
-                  </div>
-                </div>
-              )}
-            </div>
-            <div className="LumpWorld__Main--Divider"></div>
-            <div className="LumpWorld__Main--Right">
-              <ul className="LumpWorld__Icons">
-                {this.state.objects.map((obj, index) => {
-                  return (
-                    <li className="LumpWorld__Icon" key={index}>
-                      <button
-                        className="Cursor--Pointer"
-                        data-button-id={index}
-                        onClick={this.handleButtonClick}
-                      >
-                        <img
-                          alt={`Lump World object number ${index}`}
-                          src={obj.icon}
-                        ></img>
-                      </button>
-                    </li>
-                  );
-                })}
-              </ul>
-            </div>
-          </div>
-          <div className="LumpWorld__Lower Handle">
-            <img alt="" draggable={false} src={bottom}></img>
-            <div className="LumpWorld__ButtonWrapper">
-              <button
-                aria-label="Show Details"
-                className="LumpWorld__Details LumpWorld__Button Cursor--Pointer"
-                onClick={this.toggleDetails}
-              >
-                <img alt="About" src={btnAbout}></img>
-              </button>
-            </div>
+            </ul>
           </div>
         </div>
-      </Draggable>
+        <div className="LumpWorld__Lower Handle">
+          <img alt="" draggable={false} src={bottom}></img>
+          <div className="LumpWorld__ButtonWrapper">
+            <button
+              aria-label="Show Details"
+              className="LumpWorld__Details LumpWorld__Button Cursor--Pointer"
+              onClick={this.toggleDetails}
+            >
+              <img alt="About" src={btnAbout}></img>
+            </button>
+          </div>
+        </div>
+      </div>
     );
+
+    if (this.state.width > 768) {
+      return (
+        <Draggable
+          axis="both"
+          bounds="parent"
+          handle=".Handle"
+          defaultPosition={defaultPosition}
+          disabled={this.state.width <= 768 ? true : false}
+          onMouseDown={this.handleLumpWorldClick}
+          position={null}
+          scale={1}
+        >
+          {lumpWorldEl}
+        </Draggable>
+      );
+    } else {
+      return <div>{lumpWorldEl}</div>;
+    }
   }
 }
 

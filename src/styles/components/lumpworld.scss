@@ -44,6 +44,11 @@
   display: flex;
   height: 358px;
 
+  @media screen and (max-width: 768px) {
+    flex-direction: column;
+    height: 100%;
+  }
+
   &:after,
   &:before {
     background-image: url(../images/about/left_bar.png);
@@ -53,6 +58,10 @@
     display: block;
     height: 358px;
     width: 42px;
+
+    @media screen and (max-width: 768px) {
+      display: none;
+    }
   }
 
   &--Left {
@@ -83,11 +92,20 @@
     display: block;
     height: 358px;
     width: 42px;
+
+    @media screen and (max-width: 768px) {
+      display: none;
+    }
   }
 
   &--Right {
     overflow-y: auto;
     width: 25%;
+
+    @media screen and (max-width: 768px) {
+      height: 66%;
+      width: 100%;
+    }
   }
 }
 
@@ -145,6 +163,14 @@
   img {
     height: auto;
     width: 100%;
+  }
+
+  @media screen and (max-width: 768px) {
+    flex: 0 1 10%;
+
+    img {
+      width: 25%;
+    }
   }
 }
 
