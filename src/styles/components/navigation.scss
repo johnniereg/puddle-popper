@@ -111,6 +111,7 @@
 .Navigation__Button {
   background: transparent;
   border: none;
+  cursor: pointer;
   display: block;
   margin: 0;
   padding: 0;
@@ -135,6 +136,7 @@
 
 .Navigation__Icon {
   display: block;
+  cursor: pointer;
 
   @media screen and (min-width: 769px) {
     cursor: $cursor-pointer;
