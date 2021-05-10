@@ -114,7 +114,7 @@ class Navigation extends Component {
         <li className="Navigation__Item" key={key}>
           <button
             className="Navigation__Button"
-            onTouchStart={this.handleButtonClick}
+            onClick={this.handleButtonClick}
             data-key={key}
           >
             {exhibit.icon ? (
