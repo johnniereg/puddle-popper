@@ -190,3 +190,31 @@
     margin-left: 3px;
   }
 }
+
+.Navigation__OpenMenu {
+  bottom: 0;
+  display: flex;
+  height: 25%;
+  justify-content: flex-end;
+  left: 0;
+  margin: auto;
+  max-width: 95%;
+  position: absolute;
+  right: 0;
+}
+
+.Navigation__ToggleWrapper {
+  align-items: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  display: flex;
+  justify-content: center;
+  position: relative;
+  width: 25%;
+}
+
+.Navigation__Toggle {
+  left: 25%;
+  top: 50%;
+  width: 55%;
+}

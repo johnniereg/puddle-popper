@@ -7,6 +7,9 @@ import navBgRight from "../images/navigation/Menu_End_Right_revised_noshadow.png
 import navBgUp from "../images/navigation/Menu_Interior_Upper_revised_noshadow.png";
 import navBgDown from "../images/navigation/Menu_Interior_Lower_revised_noshadow.png";
 
+import leftArrow from "../images/navigation/Left_Facing_Arrow.png";
+import rightArrow from "../images/navigation/Right_Facing_Arrow.png";
+
 class Navigation extends Component {
   constructor(props) {
     super(props);
@@ -16,6 +19,7 @@ class Navigation extends Component {
     };
 
     this.toggleMobileMenu = this.toggleMobileMenu.bind(this);
+    this.hideMobileMenu = this.hideMobileMenu.bind(this);
   }
 
   handleButtonClick(event) {
@@ -59,6 +63,12 @@ class Navigation extends Component {
     this.setState(prevState => ({
       mobileMenuVisible: !prevState.mobileMenuVisible
     }));
+  }
+
+  hideMobileMenu() {
+    this.setState({
+      mobileMenuVisible: false
+    });
   }
 
   render() {
@@ -169,18 +179,43 @@ class Navigation extends Component {
             {navItemsMobile[12]}
             {navItemsMobile[13]}
             {navItemsMobile[14]}
+            <li className="Navigation__Item" key={15}>
+              <button
+                aria-lable="Hide Menu"
+                className="Navigation__Button"
+                onClick={this.toggleMobileMenu}
+              >
+                <img
+                  alt="Close Mobile Menu"
+                  className={`Navigation__Icon Navigation__Icon--mobileMenu`}
+                  src={leftArrow}
+                  style={{ width: "100%", height: "auto" }}
+                ></img>
+              </button>
+            </li>
           </ul>
-          <button
-            aria-label="Toggle Menu"
-            className="Navigation__Button"
-            onClick={this.toggleMobileMenu}
+          <div
+            className={
+              this.state.mobileMenuVisible
+                ? "Navigation__OpenMenu Hidden"
+                : "Navigation__OpenMenu"
+            }
           >
-            <img
-              alt="Toggle Menu"
-              className={`Navigation__Icon Navigation__Icon--mobileMenu`}
-              style={{ width: "100%", height: "auto" }}
-            ></img>
-          </button>
+            <div className="Navigation__ToggleWrapper">
+              <button
+                aria-label="Show Menu"
+                className="Navigation__Button Navigation__Toggle"
+                onClick={this.toggleMobileMenu}
+              >
+                <img
+                  alt="Toggle Menu"
+                  className="Navigation__Icon Navigation__Icon--showMenu"
+                  src={rightArrow}
+                  style={{ width: "100%", height: "auto" }}
+                ></img>
+              </button>
+            </div>
+          </div>
         </nav>
       );
     } else {
