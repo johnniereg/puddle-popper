@@ -237,105 +237,113 @@ class Chat extends Component {
     const defaultPosition =
       this.state.width > 768 ? { x: randomX, y: randomY } : { x: 10, y: 10 };
 
-    return (
-      <Draggable
-        axis="both"
-        bounds="parent"
-        handle=".Handle"
-        defaultPosition={defaultPosition}
-        disabled={this.state.width <= 768 ? true : false}
-        onMouseDown={this.handleChatClick}
-        position={null}
-        scale={1}
+    const chatFormEl = (
+      <form
+        className={this.state.visible ? "Chat" : "Chat Chat--hidden"}
+        onSubmit={this.onSubmit}
+        style={{
+          zIndex: this.state.zIndex
+        }}
       >
-        <form
-          className={this.state.visible ? "Chat" : "Chat Chat--hidden"}
-          onSubmit={this.onSubmit}
-          style={{
-            zIndex: this.state.zIndex
-          }}
-        >
-          <div className="Chat__Upper">
-            <div className="Chat__UserWrapper">
-              <img
-                alt=""
-                className="Handle"
-                draggable="false"
-                src={topLeft}
-              ></img>
-              <input
-                aria-label="Username"
-                className="Chat__Input Chat__Input--User"
-                name="Username"
-                onChange={this.handleUsernameChange}
-                placeholder="Username"
-                type="text"
-                value={this.state.userName}
-              ></input>
-            </div>
-            <button
-              aria-label="Close Chat"
-              className="Chat__Close Cursor--Pointer"
-              onClick={this.hideChat}
-            >
-              <img alt="Close Chat" draggable="false" src={topRight}></img>
-            </button>
+        <div className="Chat__Upper">
+          <div className="Chat__UserWrapper">
+            <img
+              alt=""
+              className="Handle"
+              draggable="false"
+              src={topLeft}
+            ></img>
+            <input
+              aria-label="Username"
+              className="Chat__Input Chat__Input--User"
+              name="Username"
+              onChange={this.handleUsernameChange}
+              placeholder="Username"
+              type="text"
+              value={this.state.userName}
+            ></input>
           </div>
-          <div className="Chat__ContentWrapper">
-            <div className="Chat__Content Cursor--Text">
-              {this.state.chatLog.map((entry, index) => {
-                return (
-                  <p
-                    key={index}
-                    className={
-                      entry.user === this.botName
-                        ? "Chat__Entry Chat__Entry--Bot"
-                        : "Chat__Entry Chat__Entry--User"
-                    }
-                  >
-                    <span className="Entry__User">
-                      {"<"}
-                      {entry.user}
-                      {">"}{" "}
-                    </span>
-                    <span className="Entry__Text">{entry.text}</span>
-                  </p>
-                );
-              })}
-              <div ref={this.messagesEndRef}></div>
-            </div>
+          <button
+            aria-label="Close Chat"
+            className="Chat__Close Cursor--Pointer"
+            onClick={this.hideChat}
+          >
+            <img alt="Close Chat" draggable="false" src={topRight}></img>
+          </button>
+        </div>
+        <div className="Chat__ContentWrapper">
+          <div className="Chat__Content Cursor--Text">
+            {this.state.chatLog.map((entry, index) => {
+              return (
+                <p
+                  key={index}
+                  className={
+                    entry.user === this.botName
+                      ? "Chat__Entry Chat__Entry--Bot"
+                      : "Chat__Entry Chat__Entry--User"
+                  }
+                >
+                  <span className="Entry__User">
+                    {"<"}
+                    {entry.user}
+                    {">"}{" "}
+                  </span>
+                  <span className="Entry__Text">{entry.text}</span>
+                </p>
+              );
+            })}
+            <div ref={this.messagesEndRef}></div>
           </div>
-          <div className="Chat__Lower">
-            <div className="Chat__InputWrapper">
-              <img
-                alt=""
-                className="Handle"
-                draggable="false"
-                src={bottomLeft}
-              ></img>
-              <input
-                className="Chat__Input Chat__Input--Text"
-                type="text"
-                onChange={this.handleTextInputChange}
-                onKeyPress={this.handleKeyPress}
-                value={this.state.textToSubmit}
-              ></input>
-            </div>
-            <button
-              aria-label="Submit Chat Text"
-              className="Chat__Submit Cursor--Pointer"
-              type="submit"
-            >
-              <img
-                alt="Submit Chat Text"
-                draggable="false"
-                src={bottomRight}
-              ></img>
-            </button>
+        </div>
+        <div className="Chat__Lower">
+          <div className="Chat__InputWrapper">
+            <img
+              alt=""
+              className="Handle"
+              draggable="false"
+              src={bottomLeft}
+            ></img>
+            <input
+              className="Chat__Input Chat__Input--Text"
+              type="text"
+              onChange={this.handleTextInputChange}
+              onKeyPress={this.handleKeyPress}
+              value={this.state.textToSubmit}
+            ></input>
           </div>
-        </form>
-      </Draggable>
+          <button
+            aria-label="Submit Chat Text"
+            className="Chat__Submit Cursor--Pointer"
+            type="submit"
+          >
+            <img
+              alt="Submit Chat Text"
+              draggable="false"
+              src={bottomRight}
+            ></img>
+          </button>
+        </div>
+      </form>
     );
+
+    if (this.state.width > 768) {
+      return (
+        <Draggable
+          axis="both"
+          bounds="parent"
+          handle=".Handle"
+          defaultPosition={defaultPosition}
+          disabled={this.state.width <= 768 ? true : false}
+          onMouseDown={this.handleChatClick}
+          position={null}
+          scale={1}
+        >
+          {chatFormEl}
+        </Draggable>
+      );
+    } else {
+      return <div>{chatFormEl}</div>;
+    }
   }
 }
 

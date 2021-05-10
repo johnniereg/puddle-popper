@@ -103,160 +103,168 @@ class Frame extends Component {
       return 0;
     });
 
-    return (
-      <Draggable
-        axis="both"
-        bounds="parent"
-        defaultPosition={defaultPosition}
-        disabled={this.state.width <= 768 ? true : false}
-        handle=".Handle"
-        onMouseDown={this.handleFrameClick}
-        position={null}
-        scale={1}
+    const frameEl = (
+      <div
+        className={
+          this.state.visible
+            ? `Frame Frame--${this.state.orientation} Handle`
+            : `Frame Frame--${this.state.orientation} Frame--hidden  Handle`
+        }
+        style={{
+          zIndex: this.state.zIndex
+        }}
       >
+        {this.state.description && (
+          <div
+            className={
+              this.state.showDetails ? "Details" : "Details Details--hidden"
+            }
+            style={{
+              zIndex: this.state.zIndex + 2
+            }}
+          >
+            <div>
+              <p>
+                {this.state.description.artist},{" "}
+                <em>{this.state.description.title}</em>,{" "}
+                {this.state.description.materialsFormatYear}
+              </p>
+              {this.state.description.photoCredit && (
+                <p>{this.state.description.photoCredit}</p>
+              )}
+              <p>-----</p>
+              <p>{this.state.description.text}</p>
+            </div>
+          </div>
+        )}
+        <div
+          className="Controls Controls--Top"
+          style={{ zIndex: this.state.zIndex + 3 }}
+        >
+          <button
+            aria-label="Close"
+            className="Frame__Control Frame__Control--Close Cursor--Pointer"
+            onClick={this.hideFrame}
+            style={{ backgroundImage: `url(${closeIcon})` }}
+          ></button>
+        </div>
         <div
           className={
-            this.state.visible
-              ? `Frame Frame--${this.state.orientation} Handle`
-              : `Frame Frame--${this.state.orientation} Frame--hidden  Handle`
+            this.state.orientation === "landscape"
+              ? "Carousel__Wrapper Carousel__Wrapper--Landscape Cursor--Default"
+              : "Carousel__Wrapper Carousel__Wrapper--Portrait Cursor--Default"
           }
-          style={{
-            zIndex: this.state.zIndex
-          }}
         >
-          {this.state.description && (
-            <div
-              className={
-                this.state.showDetails ? "Details" : "Details Details--hidden"
-              }
-              style={{
-                zIndex: this.state.zIndex + 2
-              }}
-            >
-              <div>
-                <p>
-                  {this.state.description.artist},{" "}
-                  <em>{this.state.description.title}</em>,{" "}
-                  {this.state.description.materialsFormatYear}
-                </p>
-                {this.state.description.photoCredit && (
-                  <p>{this.state.description.photoCredit}</p>
-                )}
-                <p>-----</p>
-                <p>{this.state.description.text}</p>
-              </div>
-            </div>
-          )}
+          <Carousel
+            dynamicHeight={true}
+            infiniteLoop={true}
+            renderArrowPrev={(onClickHandler, hasPrev, label) =>
+              hasPrev && (
+                <button
+                  aria-label="Carousel left"
+                  type="button"
+                  className="Frame__Control Frame__Control--Arrow Frame__Control--ArrowLeft Cursor--Pointer"
+                  onClick={onClickHandler}
+                  title={label}
+                  style={{ ...arrowStyles }}
+                >
+                  <img alt="" src={leftIcon}></img>
+                </button>
+              )
+            }
+            renderArrowNext={(onClickHandler, hasNext, label) =>
+              hasNext && (
+                <button
+                  type="button"
+                  className="Frame__Control  Frame__Control--Arrow Frame__Control--ArrowRight Cursor--Pointer"
+                  onClick={onClickHandler}
+                  title={label}
+                  style={{ ...arrowStyles }}
+                >
+                  <img alt="" src={rightIcon}></img>
+                </button>
+              )
+            }
+            showIndicators={false}
+            showStatus={false}
+            showThumbs={false}
+            swipeable={false}
+            useKeyboardArrows={true}
+          >
+            {this.state.images &&
+              sortedImages.map((image, index) => {
+                if (image.node.base.includes("gif")) {
+                  return (
+                    <img
+                      alt="Spider"
+                      className="Frame__Image"
+                      src={image.node.publicURL}
+                      draggable={false}
+                      key={index}
+                    ></img>
+                  );
+                }
+                if (image.node.base.includes("spider")) {
+                  console.log("includes spider");
+                  return (
+                    <video autoPlay muted loop key={index}>
+                      <source src={spiderVideo} type="video/mp4"></source>
+                    </video>
+                  );
+                }
+                if (image.node.base.includes("mel_easteregg1")) {
+                  return (
+                    <video autoPlay muted loop key={index}>
+                      <source src={melVideo} type="video/mp4"></source>
+                    </video>
+                  );
+                }
+                return (
+                  <GatsbyImage
+                    alt={image.node.base.split(".")[0]} // only use section of the file extension with the filename
+                    className="Frame__Image"
+                    image={image.node.childImageSharp.gatsbyImageData}
+                    key={index}
+                    draggable={false}
+                  />
+                );
+              })}
+          </Carousel>
+        </div>
+        {this.state.description && (
           <div
-            className="Controls Controls--Top"
+            className="Controls Controls--Bottom"
             style={{ zIndex: this.state.zIndex + 3 }}
           >
             <button
-              aria-label="Close"
-              className="Frame__Control Frame__Control--Close Cursor--Pointer"
-              onClick={this.hideFrame}
-              style={{ backgroundImage: `url(${closeIcon})` }}
+              aria-label="Toggle exhibit description"
+              className="Frame__Control Frame__Control--Info Cursor--Pointer"
+              onClick={this.toggleDetails}
+              style={{ backgroundImage: `url(${infoIcon})` }}
             ></button>
           </div>
-          <div
-            className={
-              this.state.orientation === "landscape"
-                ? "Carousel__Wrapper Carousel__Wrapper--Landscape Cursor--Default"
-                : "Carousel__Wrapper Carousel__Wrapper--Portrait Cursor--Default"
-            }
-          >
-            <Carousel
-              dynamicHeight={true}
-              infiniteLoop={true}
-              renderArrowPrev={(onClickHandler, hasPrev, label) =>
-                hasPrev && (
-                  <button
-                    aria-label="Carousel left"
-                    type="button"
-                    className="Frame__Control Frame__Control--Arrow Frame__Control--ArrowLeft Cursor--Pointer"
-                    onClick={onClickHandler}
-                    title={label}
-                    style={{ ...arrowStyles }}
-                  >
-                    <img alt="" src={leftIcon}></img>
-                  </button>
-                )
-              }
-              renderArrowNext={(onClickHandler, hasNext, label) =>
-                hasNext && (
-                  <button
-                    type="button"
-                    className="Frame__Control  Frame__Control--Arrow Frame__Control--ArrowRight Cursor--Pointer"
-                    onClick={onClickHandler}
-                    title={label}
-                    style={{ ...arrowStyles }}
-                  >
-                    <img alt="" src={rightIcon}></img>
-                  </button>
-                )
-              }
-              showIndicators={false}
-              showStatus={false}
-              showThumbs={false}
-              swipeable={false}
-              useKeyboardArrows={true}
-            >
-              {this.state.images &&
-                sortedImages.map((image, index) => {
-                  if (image.node.base.includes("gif")) {
-                    return (
-                      <img
-                        alt="Spider"
-                        className="Frame__Image"
-                        src={image.node.publicURL}
-                        draggable={false}
-                        key={index}
-                      ></img>
-                    );
-                  }
-                  if (image.node.base.includes("spider")) {
-                    console.log("includes spider");
-                    return (
-                      <video autoPlay muted loop key={index}>
-                        <source src={spiderVideo} type="video/mp4"></source>
-                      </video>
-                    );
-                  }
-                  if (image.node.base.includes("mel_easteregg1")) {
-                    return (
-                      <video autoPlay muted loop key={index}>
-                        <source src={melVideo} type="video/mp4"></source>
-                      </video>
-                    );
-                  }
-                  return (
-                    <GatsbyImage
-                      alt={image.node.base.split(".")[0]} // only use section of the file extension with the filename
-                      className="Frame__Image"
-                      image={image.node.childImageSharp.gatsbyImageData}
-                      key={index}
-                      draggable={false}
-                    />
-                  );
-                })}
-            </Carousel>
-          </div>
-          {this.state.description && (
-            <div
-              className="Controls Controls--Bottom"
-              style={{ zIndex: this.state.zIndex + 3 }}
-            >
-              <button
-                aria-label="Toggle exhibit description"
-                className="Frame__Control Frame__Control--Info Cursor--Pointer"
-                onClick={this.toggleDetails}
-                style={{ backgroundImage: `url(${infoIcon})` }}
-              ></button>
-            </div>
-          )}
-        </div>
-      </Draggable>
+        )}
+      </div>
     );
+
+    if (this.state.width > 768) {
+      return (
+        <Draggable
+          axis="both"
+          bounds="parent"
+          defaultPosition={defaultPosition}
+          disabled={this.state.width <= 768 ? true : false}
+          handle=".Handle"
+          onMouseDown={this.handleFrameClick}
+          position={null}
+          scale={1}
+        >
+          {frameEl}
+        </Draggable>
+      );
+    } else {
+      return <div>{frameEl}</div>;
+    }
   }
 }
 
