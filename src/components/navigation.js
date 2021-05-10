@@ -183,7 +183,7 @@ class Navigation extends Component {
             {navItemsMobile[14]}
             <li className="Navigation__Item" key={15}>
               <button
-                aria-lable="Hide Menu"
+                aria-label="Hide Menu"
                 className="Navigation__Button"
                 onClick={this.toggleMobileMenu}
               >
