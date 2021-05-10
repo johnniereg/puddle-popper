@@ -25,6 +25,7 @@ class Navigation extends Component {
   handleButtonClick(event) {
     event.preventDefault();
     const key = parseInt(event.currentTarget.getAttribute("data-key"));
+    console.log(key);
     PubSub.publish("toggleFrame", key);
   }
 
@@ -113,7 +114,6 @@ class Navigation extends Component {
         <li className="Navigation__Item" key={key}>
           <button
             className="Navigation__Button"
-            onClick={this.handleButtonClick}
             onTouchStart={this.handleButtonClick}
             data-key={key}
           >
