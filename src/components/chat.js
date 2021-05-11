@@ -13,91 +13,87 @@ class Chat extends Component {
     this.botName = "Plintor Drax";
 
     this.state = {
-      ...this.props.data,
       botReplying: false,
       chatLog: [{ user: this.botName, text: `Hello, I am ${this.botName}` }],
       replyOptions: [
         {
           quote:
-            "I have four long arms to wrap around you, and a colourful, soft shell for protection and warmth."
+            "I have four long arms to wrap around you, and a colourful, soft shell for protection and warmth.",
         },
         {
-          quote: "They open their eyes at night, underground."
+          quote: "They open their eyes at night, underground.",
         },
         {
-          quote: `“because of the Moon; / because it’s in my nature; / because it’s against nature”`
+          quote: `“because of the Moon; / because it’s in my nature; / because it’s against nature”`,
         },
         {
-          quote: "Go lay an egg!"
-        },
-        {
-          quote:
-            "Fuzzy, soft, pink, stinky, strong, squishy, warm, wet, covered in slime…"
-        },
-        {
-          quote: "My Feelings for the sun are complex. Beyond me."
-        },
-        {
-          quote: `I thought long and hard “how can I purify myself of the sun’s glow.” / Then I thought so simply … I will bury myself in the earth!`
-        },
-        {
-          quote: `The future is already full; It is much older and larger than our present; and we are the aliens in it.`
-        },
-        {
-          quote: `There is no end / To what a living world / Will demand of you.`
-        },
-        {
-          quote: `We are Earthseed / The life that perceives itself / Changing.`
+          quote: "Go lay an egg!",
         },
         {
           quote:
-            "The name is the guest of the substance, and the world is a verb."
+            "Fuzzy, soft, pink, stinky, strong, squishy, warm, wet, covered in slime…",
         },
         {
-          quote: "Germs, cells, blossoms, seeds."
+          quote: "My Feelings for the sun are complex. Beyond me.",
         },
         {
-          quote:
-            "Relationship among all things appears to be complex and reciprocal."
+          quote: `I thought long and hard “how can I purify myself of the sun’s glow.” / Then I thought so simply … I will bury myself in the earth!`,
         },
         {
-          quote: "Tell me more."
+          quote: `The future is already full; It is much older and larger than our present; and we are the aliens in it.`,
         },
         {
-          quote:
-            "Family is a system of learned behaviours, not only blood, gut and genes."
+          quote: `There is no end / To what a living world / Will demand of you.`,
         },
         {
-          quote:
-            "Soliloquy faucet posture lily vein milk pooling lightly under beams follow gestures barren field wind blowing dust gathering in crevices"
+          quote: `We are Earthseed / The life that perceives itself / Changing.`,
         },
         {
           quote:
-            "Germinating relic lounging together in sliding spaces rounded out cave bulbous pebbles scattered under invisible water pulsating warmth and glowing carnelian"
+            "The name is the guest of the substance, and the world is a verb.",
+        },
+        {
+          quote: "Germs, cells, blossoms, seeds.",
         },
         {
           quote:
-            "Tragic remnant sounding out the memories lightly remembered slightly open gateway saturated threads flowing through fluids drip pools of fibres"
+            "Relationship among all things appears to be complex and reciprocal.",
+        },
+        {
+          quote: "Tell me more.",
         },
         {
           quote:
-            "Overgrown vines tighten around the body of another slithering slowly around follicles hairs poking through pulsing pressure colour changing appendages"
+            "Family is a system of learned behaviours, not only blood, gut and genes.",
         },
         {
           quote:
-            "Mood launch circling backwards into puff cloud ice crystals dust skin fibres fall warm and melt to dewy water pebbles "
-        }
+            "Soliloquy faucet posture lily vein milk pooling lightly under beams follow gestures barren field wind blowing dust gathering in crevices",
+        },
+        {
+          quote:
+            "Germinating relic lounging together in sliding spaces rounded out cave bulbous pebbles scattered under invisible water pulsating warmth and glowing carnelian",
+        },
+        {
+          quote:
+            "Tragic remnant sounding out the memories lightly remembered slightly open gateway saturated threads flowing through fluids drip pools of fibres",
+        },
+        {
+          quote:
+            "Overgrown vines tighten around the body of another slithering slowly around follicles hairs poking through pulsing pressure colour changing appendages",
+        },
+        {
+          quote:
+            "Mood launch circling backwards into puff cloud ice crystals dust skin fibres fall warm and melt to dewy water pebbles ",
+        },
       ],
       textToSubmit: "",
       userName: "Lounge Visitor",
-      visible: false,
-      width: this.props.width,
-      zIndex: 2
+      zIndex: 2,
     };
 
     this.handleChatClick = this.handleChatClick.bind(this);
     this.toggleChat = this.toggleChat.bind(this);
-    this.hideChat = this.hideChat.bind(this);
     this.sendToBack = this.sendToBack.bind(this);
     this.onSubmit = this.onSubmit.bind(this);
     this.handleKeyPress = this.handleKeyPress.bind(this);
@@ -131,11 +127,11 @@ class Chat extends Component {
     }
     const logEntry = {
       user: this.state.userName,
-      text: this.state.textToSubmit
+      text: this.state.textToSubmit,
     };
-    this.setState(prevState => ({
+    this.setState((prevState) => ({
       chatLog: [...prevState.chatLog, logEntry],
-      textToSubmit: ""
+      textToSubmit: "",
     }));
     if (this.state.botReplying === false) {
       this.botReply();
@@ -145,36 +141,28 @@ class Chat extends Component {
   handleChatClick() {
     // Bring clicked frame to front
     this.setState({
-      zIndex: 10
+      zIndex: 10,
     });
     // Send other frames to back
-    PubSub.publish("sendToBack", this.state.key);
-  }
-
-  hideChat() {
-    this.setState({
-      visible: false,
-      zIndex: 2
-    });
+    PubSub.publish("sendToBack", this.props.data.key);
   }
 
   sendToBack(msg, data) {
-    if (data !== this.state.key) {
+    if (data !== this.props.data.key) {
       this.setState({
-        zIndex: 2
+        zIndex: 2,
       });
     }
   }
 
   toggleChat(msg, data) {
-    if (data === this.state.key) {
-      this.setState(prevState => ({
-        visible: !prevState.visible,
-        zIndex: 10
+    if (data === this.props.data.key) {
+      this.setState((prevState) => ({
+        zIndex: 10,
       }));
     } else {
       this.setState({
-        zIndex: 2
+        zIndex: 2,
       });
     }
   }
@@ -205,13 +193,13 @@ class Chat extends Component {
 
     const logEntry = {
       user: this.botName,
-      text: quote
+      text: quote,
     };
 
     options.splice(optionToUse, 1);
 
     this.setState({
-      replyOptions: options
+      replyOptions: options,
     });
 
     return logEntry;
@@ -223,9 +211,9 @@ class Chat extends Component {
 
     this.setState({ botReplying: true });
     setTimeout(() => {
-      this.setState(prevState => ({
+      this.setState((prevState) => ({
         chatLog: [...prevState.chatLog, logEntry],
-        botReplying: false
+        botReplying: false,
       }));
     }, delayTime);
   }
@@ -235,14 +223,14 @@ class Chat extends Component {
     const randomY = Math.random() * (100 - 20) + 20;
 
     const defaultPosition =
-      this.state.width > 768 ? { x: randomX, y: randomY } : { x: 10, y: 10 };
+      this.props.width > 768 ? { x: randomX, y: randomY } : { x: 10, y: 10 };
 
     const chatFormEl = (
       <form
-        className={this.state.visible ? "Chat" : "Chat Chat--hidden"}
+        className={this.props.data.visible ? "Chat" : "Chat Chat--hidden"}
         onSubmit={this.onSubmit}
         style={{
-          zIndex: this.state.zIndex
+          zIndex: this.state.zIndex,
         }}
       >
         <div className="Chat__Upper">
@@ -266,7 +254,7 @@ class Chat extends Component {
           <button
             aria-label="Close Chat"
             className="Chat__Close Cursor--Pointer"
-            onClick={this.hideChat}
+            onClick={() => this.props.toggleFrame(this.props.data.key)}
           >
             <img alt="Close Chat" draggable="false" src={topRight}></img>
           </button>
@@ -326,14 +314,14 @@ class Chat extends Component {
       </form>
     );
 
-    if (this.state.width > 768) {
+    if (this.props.width > 768) {
       return (
         <Draggable
           axis="both"
           bounds="parent"
           handle=".Handle"
           defaultPosition={defaultPosition}
-          disabled={this.state.width <= 768 ? true : false}
+          disabled={this.props.width <= 768 ? true : false}
           onMouseDown={this.handleChatClick}
           position={null}
           scale={1}

@@ -17,17 +17,15 @@ class About extends Component {
       ...this.props.data,
       visible: false,
       width: this.props.width,
-      zIndex: 2
+      zIndex: 2,
     };
 
-    this.hideAbout = this.hideAbout.bind(this);
     this.handleAboutClick = this.handleAboutClick.bind(this);
     this.toggleAbout = this.toggleAbout.bind(this);
     this.sendToBack = this.sendToBack.bind(this);
   }
 
   componentDidMount() {
-    PubSub.subscribe("toggleFrame", this.toggleAbout);
     PubSub.subscribe("sendToBack", this.sendToBack);
   }
 
@@ -38,36 +36,28 @@ class About extends Component {
   handleAboutClick() {
     // Bring clicked frame to front
     this.setState({
-      zIndex: 10
+      zIndex: 10,
     });
     // Send other frames to back
     PubSub.publish("sendToBack", this.state.key);
   }
 
-  hideAbout() {
-    this.setState({
-      visible: false,
-      zIndex: 2
-    });
-  }
-
   sendToBack(msg, data) {
     if (data !== this.state.key) {
       this.setState({
-        zIndex: 2
+        zIndex: 2,
       });
     }
   }
 
   toggleAbout(msg, data) {
     if (data === this.state.key) {
-      this.setState(prevState => ({
-        visible: !prevState.visible,
-        zIndex: 10
+      this.setState((prevState) => ({
+        zIndex: 10,
       }));
     } else {
       this.setState({
-        zIndex: 2
+        zIndex: 2,
       });
     }
   }
@@ -77,13 +67,13 @@ class About extends Component {
     const randomY = Math.random() * (100 - 20) + 20;
 
     const defaultPosition =
-      this.state.width > 768 ? { x: randomX, y: randomY } : { x: 10, y: 10 };
+      this.props.width > 768 ? { x: randomX, y: randomY } : { x: 10, y: 10 };
 
     const aboutEl = (
       <div
-        className={this.state.visible ? "About" : "About About--hidden"}
+        className={this.props.data.visible ? "About" : "About About--hidden"}
         style={{
-          zIndex: this.state.zIndex
+          zIndex: this.state.zIndex,
         }}
       >
         <div className="About__Upper">
@@ -93,7 +83,7 @@ class About extends Component {
           <button
             aria-label="Close About"
             className="About__Close"
-            onClick={this.hideAbout}
+            onClick={() => this.props.toggleFrame(this.props.data.key)}
           >
             <img alt="Close" draggable="false" src={topRight}></img>
           </button>
@@ -240,7 +230,7 @@ class About extends Component {
             <div
               style={{
                 display: "flex",
-                width: "100%"
+                width: "100%",
               }}
             >
               <img
@@ -258,14 +248,14 @@ class About extends Component {
       </div>
     );
 
-    if (this.state.width > 768) {
+    if (this.props.width > 768) {
       return (
         <Draggable
           axis="both"
           bounds="parent"
           handle=".Handle"
           defaultPosition={defaultPosition}
-          disabled={this.state.width <= 768 ? true : false}
+          disabled={this.props.width <= 768 ? true : false}
           onMouseDown={this.handleAboutClick}
           position={null}
           scale={1}
