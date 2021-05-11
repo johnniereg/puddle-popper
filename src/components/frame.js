@@ -243,6 +243,7 @@ class Frame extends Component {
     );
 
     if (this.props.width > 768) {
+      console.log("return with draggable");
       return (
         <Draggable
           axis="both"
@@ -258,6 +259,7 @@ class Frame extends Component {
         </Draggable>
       );
     } else {
+      console.log("return without draggable");
       return <div>{frameEl}</div>;
     }
   }
