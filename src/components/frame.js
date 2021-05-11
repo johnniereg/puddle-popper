@@ -90,6 +90,7 @@ class Frame extends Component {
   }
 
   render() {
+    console.log(this.props.width, "width in render");
     const arrowStyles = {
       zIndex: this.state.zIndex + 1,
     };
