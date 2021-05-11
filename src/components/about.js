@@ -15,30 +15,35 @@ class About extends Component {
 
     this.state = {
       ...this.props.data,
+      height: 0,
       visible: false,
-      width: this.props.width,
-      zIndex: 2
+      width: 0,
+      zIndex: 2,
     };
 
     this.hideAbout = this.hideAbout.bind(this);
     this.handleAboutClick = this.handleAboutClick.bind(this);
-    this.toggleAbout = this.toggleAbout.bind(this);
     this.sendToBack = this.sendToBack.bind(this);
+    this.toggleAbout = this.toggleAbout.bind(this);
+    this.updateWindowDimensions = this.updateWindowDimensions.bind(this);
   }
 
   componentDidMount() {
     PubSub.subscribe("toggleFrame", this.toggleAbout);
     PubSub.subscribe("sendToBack", this.sendToBack);
+    this.updateWindowDimensions();
+    window.addEventListener("resize", this.updateWindowDimensions);
   }
 
   componentWillUnmount() {
     PubSub.unsubscribeAll();
+    window.removeEventListener("resize", this.updateWindowDimensions);
   }
 
   handleAboutClick() {
     // Bring clicked frame to front
     this.setState({
-      zIndex: 10
+      zIndex: 10,
     });
     // Send other frames to back
     PubSub.publish("sendToBack", this.state.key);
@@ -47,29 +52,33 @@ class About extends Component {
   hideAbout() {
     this.setState({
       visible: false,
-      zIndex: 2
+      zIndex: 2,
     });
   }
 
   sendToBack(msg, data) {
     if (data !== this.state.key) {
       this.setState({
-        zIndex: 2
+        zIndex: 2,
       });
     }
   }
 
   toggleAbout(msg, data) {
     if (data === this.state.key) {
-      this.setState(prevState => ({
+      this.setState((prevState) => ({
         visible: !prevState.visible,
-        zIndex: 10
+        zIndex: 10,
       }));
     } else {
       this.setState({
-        zIndex: 2
+        zIndex: 2,
       });
     }
+  }
+
+  updateWindowDimensions() {
+    this.setState({ width: window.innerWidth, height: window.innerHeight });
   }
 
   render() {
@@ -83,7 +92,7 @@ class About extends Component {
       <div
         className={this.state.visible ? "About" : "About About--hidden"}
         style={{
-          zIndex: this.state.zIndex
+          zIndex: this.state.zIndex,
         }}
       >
         <div className="About__Upper">
@@ -240,7 +249,7 @@ class About extends Component {
             <div
               style={{
                 display: "flex",
-                width: "100%"
+                width: "100%",
               }}
             >
               <img
