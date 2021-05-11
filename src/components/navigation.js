@@ -36,7 +36,6 @@ class Navigation extends Component {
     event.preventDefault();
     event.stopPropagation();
     const key = parseInt(event.currentTarget.getAttribute("data-key"));
-    console.log(key);
     PubSub.publish("toggleFrame", key);
   }
 

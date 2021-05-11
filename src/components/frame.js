@@ -68,18 +68,11 @@ class Frame extends Component {
   }
 
   toggleFrame(msg, data) {
-    console.log("toggle frame called", data);
-    console.log("state before", this.state);
     if (data === this.state.key) {
-      this.setState(
-        (prevState) => ({
-          visible: !prevState.visible,
-          zIndex: 10,
-        }),
-        () => {
-          console.log("state after", this.state);
-        }
-      );
+      this.setState((prevState) => ({
+        visible: !prevState.visible,
+        zIndex: 10,
+      }));
     } else {
       this.setState({
         zIndex: 2,
@@ -106,7 +99,7 @@ class Frame extends Component {
     const randomY = Math.random() * (100 - 20) + 20;
 
     const defaultPosition =
-      this.props.width > 768 ? { x: randomX, y: randomY } : { x: 10, y: 10 };
+      this.state.width > 768 ? { x: randomX, y: randomY } : { x: 10, y: 10 };
 
     const sortedImages = this.state.images.edges.sort((a, b) => {
       if (a.node.base < b.node.base) {
@@ -250,8 +243,7 @@ class Frame extends Component {
       </div>
     );
 
-    if (this.props.width > 768) {
-      console.log("return with draggable");
+    if (this.state.width > 768) {
       return (
         <Draggable
           axis="both"
@@ -267,7 +259,6 @@ class Frame extends Component {
         </Draggable>
       );
     } else {
-      console.log("return without draggable");
       return <div>{frameEl}</div>;
     }
   }
