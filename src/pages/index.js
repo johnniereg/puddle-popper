@@ -5,7 +5,7 @@ import { useStaticQuery, graphql } from "gatsby"; // to query for image data
 import App from "../components/app";
 
 const getWidth = () => {
-  const mobileBreakpoint = 769;
+  const mobileBreakpoint = 768;
 
   if (typeof window !== "undefined") {
     return window.innerWidth;
