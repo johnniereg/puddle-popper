@@ -20,7 +20,7 @@ class Frame extends Component {
       showDetails: false,
       visible: false,
       width: this.props.width,
-      zIndex: 2
+      zIndex: 2,
     };
 
     this.handleFrameClick = this.handleFrameClick.bind(this);
@@ -42,7 +42,7 @@ class Frame extends Component {
   handleFrameClick() {
     // Bring clicked frame to front
     this.setState({
-      zIndex: 10
+      zIndex: 10,
     });
     // Send other frames to back
     PubSub.publish("sendToBack", this.state.key);
@@ -51,40 +51,42 @@ class Frame extends Component {
   hideFrame() {
     this.setState({
       visible: false,
-      zIndex: 2
+      zIndex: 2,
     });
   }
 
   sendToBack(msg, data) {
     if (data !== this.state.key) {
       this.setState({
-        zIndex: 2
+        zIndex: 2,
       });
     }
   }
 
   toggleFrame(msg, data) {
+    console.log("toggle frame called", data);
+    console.log(this.state);
     if (data === this.state.key) {
-      this.setState(prevState => ({
+      this.setState((prevState) => ({
         visible: !prevState.visible,
-        zIndex: 10
+        zIndex: 10,
       }));
     } else {
       this.setState({
-        zIndex: 2
+        zIndex: 2,
       });
     }
   }
 
   toggleDetails() {
-    this.setState(prevState => ({
-      showDetails: !prevState.showDetails
+    this.setState((prevState) => ({
+      showDetails: !prevState.showDetails,
     }));
   }
 
   render() {
     const arrowStyles = {
-      zIndex: this.state.zIndex + 1
+      zIndex: this.state.zIndex + 1,
     };
 
     const randomX = Math.random() * (200 - 20) + 20;
@@ -111,7 +113,7 @@ class Frame extends Component {
             : `Frame Frame--${this.state.orientation} Frame--hidden  Handle`
         }
         style={{
-          zIndex: this.state.zIndex
+          zIndex: this.state.zIndex,
         }}
       >
         {this.state.description && (
@@ -120,7 +122,7 @@ class Frame extends Component {
               this.state.showDetails ? "Details" : "Details Details--hidden"
             }
             style={{
-              zIndex: this.state.zIndex + 2
+              zIndex: this.state.zIndex + 2,
             }}
           >
             <div>
