@@ -274,6 +274,7 @@ const IndexPage = () => {
   `);
 
   let width = useCurrentWidth();
+  console.log(width, "width");
   return <App width={width} exhibitImages={exhibitImages} />;
 };
 
