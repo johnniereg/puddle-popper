@@ -15,7 +15,7 @@ class Navigation extends Component {
     super(props);
 
     this.state = {
-      mobileMenuVisible: false
+      mobileMenuVisible: false,
     };
 
     this.toggleMobileMenu = this.toggleMobileMenu.bind(this);
@@ -24,6 +24,7 @@ class Navigation extends Component {
 
   handleButtonClick(event) {
     event.preventDefault();
+    event.stopPropagation();
     const key = parseInt(event.currentTarget.getAttribute("data-key"));
     console.log(key);
     PubSub.publish("toggleFrame", key);
@@ -62,14 +63,14 @@ class Navigation extends Component {
   }
 
   toggleMobileMenu() {
-    this.setState(prevState => ({
-      mobileMenuVisible: !prevState.mobileMenuVisible
+    this.setState((prevState) => ({
+      mobileMenuVisible: !prevState.mobileMenuVisible,
     }));
   }
 
   hideMobileMenu() {
     this.setState({
-      mobileMenuVisible: false
+      mobileMenuVisible: false,
     });
   }
 
