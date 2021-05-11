@@ -16,8 +16,7 @@ class Dewdrops extends Component {
 
     this.state = {
       items: this.props.items,
-      width: this.props.width,
-      icons: [drop1, drop2, drop3, drop4, drop5, drop6, drop7, drop8]
+      icons: [drop1, drop2, drop3, drop4, drop5, drop6, drop7, drop8],
     };
   }
 

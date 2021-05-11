@@ -85,9 +85,8 @@ class LumpWorld extends Component {
       description: {
         artist: "Juli Majer collaboration with Scott Lougheed",
         materialsFormatYear: "digital interactive game, 2021",
-        text:
-          "Digital drag and drop game featuring 3D-rendered creatures, plants, fruit, objects and furniture in a lounge-like digital space.",
-        title: "LumpWorld"
+        text: "Digital drag and drop game featuring 3D-rendered creatures, plants, fruit, objects and furniture in a lounge-like digital space.",
+        title: "LumpWorld",
       },
       objects: [
         { id: 0, inPlay: false, icon: icon1, img: obj1, zIndex: 0 },
@@ -121,13 +120,13 @@ class LumpWorld extends Component {
         { id: 28, inPlay: false, icon: icon29, img: obj29, zIndex: 0 },
         { id: 29, inPlay: false, icon: icon30, img: obj30, zIndex: 0 },
         { id: 30, inPlay: false, icon: icon31, img: obj31, zIndex: 0 },
-        { id: 31, inPlay: false, icon: icon32, img: obj32, zIndex: 0 }
+        { id: 31, inPlay: false, icon: icon32, img: obj32, zIndex: 0 },
       ],
       objectsInPlay: 0,
       showDetails: false,
       visible: false,
-      width: this.props.width,
-      zIndex: 2
+      width: 0,
+      zIndex: 2,
     };
 
     this.hideLumpWorld = this.hideLumpWorld.bind(this);
@@ -137,21 +136,29 @@ class LumpWorld extends Component {
     this.toggleDetails = this.toggleDetails.bind(this);
     this.updateBg = this.updateBg.bind(this);
     this.sendToBack = this.sendToBack.bind(this);
+    this.updateWindowDimensions = this.updateWindowDimensions.bind(this);
   }
 
   componentDidMount() {
     PubSub.subscribe("toggleFrame", this.toggleLumpWorld);
     PubSub.subscribe("sendToBack", this.sendToBack);
+    this.updateWindowDimensions();
+    window.addEventListener("resize", this.updateWindowDimensions);
   }
 
   componentWillUnmount() {
     PubSub.unsubscribeAll();
+    window.removeEventListener("resize", this.updateWindowDimensions);
+  }
+
+  updateWindowDimensions() {
+    this.setState({ width: window.innerWidth, height: window.innerHeight });
   }
 
   handleLumpWorldClick() {
     // Bring clicked frame to front
     this.setState({
-      zIndex: 10
+      zIndex: 10,
     });
     // Send other frames to back
     PubSub.publish("sendToBack", this.state.key);
@@ -159,7 +166,7 @@ class LumpWorld extends Component {
 
   hideLumpWorld() {
     const objects = this.state.objects;
-    objects.forEach(obj => {
+    objects.forEach((obj) => {
       obj.inPlay = false;
       obj.zIndex = 0;
     });
@@ -167,34 +174,34 @@ class LumpWorld extends Component {
     this.setState({
       objects: objects,
       visible: false,
-      zIndex: 2
+      zIndex: 2,
     });
   }
 
   sendToBack(msg, data) {
     if (data !== this.state.key) {
       this.setState({
-        zIndex: 2
+        zIndex: 2,
       });
     }
   }
 
   toggleLumpWorld(msg, data) {
     if (data === this.state.key) {
-      this.setState(prevState => ({
+      this.setState((prevState) => ({
         visible: !prevState.visible,
-        zIndex: 10
+        zIndex: 10,
       }));
     } else {
       this.setState({
-        zIndex: 2
+        zIndex: 2,
       });
     }
   }
 
   toggleDetails() {
-    this.setState(prevState => ({
-      showDetails: !prevState.showDetails
+    this.setState((prevState) => ({
+      showDetails: !prevState.showDetails,
     }));
   }
 
@@ -205,9 +212,9 @@ class LumpWorld extends Component {
     objects[key].inPlay = !isInPlay;
     objects[key]["zIndex"] = this.state.objectsInPlay + this.state.zIndex;
 
-    this.setState(prevState => ({
+    this.setState((prevState) => ({
       objects: objects,
-      objectsInPlay: prevState.objectsInPlay + 1
+      objectsInPlay: prevState.objectsInPlay + 1,
     }));
   }
 
@@ -215,7 +222,7 @@ class LumpWorld extends Component {
     const bgType = e.currentTarget.getAttribute("data-bg-type");
 
     this.setState({
-      bg: bgType
+      bg: bgType,
     });
   }
 
@@ -232,7 +239,7 @@ class LumpWorld extends Component {
           this.state.visible ? "LumpWorld" : "LumpWorld LumpWorld--hidden"
         }
         style={{
-          zIndex: this.state.zIndex
+          zIndex: this.state.zIndex,
         }}
       >
         <div className="LumpWorld__Upper Handle">
@@ -300,7 +307,7 @@ class LumpWorld extends Component {
                         : `LumpWorld__Object Cursor--Move Hidden`
                     }
                     style={{
-                      zIndex: obj.zIndex
+                      zIndex: obj.zIndex,
                     }}
                   >
                     <img
@@ -319,7 +326,7 @@ class LumpWorld extends Component {
                   this.state.showDetails ? "Details" : "Details Details--hidden"
                 }
                 style={{
-                  zIndex: "100"
+                  zIndex: "100",
                 }}
               >
                 <div>

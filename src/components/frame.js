@@ -19,7 +19,7 @@ class Frame extends Component {
       ...this.props.data,
       showDetails: false,
       visible: false,
-      width: this.props.width,
+      width: 0,
       zIndex: 2,
     };
 
@@ -28,15 +28,19 @@ class Frame extends Component {
     this.sendToBack = this.sendToBack.bind(this);
     this.toggleDetails = this.toggleDetails.bind(this);
     this.toggleFrame = this.toggleFrame.bind(this);
+    this.updateWindowDimensions = this.updateWindowDimensions.bind(this);
   }
 
   componentDidMount() {
     PubSub.subscribe("toggleFrame", this.toggleFrame);
     PubSub.subscribe("sendToBack", this.sendToBack);
+    this.updateWindowDimensions();
+    window.addEventListener("resize", this.updateWindowDimensions);
   }
 
   componentWillUnmount() {
     PubSub.unsubscribeAll();
+    window.removeEventListener("resize", this.updateWindowDimensions);
   }
 
   handleFrameClick() {
@@ -89,8 +93,11 @@ class Frame extends Component {
     }));
   }
 
+  updateWindowDimensions() {
+    this.setState({ width: window.innerWidth, height: window.innerHeight });
+  }
+
   render() {
-    console.log(this.props.width, "width in render");
     const arrowStyles = {
       zIndex: this.state.zIndex + 1,
     };

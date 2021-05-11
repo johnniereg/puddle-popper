@@ -20,6 +20,16 @@ class Navigation extends Component {
 
     this.toggleMobileMenu = this.toggleMobileMenu.bind(this);
     this.hideMobileMenu = this.hideMobileMenu.bind(this);
+    this.updateWindowDimensions = this.updateWindowDimensions.bind(this);
+  }
+
+  componentDidMount() {
+    this.updateWindowDimensions();
+    window.addEventListener("resize", this.updateWindowDimensions);
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener("resize", this.updateWindowDimensions);
   }
 
   handleButtonClick(event) {
@@ -72,6 +82,10 @@ class Navigation extends Component {
     this.setState({
       mobileMenuVisible: false,
     });
+  }
+
+  updateWindowDimensions() {
+    this.setState({ width: window.innerWidth, height: window.innerHeight });
   }
 
   render() {
@@ -133,7 +147,7 @@ class Navigation extends Component {
       );
     });
 
-    if (this.props.width <= 768) {
+    if (this.state.width <= 768) {
       return (
         <nav className="Navigation Navigation--Mobile">
           <ul

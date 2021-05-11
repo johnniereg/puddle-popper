@@ -28,7 +28,6 @@ class App extends Component {
     this.exhibitImages = this.props.exhibitImages;
 
     this.state = {
-      width: this.props.width,
       navItems: {
         0: {
           key: 0,
@@ -252,12 +251,8 @@ class App extends Component {
           <title>Puddle Popper Lounge</title>
           <link rel="canonical" href="https://lounge.puddlepopper.com" />
         </Helmet>
-        <Main
-          data={this.state.navItems}
-          exhibits={this.props.exhibitImages}
-          width={this.props.width}
-        />
-        <Navigation data={this.state.navItems} width={this.props.width} />
+        <Main data={this.state.navItems} exhibits={this.props.exhibitImages} />
+        <Navigation data={this.state.navItems} />
       </div>
     );
   }
