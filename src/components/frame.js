@@ -65,12 +65,17 @@ class Frame extends Component {
 
   toggleFrame(msg, data) {
     console.log("toggle frame called", data);
-    console.log(this.state);
+    console.log("state before", this.state);
     if (data === this.state.key) {
-      this.setState((prevState) => ({
-        visible: !prevState.visible,
-        zIndex: 10,
-      }));
+      this.setState(
+        (prevState) => ({
+          visible: !prevState.visible,
+          zIndex: 10,
+        }),
+        () => {
+          console.log("state after", this.state);
+        }
+      );
     } else {
       this.setState({
         zIndex: 2,
@@ -93,7 +98,7 @@ class Frame extends Component {
     const randomY = Math.random() * (100 - 20) + 20;
 
     const defaultPosition =
-      this.state.width > 768 ? { x: randomX, y: randomY } : { x: 10, y: 10 };
+      this.props.width > 768 ? { x: randomX, y: randomY } : { x: 10, y: 10 };
 
     const sortedImages = this.state.images.edges.sort((a, b) => {
       if (a.node.base < b.node.base) {
@@ -237,14 +242,13 @@ class Frame extends Component {
       </div>
     );
 
-    if (this.state.width > 768) {
+    if (this.props.width > 768) {
       return (
         <Draggable
           axis="both"
           bounds="parent"
           cancel={".Carousel__Wrapper"}
           defaultPosition={defaultPosition}
-          disabled={this.state.width <= 768 ? true : false}
           handle=".Handle"
           onMouseDown={this.handleFrameClick}
           position={null}
