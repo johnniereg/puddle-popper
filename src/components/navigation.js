@@ -1,12 +1,9 @@
 import React, { Component } from "react";
-import PubSub from "pubsub-js";
 
-// import navBgImg from "../images/navigation/Menu_bar.png";
 import navBgLeft from "../images/navigation/Menu_End_Left_revised_noshadow.png";
 import navBgRight from "../images/navigation/Menu_End_Right_revised_noshadow.png";
 import navBgUp from "../images/navigation/Menu_Interior_Upper_revised_noshadow.png";
 import navBgDown from "../images/navigation/Menu_Interior_Lower_revised_noshadow.png";
-
 import leftArrow from "../images/navigation/Left_Facing_Arrow.png";
 import rightArrow from "../images/navigation/Right_Facing_Arrow.png";
 
@@ -15,18 +12,11 @@ class Navigation extends Component {
     super(props);
 
     this.state = {
-      mobileMenuVisible: false
+      mobileMenuVisible: false,
     };
 
     this.toggleMobileMenu = this.toggleMobileMenu.bind(this);
     this.hideMobileMenu = this.hideMobileMenu.bind(this);
-  }
-
-  handleButtonClick(event) {
-    event.preventDefault();
-    const key = parseInt(event.currentTarget.getAttribute("data-key"));
-    console.log(key);
-    PubSub.publish("toggleFrame", key);
   }
 
   determineBgImage(index, length) {
@@ -62,14 +52,14 @@ class Navigation extends Component {
   }
 
   toggleMobileMenu() {
-    this.setState(prevState => ({
-      mobileMenuVisible: !prevState.mobileMenuVisible
+    this.setState((prevState) => ({
+      mobileMenuVisible: !prevState.mobileMenuVisible,
     }));
   }
 
   hideMobileMenu() {
     this.setState({
-      mobileMenuVisible: false
+      mobileMenuVisible: false,
     });
   }
 
@@ -91,7 +81,7 @@ class Navigation extends Component {
           ></img>
           <button
             className="Navigation__Button"
-            onClick={this.handleButtonClick}
+            onClick={() => this.props.toggleFrame(key)}
             data-key={key}
           >
             {exhibit.icon ? (
@@ -114,7 +104,7 @@ class Navigation extends Component {
         <li className="Navigation__Item" key={key}>
           <button
             className="Navigation__Button"
-            onClick={this.handleButtonClick}
+            onClick={() => this.props.toggleFrame(key)}
             data-key={key}
           >
             {exhibit.icon ? (

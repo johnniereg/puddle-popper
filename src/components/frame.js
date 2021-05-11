@@ -16,22 +16,17 @@ class Frame extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      ...this.props.data,
       showDetails: false,
-      visible: false,
-      width: this.props.width,
-      zIndex: 2
+      zIndex: 2,
     };
 
     this.handleFrameClick = this.handleFrameClick.bind(this);
-    this.hideFrame = this.hideFrame.bind(this);
     this.sendToBack = this.sendToBack.bind(this);
     this.toggleDetails = this.toggleDetails.bind(this);
     this.toggleFrame = this.toggleFrame.bind(this);
   }
 
   componentDidMount() {
-    PubSub.subscribe("toggleFrame", this.toggleFrame);
     PubSub.subscribe("sendToBack", this.sendToBack);
   }
 
@@ -42,58 +37,51 @@ class Frame extends Component {
   handleFrameClick() {
     // Bring clicked frame to front
     this.setState({
-      zIndex: 10
+      zIndex: 10,
     });
     // Send other frames to back
-    PubSub.publish("sendToBack", this.state.key);
-  }
-
-  hideFrame() {
-    this.setState({
-      visible: false,
-      zIndex: 2
-    });
+    PubSub.publish("sendToBack", this.props.data.key);
   }
 
   sendToBack(msg, data) {
-    if (data !== this.state.key) {
+    if (data !== this.props.data.key) {
       this.setState({
-        zIndex: 2
+        zIndex: 2,
       });
     }
   }
 
   toggleFrame(msg, data) {
-    if (data === this.state.key) {
-      this.setState(prevState => ({
-        visible: !prevState.visible,
-        zIndex: 10
+    if (data === this.props.data.key) {
+      this.setState((prevState) => ({
+        // visible: !prevState.visible,
+        zIndex: 10,
       }));
     } else {
       this.setState({
-        zIndex: 2
+        zIndex: 2,
       });
     }
   }
 
   toggleDetails() {
-    this.setState(prevState => ({
-      showDetails: !prevState.showDetails
+    this.setState((prevState) => ({
+      showDetails: !prevState.showDetails,
     }));
   }
 
   render() {
     const arrowStyles = {
-      zIndex: this.state.zIndex + 1
+      zIndex: this.state.zIndex + 1,
     };
 
     const randomX = Math.random() * (200 - 20) + 20;
     const randomY = Math.random() * (100 - 20) + 20;
 
     const defaultPosition =
-      this.state.width > 768 ? { x: randomX, y: randomY } : { x: 10, y: 10 };
+      this.props.width > 768 ? { x: randomX, y: randomY } : { x: 10, y: 10 };
 
-    const sortedImages = this.state.images.edges.sort((a, b) => {
+    const sortedImages = this.props.data.images.edges.sort((a, b) => {
       if (a.node.base < b.node.base) {
         return -1;
       }
@@ -106,34 +94,34 @@ class Frame extends Component {
     const frameEl = (
       <div
         className={
-          this.state.visible
-            ? `Frame Frame--${this.state.orientation} Handle`
-            : `Frame Frame--${this.state.orientation} Frame--hidden  Handle`
+          this.props.data.visible
+            ? `Frame Frame--${this.props.data.orientation} Handle`
+            : `Frame Frame--${this.props.data.orientation} Frame--hidden  Handle`
         }
         style={{
-          zIndex: this.state.zIndex
+          zIndex: this.state.zIndex,
         }}
       >
-        {this.state.description && (
+        {this.props.data.description && (
           <div
             className={
               this.state.showDetails ? "Details" : "Details Details--hidden"
             }
             style={{
-              zIndex: this.state.zIndex + 2
+              zIndex: this.state.zIndex + 2,
             }}
           >
             <div>
               <p>
-                {this.state.description.artist},{" "}
-                <em>{this.state.description.title}</em>,{" "}
-                {this.state.description.materialsFormatYear}
+                {this.props.data.description.artist},{" "}
+                <em>{this.props.data.description.title}</em>,{" "}
+                {this.props.data.description.materialsFormatYear}
               </p>
-              {this.state.description.photoCredit && (
-                <p>{this.state.description.photoCredit}</p>
+              {this.props.data.description.photoCredit && (
+                <p>{this.props.data.description.photoCredit}</p>
               )}
               <p>-----</p>
-              <p>{this.state.description.text}</p>
+              <p>{this.props.data.description.text}</p>
             </div>
           </div>
         )}
@@ -144,13 +132,13 @@ class Frame extends Component {
           <button
             aria-label="Close"
             className="Frame__Control Frame__Control--Close Cursor--Pointer"
-            onClick={this.hideFrame}
+            onClick={() => this.props.toggleFrame(this.props.data.key)}
             style={{ backgroundImage: `url(${closeIcon})` }}
           ></button>
         </div>
         <div
           className={
-            this.state.orientation === "landscape"
+            this.props.data.orientation === "landscape"
               ? "Carousel__Wrapper Carousel__Wrapper--Landscape Cursor--Default"
               : "Carousel__Wrapper Carousel__Wrapper--Portrait Cursor--Default"
           }
@@ -191,7 +179,7 @@ class Frame extends Component {
             swipeable={false}
             useKeyboardArrows={true}
           >
-            {this.state.images &&
+            {this.props.data.images &&
               sortedImages.map((image, index) => {
                 if (image.node.base.includes("spider")) {
                   return (
@@ -219,7 +207,7 @@ class Frame extends Component {
               })}
           </Carousel>
         </div>
-        {this.state.description && (
+        {this.props.data.description && (
           <div
             className="Controls Controls--Bottom"
             style={{ zIndex: this.state.zIndex + 3 }}
@@ -235,14 +223,14 @@ class Frame extends Component {
       </div>
     );
 
-    if (this.state.width > 768) {
+    if (this.props.width > 768) {
       return (
         <Draggable
           axis="both"
           bounds="parent"
           cancel={".Carousel__Wrapper"}
           defaultPosition={defaultPosition}
-          disabled={this.state.width <= 768 ? true : false}
+          disabled={this.props.width <= 768 ? true : false}
           handle=".Handle"
           onMouseDown={this.handleFrameClick}
           position={null}
