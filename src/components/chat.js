@@ -2,11 +2,6 @@ import React, { Component } from "react";
 import Draggable from "react-draggable";
 import PubSub from "pubsub-js";
 
-import topLeft from "../images/chat/top_bar_solid.png";
-import topRight from "../images/chat/close_button_with_X.png";
-import bottomLeft from "../images/chat/bottom_bar_solid.png";
-import bottomRight from "../images/chat/send_button_with_text.png";
-
 class Chat extends Component {
   constructor(props) {
     super(props);
