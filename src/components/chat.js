@@ -254,13 +254,7 @@ class Chat extends Component {
         }}
       >
         <div className="Chat__Upper">
-          <div className="Chat__UserWrapper">
-            <img
-              alt=""
-              className="Handle"
-              draggable="false"
-              src={topLeft}
-            ></img>
+          <div className="Chat__Upper--Left">
             <input
               aria-label="Username"
               className="Chat__Input Chat__Input--User"
@@ -271,14 +265,17 @@ class Chat extends Component {
               value={this.state.userName}
             ></input>
           </div>
-          <button
-            aria-label="Close Chat"
-            className="Chat__Close Cursor--Pointer"
-            onClick={this.hideChat}
-          >
-            <img alt="Close Chat" draggable="false" src={topRight}></img>
-          </button>
+          <div className="Chat__Upper--Right">
+            <button
+              aria-label="Close Chat"
+              className="Chat__Close Cursor--Pointer"
+              onClick={this.hideChat}
+            >
+              <span>X</span>
+            </button>
+          </div>
         </div>
+
         <div className="Chat__ContentWrapper">
           <div className="Chat__Content Cursor--Text">
             {this.state.chatLog.map((entry, index) => {
@@ -304,13 +301,7 @@ class Chat extends Component {
           </div>
         </div>
         <div className="Chat__Lower">
-          <div className="Chat__InputWrapper">
-            <img
-              alt=""
-              className="Handle"
-              draggable="false"
-              src={bottomLeft}
-            ></img>
+          <div className="Chat__Lower--Left">
             <input
               className="Chat__Input Chat__Input--Text"
               type="text"
@@ -319,17 +310,15 @@ class Chat extends Component {
               value={this.state.textToSubmit}
             ></input>
           </div>
-          <button
-            aria-label="Submit Chat Text"
-            className="Chat__Submit Cursor--Pointer"
-            type="submit"
-          >
-            <img
-              alt="Submit Chat Text"
-              draggable="false"
-              src={bottomRight}
-            ></img>
-          </button>
+          <div className="Chat__Lower--Right">
+            <button
+              aria-label="Submit Chat Text"
+              className="Chat__Submit Cursor--Pointer"
+              type="submit"
+            >
+              <span>SEND</span>
+            </button>
+          </div>
         </div>
       </form>
     );
