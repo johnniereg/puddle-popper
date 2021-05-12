@@ -73,6 +73,7 @@
 
 .Chat__ContentWrapper {
   display: flex;
+  height: 358px;
 
   &:after,
   &:before {
@@ -89,7 +90,7 @@
 .Chat__Content {
   background-color: #fffef2;
   cursor: $cursor-text;
-  height: 358px;
+  height: 100%;
   overflow-y: auto;
   padding: 22px 27px;
   width: 516px;
