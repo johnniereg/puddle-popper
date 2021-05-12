@@ -99,8 +99,8 @@
 
   .Chat__Entry {
     font-family: "IBM Plex Mono", monospace;
-    font-size: 16px;
-    line-height: 18px;
+    font-size: 14px;
+    line-height: 16px;
     margin: 0 0 13px;
 
     &--Bot {
@@ -117,7 +117,7 @@
   }
 
   .Entry__Text {
-    font-weight: regular;
+    font-weight: normal;
   }
 }
 
