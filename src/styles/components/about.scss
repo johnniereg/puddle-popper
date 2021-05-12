@@ -3,7 +3,7 @@
   -webkit-filter: drop-shadow(3px 3px 1px #3f082f80);
   display: flex;
   flex-direction: column;
-  max-width: 600px;
+  max-width: 500px;
   position: absolute;
   width: 80vw;
 
@@ -20,21 +20,45 @@
 }
 
 .About__Upper {
+  color: #fae213;
   display: flex;
+  font-family: "OCR A Std";
+  font-size: 14px;
+  height: 48px;
   margin-bottom: 0px;
   position: relative;
 
-  @media screen and (min-width: 769px) {
-    height: 72px;
+  @media screen and (max-width: 768px) {
+    height: 36px;
   }
 
-  .ImageWrapper {
-    display: inherit;
+  &--Left {
+    background-image: url(../images/about/top_bar.png);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    display: flex;
+    align-items: center;
+    flex: 1 1 auto;
+    padding-left: 20px;
   }
 
-  img {
-    height: auto;
-    width: 100%;
+  &--Right {
+    align-items: center;
+    display: flex;
+    background-image: url(../images/about/close_button.png);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    justify-content: center;
+    width: 15%;
+
+    button {
+      align-items: center;
+      color: #fae213;
+      display: flex;
+      height: 100%;
+      justify-content: center;
+      width: 100%;
+    }
   }
 }
 
@@ -45,11 +69,11 @@
   &:before {
     background-image: url(../images/about/left_bar.png);
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size: 100% 100%;
     content: "";
     display: block;
     height: 358px;
-    width: 42px;
+    width: 21px;
   }
 }
 
@@ -63,9 +87,13 @@
   padding: 22px 27px;
   width: 516px;
 
+  @media screen and (max-width: 768px) {
+    padding: 14px 16px;
+  }
+
   h1 {
     color: #800000;
-    font-size: 18px;
+    font-size: 16px;
     font-weight: 500;
     line-height: 20px;
     margin: 0 0 17px;
@@ -80,7 +108,7 @@
   }
 
   p {
-    font-size: 16px;
+    font-size: 14px;
     line-height: 20px;
     margin: 0 0 17px;
   }
@@ -90,14 +118,33 @@
     cursor: $cursor-pointer;
     text-decoration: none;
   }
+
+  hr {
+    border: 1px dashed #800000;
+    border-style: none none dashed;
+    color: #fff;
+    background-color: #fff;
+  }
+
+  .CCLogo {
+    height: 50px;
+    width: auto;
+
+    @media screen and (max-width: 768px) {
+      height: 36px;
+    }
+  }
 }
 
 .About__Lower {
-  background-color: transparent;
+  background-image: url(../images/about/bottom_bar.png);
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  height: 48px;
+  width: 100%;
 
-  img {
-    height: auto;
-    width: 100%;
+  @media screen and (max-width: 768px) {
+    height: 36px;
   }
 }
 

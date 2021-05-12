@@ -2,10 +2,6 @@ import React, { Component } from "react";
 import Draggable from "react-draggable";
 import PubSub from "pubsub-js";
 
-import bottom from "../images/about/bottom_bar.png";
-import topLeft from "../images/about/top_bar_with_About.png";
-import topRight from "../images/about/close_button_with_x.png";
-
 import tentacle from "../images/about/tentaclecrop.jpg";
 import canadaCouncil from "../images/about/CCA_RGB_black_e.png";
 
@@ -96,16 +92,18 @@ class About extends Component {
         }}
       >
         <div className="About__Upper">
-          <div className="ImageWrapper Handle Cursor--Move">
-            <img alt="About" draggable="false" src={topLeft}></img>
+          <div className="About__Upper--Left Handle Cursor--Move">
+            <span>ABOUT</span>
           </div>
-          <button
-            aria-label="Close About"
-            className="About__Close"
-            onClick={this.hideAbout}
-          >
-            <img alt="Close" draggable="false" src={topRight}></img>
-          </button>
+          <div className="About__Upper--Right">
+            <button
+              aria-label="Close About"
+              className="About__Close"
+              onClick={this.hideAbout}
+            >
+              <span>X</span>
+            </button>
+          </div>
         </div>
         <div className="About__ContentWrapper">
           <div className="About__Content">
@@ -150,7 +148,6 @@ class About extends Component {
               web developer Johnnie Regalado, and 3D artist Scott Lougheed to
               realize our ideas in the digital realm.
             </p>
-
             <div style={{ marginBottom: "17px", width: "100%" }}>
               <img
                 style={{ height: "auto", width: "100%" }}
@@ -243,6 +240,8 @@ class About extends Component {
               fleshy realities both familiar and alien.
             </p>
 
+            <hr></hr>
+
             <p style={{ color: "#007000" }}>
               We acknowledge the support of the Canada Council for the Arts.
             </p>
@@ -254,16 +253,14 @@ class About extends Component {
             >
               <img
                 alt="Canada Council Logo"
+                className="CCLogo"
                 src={canadaCouncil}
-                style={{ height: "auto", width: "50%" }}
               ></img>
             </div>
           </div>
         </div>
 
-        <div className="About__Lower Handle Cursor--Move">
-          <img alt="" draggable="false" src={bottom}></img>
-        </div>
+        <div className="About__Lower Handle Cursor--Move"></div>
       </div>
     );
 
