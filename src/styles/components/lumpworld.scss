@@ -45,7 +45,6 @@
     display: flex;
     align-items: center;
     flex: 1 1 auto;
-    padding-left: 20px;
   }
 
   &--Right {
@@ -131,7 +130,7 @@
     width: 25%;
 
     @media screen and (max-width: 768px) {
-      height: 66%;
+      height: 40%;
       width: 100%;
     }
   }
@@ -202,11 +201,7 @@
   }
 
   @media screen and (max-width: 768px) {
-    flex: 0 1 20%;
-
-    img {
-      width: 25%;
-    }
+    flex: 1 1 15%;
   }
 }
 
