@@ -51,6 +51,10 @@
     justify-content: center;
     width: 15%;
 
+    @media screen and (max-width: 768px) {
+      width: 25%;
+    }
+
     button {
       align-items: center;
       color: #fae213;
@@ -73,7 +77,7 @@
     content: "";
     display: block;
     height: 358px;
-    width: 21px;
+    width: 30px;
   }
 }
 
