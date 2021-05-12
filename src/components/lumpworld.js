@@ -244,7 +244,6 @@ class LumpWorld extends Component {
       >
         <div className="LumpWorld__Upper Handle">
           <div className="LumpWorld__Upper--Left Handle">
-            <img alt="" draggable={false} src={topLeft}></img>
             <div className="LumpWorld__ButtonWrapper">
               <button
                 alt="Toggle background to day"
@@ -272,7 +271,7 @@ class LumpWorld extends Component {
               className="LumpWorld__Close Cursor--Pointer"
               onClick={this.hideLumpWorld}
             >
-              <img alt="Close" draggable={false} src={topRight}></img>
+              <span>X</span>
             </button>
           </div>
         </div>
@@ -364,7 +363,6 @@ class LumpWorld extends Component {
           </div>
         </div>
         <div className="LumpWorld__Lower Handle">
-          <img alt="" draggable={false} src={bottom}></img>
           <div className="LumpWorld__ButtonWrapper">
             <button
               aria-label="Show Details"
