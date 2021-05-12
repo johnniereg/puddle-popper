@@ -2,9 +2,6 @@ import React, { Component } from "react";
 import Draggable from "react-draggable";
 import PubSub from "pubsub-js";
 
-import topLeft from "../images/lumpworld/LW_bar_top.png";
-import topRight from "../images/lumpworld/LW_button_close.png";
-import bottom from "../images/lumpworld/LW_bar_bottom.png";
 import btnDay from "../images/lumpworld/LW_button_day.png";
 import btnNight from "../images/lumpworld/LW_button_night.png";
 import btnAbout from "../images/lumpworld/LW_button_about.png";
@@ -41,6 +38,7 @@ import obj29 from "../images/lumpworld/objects/LWObj29.png";
 import obj30 from "../images/lumpworld/objects/LWObj30.png";
 import obj31 from "../images/lumpworld/objects/LWObj31.png";
 import obj32 from "../images/lumpworld/objects/LWObj32.png";
+import obj33 from "../images/lumpworld/objects/LWObj33.png";
 
 import icon1 from "../images/lumpworld/icons/LWIcon01.png";
 import icon2 from "../images/lumpworld/icons/LWIcon02.png";
@@ -74,6 +72,7 @@ import icon29 from "../images/lumpworld/icons/LWIcon29.png";
 import icon30 from "../images/lumpworld/icons/LWIcon30.png";
 import icon31 from "../images/lumpworld/icons/LWIcon31.png";
 import icon32 from "../images/lumpworld/icons/LWIcon32.png";
+import icon33 from "../images/lumpworld/icons/LWIcon33.png";
 
 class LumpWorld extends Component {
   constructor(props) {
@@ -121,6 +120,7 @@ class LumpWorld extends Component {
         { id: 29, inPlay: false, icon: icon30, img: obj30, zIndex: 0 },
         { id: 30, inPlay: false, icon: icon31, img: obj31, zIndex: 0 },
         { id: 31, inPlay: false, icon: icon32, img: obj32, zIndex: 0 },
+        { id: 32, inPlay: false, icon: icon33, img: obj33, zIndex: 0 },
       ],
       objectsInPlay: 0,
       showDetails: false,

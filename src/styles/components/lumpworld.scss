@@ -4,9 +4,9 @@
   filter: drop-shadow(3px 3px 1px #3f082f80);
   -webkit-filter: drop-shadow(3px 3px 1px #3f082f80);
   flex-direction: column;
-  max-width: 80vw;
+  max-width: 90vw;
   position: absolute;
-  width: 800px;
+  width: 1000px;
 
   @media screen and (max-width: 768px) {
     height: 90%;
@@ -55,6 +55,7 @@
     background-repeat: no-repeat;
     background-size: 100% 100%;
     justify-content: center;
+    max-width: 71px;
     width: 15%;
 
     @media screen and (max-width: 768px) {
@@ -75,7 +76,8 @@
 .LumpWorld__Main {
   background-color: #fffef2;
   display: flex;
-  height: 358px;
+  height: 500px;
+  max-height: 80vh;
 
   @media screen and (max-width: 768px) {
     flex-direction: column;
@@ -90,8 +92,8 @@
     background-size: 100% 100%;
     content: "";
     display: block;
-    height: 358px;
-    width: 21px;
+    height: 100%;
+    width: 30px;
 
     @media screen and (max-width: 768px) {
       display: none;
@@ -190,7 +192,7 @@
 .LumpWorld__Icon {
   align-items: center;
   display: flex;
-  flex: 1 1 25%;
+  flex: 1 1 20%;
   flex-direction: column;
   justify-content: center;
 
@@ -200,7 +202,7 @@
   }
 
   @media screen and (max-width: 768px) {
-    flex: 0 1 10%;
+    flex: 0 1 20%;
 
     img {
       width: 25%;
