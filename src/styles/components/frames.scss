@@ -16,6 +16,7 @@ $bevel-shadow: #72378d;
 
   @media screen and (max-width: 768px) {
     left: 50%;
+    padding: 25px;
     top: 50%;
     transform: translate(-50%, -50%);
     width: 90%;
@@ -31,6 +32,11 @@ $bevel-shadow: #72378d;
     height: 35px;
     width: 35px;
 
+    @media screen and (max-width: 768px) {
+      width: 18px;
+      height: 18px;
+    }
+
     &--Arrow {
       cursor: $cursor-pointer;
       height: 50px;
@@ -42,10 +48,22 @@ $bevel-shadow: #72378d;
 
     &--ArrowLeft {
       left: -45px;
+
+      @media screen and (max-width: 768px) {
+        height: auto;
+        left: -22px;
+        width: 18px;
+      }
     }
 
     &--ArrowRight {
       right: -45px;
+
+      @media screen and (max-width: 768px) {
+        height: auto;
+        right: -22px;
+        width: 18px;
+      }
     }
   }
 
@@ -67,10 +85,18 @@ $bevel-shadow: #72378d;
 
   &--Top {
     top: 7px;
+
+    @media screen and (max-width: 768px) {
+      top: 3px;
+    }
   }
 
   &--Bottom {
     bottom: 7px;
+
+    @media screen and (max-width: 768px) {
+      bottom: 3px;
+    }
   }
 }
 
@@ -91,6 +117,10 @@ $bevel-shadow: #72378d;
   position: absolute;
   right: 0;
   top: 0;
+
+  @media screen and (max-width: 768px) {
+    margin: 25px;
+  }
 
   &--hidden {
     display: none;
