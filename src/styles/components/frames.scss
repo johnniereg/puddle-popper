@@ -27,6 +27,8 @@ $bevel-shadow: #72378d;
   }
 
   &__Control {
+    background-repeat: no-repeat;
+    background-position: center;
     background-size: contain;
     cursor: $cursor-pointer;
     height: 35px;
