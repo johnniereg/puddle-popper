@@ -249,7 +249,7 @@ class Chat extends Component {
         }}
       >
         <div className="Chat__Upper">
-          <div className="Chat__Upper--Left">
+          <div className="Chat__Upper--Left Handle">
             <input
               aria-label="Username"
               className="Chat__Input Chat__Input--User"
@@ -296,7 +296,7 @@ class Chat extends Component {
           </div>
         </div>
         <div className="Chat__Lower">
-          <div className="Chat__Lower--Left">
+          <div className="Chat__Lower--Left Handle">
             <input
               className="Chat__Input Chat__Input--Text"
               type="text"
