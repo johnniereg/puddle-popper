@@ -23,7 +23,8 @@ class Main extends Component {
       juli_eastereggy: {
         description: {
           artist: "Juli Majer",
-          materialsFormatYear: "coloured pencil on vellum, 6.5” x 9.25”, 2021",
+          materialsFormatYear:
+            "coloured pencil on vellum, <span style='white-space; nowrap;'>6.5” x 9.25”</span>, 2021",
           text: "A coloured pencil drawing displaying alien mechanisms, bubbling forms and flower-like creatures emerging from a lotus root.",
           title: "Untitled",
         },
@@ -33,7 +34,7 @@ class Main extends Component {
         description: {
           artist: "Mel Thibodeau",
           materialsFormatYear:
-            "mixed fabrics and polyester stuffing, 94” x 48” (with arms extended), 2021",
+            "mixed fabrics and polyester stuffing, <span style='white-space; nowrap;'>94” x 48”</span> (with arms extended), 2021",
           text: "Video of the artist, Mel Thibodeau, dancing while wearing their sculpture made of multi textured, and variously coloured fake furs. While worn standing up, the sculpture extends from their head to their knees.",
           title: "Friend",
         },
@@ -55,7 +56,7 @@ class Main extends Component {
         description: {
           artist: "Sarah Davidson",
           materialsFormatYear:
-            "watercolour, ink and pencil crayon on paper, 15.75 x 12 in, 2021",
+            "watercolour, ink and pencil crayon on paper, <span style='white-space; nowrap;'>15.75 x 12 in</span>, 2021",
           text: "A drawing made up of dense, cross hatched line work depicts lily pads and eyeballs woven together to create a dense field of intersecting elements. Two frog eyes appear to regard the viewer. The muted colour palette of green, brown and blue creates a murky swamp of elements. Elements intersect to create movement and the appearance of floating.",
           title: "Thaw",
         },
@@ -65,7 +66,7 @@ class Main extends Component {
         description: {
           artist: "Sarah Davidson",
           materialsFormatYear:
-            "watercolour, ink, and pencil crayon on paper, 7.5 x 11.5 in, 2021",
+            "watercolour, ink, and pencil crayon on paper, <span style='white-space; nowrap;'>7.5 x 11.5 in</span>, 2021",
           text: "A drawing made up of dense, cross hatched line work depicts oak leaves, grasses and eyeballs woven together to create a dense field of intersecting elements. Two mismatched eyeballs are centered, one frog eye and one abstracted human eye, appear to regard the viewer. The muted colour palette of red, blue, black and yellow creates a murky swamp of elements. Elements intersect to create movement and the appearance of floating.",
           title: "Leaf Tender",
         },

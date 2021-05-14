@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import ReactHTMLParser from "react-html-parser";
 import Draggable from "react-draggable";
 import { GatsbyImage } from "gatsby-plugin-image";
 import { Carousel } from "react-responsive-carousel";
@@ -133,15 +134,15 @@ class Frame extends Component {
           >
             <div>
               <p>
-                {this.state.description.artist},{" "}
-                <em>{this.state.description.title}</em>,{" "}
-                {this.state.description.materialsFormatYear}
+                {ReactHTMLParser(this.state.description.artist)},{" "}
+                <em>{ReactHTMLParser(this.state.description.title)}</em>,{" "}
+                {ReactHTMLParser(this.state.description.materialsFormatYear)}
               </p>
               {this.state.description.photoCredit && (
-                <p>{this.state.description.photoCredit}</p>
+                <p>{ReactHTMLParser(this.state.description.photoCredit)}</p>
               )}
               <p>-----</p>
-              <p>{this.state.description.text}</p>
+              <p>{ReactHTMLParser(this.state.description.text)}</p>
             </div>
           </div>
         )}

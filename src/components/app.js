@@ -38,7 +38,7 @@ class App extends Component {
           description: {
             artist: "Sarah Davidson",
             materialsFormatYear:
-              "watercolour, ink and pencil crayon on paper, 31 x 48.5 in, 2021",
+              "watercolour, ink and pencil crayon on paper, <span style='white-space; nowrap;'>31 x 48.5 in</span>, 2021",
             text: "A drawing made up of dense, cross hatched line work depicts lily pads, butterflies and eyeballs woven together to create a dense field of intersecting elements. The muted colour palette of red, blue, black and yellow creates a murky swamp of elements. Elements intersect to create movement and the appearance of floating.",
             title: "Camouflage as Organic Defence",
           },
@@ -53,7 +53,7 @@ class App extends Component {
           description: {
             artist: "Sonja Ratkay",
             materialsFormatYear:
-              "Organza, wool roving, thread and metal dowels, 55 x 100 in, 2021",
+              "Organza, wool roving, thread and metal dowels, <span style='white-space; nowrap;'>55 x 100 in</span>, 2021",
             photoCredit: "Photography by Edwin Isford",
             text: "A large pink, sheer, layered, and shimmery tapestry is shown installed hanging from the ceiling in a room. The tapestry depicts an abstracted body silhouette, and a vein-like shape inside of this form is stuffed with wool roving elements, which make it puffy. The tapestry, which is taller than a person, is meant to function as a room divider or space definer for the lounge.",
             title: "Salad in the Bloodstream",
@@ -68,7 +68,8 @@ class App extends Component {
           iconTitle: "Burst",
           description: {
             artist: "Mel Thibodeau",
-            materialsFormatYear: "mixed fabrics and foam, 36” x 36” x 6”, 2021",
+            materialsFormatYear:
+              "mixed fabrics and foam, <span style='white-space; nowrap;'>36” x 36” x 6”</span>, 2021",
             text: "Photos of a large circular pillow sculpture that functions as a seat. The seat is constructed from foam and upholstered with multi-textured and variously-coloured fake furs, as well as a holographic fabric. The image created by the fabrics resembles a large yellow egg in a colourful nest. It is stuffed so that the elements are raised and puffy.",
             title: "Nest",
           },
@@ -83,7 +84,7 @@ class App extends Component {
           description: {
             artist: "Juli Majer",
             materialsFormatYear:
-              "mixed fabrics and polyester stuffing, 2’ x 2’ x 4”, 2021",
+              "mixed fabrics and polyester stuffing, <span style='white-space; nowrap;'>2’ x 2’ x 4”</span>, 2021",
             text: "Photos of a multi-textured, oversized seat cushion made of soft fleece and fake fur. The cushion is quilted in a way which resembles the texture of a brain.",
             title: "Untitled",
           },
@@ -98,7 +99,7 @@ class App extends Component {
           description: {
             artist: "Sonja Ratkay",
             materialsFormatYear:
-              "Ink drawing on paper, 9 x 12 in, 2021 and Soft Shell, Ink drawing on paper, in, 2021",
+              "Ink drawing on paper, <span style='white-space; nowrap;'>9 x 12 in</span>, 2021 and <em>Soft Shell</em>, Ink drawing on paper, in, 2021",
             photoCredit: "Photography by Edwin Isford",
             text: "Set of two black ink drawings on white paper, of identical dimensions. The first drawing depicts an abstracted squatting figure. Hand drawn text wraps through the figure’s legs and reads: “MOON LIT PLEATS PETAL DENTED SLEET”. The second drawing depicts an abstracted creature. Amoeba-like organs show through the creature’s body.",
             title: "Squatting Intuitive",
@@ -128,7 +129,7 @@ class App extends Component {
           description: {
             artist: "Mel Thibodeau",
             materialsFormatYear:
-              "mixed fabrics and polyester stuffing, 94” x 48”  (with arms extended), 2021",
+              "mixed fabrics and polyester stuffing, <span style='white-space; nowrap;'>94” x 48”</span> (with arms extended), 2021",
             text: "Photos of the artist, Mel Thibodeau, demonstrating their wearable sculpture made of multi textured, and variously coloured fake furs. While worn standing up, the sculpture extends from their head to their knees. The work is shown functioning as a seat and a wrapped pillow: Mel is pictured wearing the sculpture as a seat, while arms wrap and tie around their torso.",
             title: "Friend",
           },
@@ -143,7 +144,7 @@ class App extends Component {
           description: {
             artist: "Sonja Ratkay",
             materialsFormatYear:
-              "pencil crayon drawing on paper, 9 x 12 in, 2021",
+              "pencil crayon drawing on paper, <span style='white-space; nowrap;'>9 x 12 in</span>, 2021",
             photoCredit: "Photography by Edwin Isford",
             text: "Pencil crayon drawing on white paper depicting an abstracted silhouette of a figure that appears to be part plant and part animal. The figure is coloured with a rainbow of colours blending together. Hand-drawn, stream-of-consciousness text wraps through their body and reads: “MERCURY DILUTED DEW DROP SLOW ORGANZA BURNT SIDEWALK LOZENGE LAVENDER IN BETWEEN CLUMP OF PETALS PAIN SUCCUMB”.",
             title: "BIRDSTONETREE",
@@ -159,7 +160,7 @@ class App extends Component {
           description: {
             artist: "Juli Majer",
             materialsFormatYear:
-              "coloured pencil on vellum, 6.5” x 9.25”, 2021",
+              "coloured pencil on vellum, <span style='white-space; nowrap;'>6.5” x 9.25”</span>, 2021",
             text: "Set of two coloured pencil drawings displaying different worlds, creatures and objects. These elements are contained within squiggly frames which join them together like a non-linear comic.",
             title: "Worm Brain Drawings",
           },
@@ -174,7 +175,7 @@ class App extends Component {
           description: {
             artist: "Sonja Ratkay",
             materialsFormatYear:
-              "Organza, wool roving, thread and metal dowels, 55 x 100 in, 2021",
+              "Organza, wool roving, thread and metal dowels, <span style='white-space; nowrap;'>55 x 100 in</span>, 2021",
             photoCredit: "Photography by Edwin Isford",
             text: "A large purple, sheer, layered, and shimmery tapestry is shown installed hanging from the ceiling in a room. The tapestry depicts an abstracted body silhouette, and a vein-like shape inside of this form is stuffed with wool roving elements, which make it puffy. The tapestry, which is taller than a person, is meant to function as a room divider or space definer for the lounge.",
             title: "Seaweed Angelus",
@@ -205,7 +206,7 @@ class App extends Component {
           description: {
             artist: "Mel Thibodeau & Juli Majer",
             materialsFormatYear:
-              "mixed fabrics and polyester stuffing, 48” x 72”, 2021",
+              "mixed fabrics and polyester stuffing, <span style='white-space; nowrap;'>48” x 72”</span>, 2021",
             text: "Photo series of a large, multi-textured quilt which is made of variously coloured fake furs and printed fabrics. The quilt features motifs of flowers, stars, worms and squiggly shapes.",
             title: "Untitled",
           },
