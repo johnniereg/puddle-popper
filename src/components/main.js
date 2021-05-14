@@ -44,7 +44,7 @@ class Main extends Component {
           artist: "Mel Thibodeau & Juli Majer",
           materialsFormatYear: "behind the scenes photograph, 2021",
           text: "Image of a pink and olive coloured plush creature in bondage, held in front of a multi-textured, oversized seat cushion made of soft fleece and fake fur.",
-          title: "",
+          title: "Untitled",
         },
         orientation: "portrait",
       },
