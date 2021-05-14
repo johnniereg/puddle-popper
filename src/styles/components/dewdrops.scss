@@ -11,47 +11,84 @@
 }
 
 .Dewdrop__Item {
+  border: 1px solid black;
   position: absolute;
   z-index: 2;
 
   &--1 {
-    left: 8%;
+    left: 5%;
     bottom: 18%;
+
+    @media screen and (max-width: 768px) {
+      bottom: 2%;
+    }
   }
 
   &--2 {
-    left: 15%;
+    left: 25%;
     bottom: 25%;
+
+    @media screen and (max-width: 768px) {
+      bottom: 2%;
+    }
   }
 
   &--3 {
-    left: 20%;
+    left: 40%;
     bottom: 30%;
+
+    @media screen and (max-width: 768px) {
+      bottom: 2%;
+    }
   }
 
   &--4 {
-    left: 35%;
+    left: 60%;
     bottom: 20%;
+
+    @media screen and (max-width: 768px) {
+      bottom: 2%;
+    }
   }
 
   &--5 {
     right: 10%;
     top: 30%;
+
+    @media screen and (max-width: 768px) {
+      right: 5%;
+      top: 2%;
+    }
   }
 
   &--6 {
     right: 20%;
     top: 10%;
+
+    @media screen and (max-width: 768px) {
+      right: 20%;
+      top: 2%;
+    }
   }
 
   &--7 {
     right: 30%;
     top: 15%;
+
+    @media screen and (max-width: 768px) {
+      right: 40%;
+      top: 2%;
+    }
   }
 
   &--8 {
     right: 15%;
     top: 20%;
+
+    @media screen and (max-width: 768px) {
+      right: 60%;
+      top: 2%;
+    }
   }
 }
 
