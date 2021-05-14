@@ -203,14 +203,14 @@ class Frame extends Component {
               sortedImages.map((image, index) => {
                 if (image.node.base.includes("spider")) {
                   return (
-                    <video autoPlay muted loop key={index}>
+                    <video autoPlay muted loop playsInline key={index}>
                       <source src={spiderVideo} type="video/mp4"></source>
                     </video>
                   );
                 }
                 if (image.node.base.includes("mel_easteregg1")) {
                   return (
-                    <video autoPlay muted loop key={index}>
+                    <video autoPlay muted loop playsInline key={index}>
                       <source src={melVideo} type="video/mp4"></source>
                     </video>
                   );
