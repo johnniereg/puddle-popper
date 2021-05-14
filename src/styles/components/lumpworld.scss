@@ -113,11 +113,13 @@
     position: relative;
 
     &.BackgroundDay {
-      background-image: url(../images/lumpworld/LumpWorld_Background_Day_2x.jpg);
+      background-image: url(../images/lumpworld/LumpWorld_Background_Day_2x.jpg),
+        url(../images/lumpworld/LumpWorld_Background_Night_2x.jpg);
     }
 
     &.BackgroundNight {
-      background-image: url(../images/lumpworld/LumpWorld_Background_Night_2x.jpg);
+      background-image: url(../images/lumpworld/LumpWorld_Background_Night_2x.jpg),
+        url(../images/lumpworld/LumpWorld_Background_Day_2x.jpg);
     }
 
     .Details {
