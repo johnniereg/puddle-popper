@@ -8,6 +8,9 @@ import navBgUp from "../images/navigation/Menu_Interior_Upper_revised_noshadow.p
 import navBgDown from "../images/navigation/Menu_Interior_Lower_revised_noshadow.png";
 
 import leftArrow from "../images/navigation/Left_Facing_Arrow.png";
+import menuOpen from "../images/navigation/Mobile_Menu_Appear_DS.png";
+import menuClose from "../images/navigation/Mobile_Menu_Disappear_DS.png";
+
 import rightArrow from "../images/navigation/Right_Facing_Arrow.png";
 
 class Navigation extends Component {
@@ -204,7 +207,7 @@ class Navigation extends Component {
                 <img
                   alt="Close Mobile Menu"
                   className={`Navigation__Icon Navigation__Icon--mobileMenu`}
-                  src={leftArrow}
+                  src={menuClose}
                   style={{ width: "100%", height: "auto" }}
                 ></img>
               </button>
@@ -226,7 +229,7 @@ class Navigation extends Component {
                 <img
                   alt="Toggle Menu"
                   className="Navigation__Icon Navigation__Icon--showMenu"
-                  src={rightArrow}
+                  src={menuOpen}
                   style={{ width: "100%", height: "auto" }}
                 ></img>
               </button>
