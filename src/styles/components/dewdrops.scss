@@ -11,7 +11,6 @@
 }
 
 .Dewdrop__Item {
-  border: 1px solid black;
   position: absolute;
   z-index: 2;
 
@@ -137,8 +136,8 @@
   }
 }
 .animate-flicker {
-  -webkit-animation: flickerAnimation 5s infinite;
-  -moz-animation: flickerAnimation 5s infinite;
-  -o-animation: flickerAnimation 5s infinite;
-  animation: flickerAnimation 5s infinite;
+  -webkit-animation: flickerAnimation 4s infinite;
+  -moz-animation: flickerAnimation 4s infinite;
+  -o-animation: flickerAnimation 4s infinite;
+  animation: flickerAnimation 4s infinite;
 }
