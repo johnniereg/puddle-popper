@@ -1,17 +1,12 @@
 import React, { Component } from "react";
 import PubSub from "pubsub-js";
 
-// import navBgImg from "../images/navigation/Menu_bar.png";
 import navBgLeft from "../images/navigation/Menu_End_Left_revised_noshadow.png";
 import navBgRight from "../images/navigation/Menu_End_Right_revised_noshadow.png";
 import navBgUp from "../images/navigation/Menu_Interior_Upper_revised_noshadow.png";
 import navBgDown from "../images/navigation/Menu_Interior_Lower_revised_noshadow.png";
-
-import leftArrow from "../images/navigation/Left_Facing_Arrow.png";
 import menuOpen from "../images/navigation/Mobile_Menu_Appear_DS.png";
 import menuClose from "../images/navigation/Mobile_Menu_Disappear_DS.png";
-
-import rightArrow from "../images/navigation/Right_Facing_Arrow.png";
 
 class Navigation extends Component {
   constructor(props) {
