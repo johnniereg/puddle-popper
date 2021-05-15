@@ -202,7 +202,6 @@ class Frame extends Component {
             </div>
           )}
           <Carousel
-            dynamicHeight={true}
             infiniteLoop={true}
             renderArrowPrev={(onClickHandler, hasPrev, label) =>
               hasPrev && (
