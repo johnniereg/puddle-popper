@@ -202,6 +202,8 @@ class Frame extends Component {
             </div>
           )}
           <Carousel
+            centerMode={true}
+            centerSlidePercentage={101}
             infiniteLoop={true}
             renderArrowPrev={(onClickHandler, hasPrev, label) =>
               hasPrev && (
