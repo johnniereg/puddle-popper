@@ -239,7 +239,7 @@ class Frame extends Component {
               sortedImages.map((image, index) => {
                 if (image.node.base.includes("spider")) {
                   return (
-                    <div style={{}}>
+                    <div style={{ backgroundColor: "#a59ce8" }}>
                       <video autoPlay muted loop playsInline key={index}>
                         <source src={spiderVideo} type="video/mp4"></source>
                       </video>
