@@ -30,6 +30,7 @@ class Main extends Component {
         },
         orientation: "portrait",
         maxWidth: "30vw",
+        frame: "Frame02",
       },
       mel_easteregg1: {
         description: {
@@ -41,6 +42,7 @@ class Main extends Component {
         },
         orientation: "portrait",
         maxWidth: "25vw",
+        frame: "Frame10",
       },
       mel_juli_easteregg1: {
         description: {
@@ -51,10 +53,12 @@ class Main extends Component {
         },
         orientation: "portrait",
         maxWidth: "35vw",
+        frame: "Frame06",
       },
       PP_EasterEgg_Quote: {
         orientation: "portrait",
         maxWidth: "35vw",
+        frame: "Frame06",
       },
       sarah_easteregg1: {
         description: {
@@ -66,6 +70,7 @@ class Main extends Component {
         },
         orientation: "landscape",
         maxWidth: "60vw",
+        frame: "Frame08",
       },
       sarah_easteregg2: {
         description: {
@@ -77,6 +82,7 @@ class Main extends Component {
         },
         orientation: "portrait",
         maxWidth: "30vw",
+        frame: "Frame09",
       },
       sonja_easteregg1: {
         description: {
@@ -87,6 +93,7 @@ class Main extends Component {
         },
         orientation: "portrait",
         maxWidth: "30vw",
+        frame: "Frame07",
       },
       sonja_easteregg2: {
         description: {
@@ -97,6 +104,7 @@ class Main extends Component {
         },
         orientation: "portrait",
         maxWidth: "30vw",
+        frame: "Frame07",
       },
     };
 
@@ -108,9 +116,10 @@ class Main extends Component {
       images: {
         edges: [easterEgg],
       },
+      frame: easterEggData[fileName].frame,
       description: easterEggData[fileName].description,
-      orientation: easterEggData[fileName].orientation,
       maxWidth: easterEggData[fileName].maxWidth,
+      orientation: easterEggData[fileName].orientation,
     };
 
     return data;

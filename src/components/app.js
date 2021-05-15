@@ -44,6 +44,7 @@ class App extends Component {
           },
           orientation: "landscape",
           maxWidth: "65vw",
+          frame: "Frame04",
         },
         1: {
           key: 1,
@@ -61,6 +62,7 @@ class App extends Component {
           },
           orientation: "portrait",
           maxWidth: "30vw",
+          frame: "Frame02",
         },
         2: {
           key: 2,
@@ -77,6 +79,7 @@ class App extends Component {
           },
           orientation: "landscape",
           maxWidth: "65vw",
+          frame: "Frame01",
         },
         3: {
           key: 3,
@@ -93,6 +96,7 @@ class App extends Component {
           },
           orientation: "landscape",
           maxWidth: "65vw",
+          frame: "Frame01",
         },
         4: {
           key: 4,
@@ -110,6 +114,7 @@ class App extends Component {
           },
           orientation: "portrait",
           maxWidth: "30vw",
+          frame: "Frame02",
         },
         5: {
           key: 5,
@@ -125,6 +130,7 @@ class App extends Component {
           },
           orientation: "landscape",
           maxWidth: "60vw",
+          frame: "Frame03",
         },
         6: {
           key: 6,
@@ -141,6 +147,7 @@ class App extends Component {
           },
           orientation: "landscape",
           maxWidth: "65vw",
+          frame: "Frame01",
         },
         7: {
           key: 7,
@@ -158,6 +165,7 @@ class App extends Component {
           },
           orientation: "portrait",
           maxWidth: "30vw",
+          frame: "Frame02",
         },
         8: {
           key: 8,
@@ -174,6 +182,7 @@ class App extends Component {
           },
           orientation: "portrait",
           maxWidth: "32vw",
+          frame: "Frame05",
         },
         9: {
           key: 9,
@@ -191,6 +200,7 @@ class App extends Component {
           },
           orientation: "portrait",
           maxWidth: "30vw",
+          frame: "Frame02",
         },
         10: {
           key: 10,
@@ -207,6 +217,7 @@ class App extends Component {
           },
           orientation: "landscape",
           maxWidth: "65vw",
+          frame: "Frame01",
         },
         11: {
           key: 11,
@@ -223,6 +234,7 @@ class App extends Component {
           },
           orientation: "portrait",
           maxWidth: "30vw",
+          frame: "Frame02",
         },
         12: {
           key: 12,

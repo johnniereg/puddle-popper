@@ -13,6 +13,30 @@ import infoIcon from "../images/frame/info.png";
 import spiderVideo from "../images/exhibits/spider/spiderConvert.mp4";
 import melVideo from "../images/exhibits/easterEggs/mel_easteregg1.mp4";
 
+import Frame01 from "../images/frame/Frame01.png";
+import Frame02 from "../images/frame/Frame02.png";
+import Frame03 from "../images/frame/Frame03.png";
+import Frame04 from "../images/frame/Frame04.png";
+import Frame05 from "../images/frame/Frame05.png";
+import Frame06 from "../images/frame/Frame06.png";
+import Frame07 from "../images/frame/Frame07.png";
+import Frame08 from "../images/frame/Frame08.png";
+import Frame09 from "../images/frame/Frame09.png";
+import Frame10 from "../images/frame/Frame10.png";
+
+const frameImages = {
+  Frame01: Frame01,
+  Frame02: Frame02,
+  Frame03: Frame03,
+  Frame04: Frame04,
+  Frame05: Frame05,
+  Frame06: Frame06,
+  Frame07: Frame07,
+  Frame08: Frame08,
+  Frame09: Frame09,
+  Frame10: Frame10,
+};
+
 class Frame extends Component {
   constructor(props) {
     super(props);
@@ -116,36 +140,21 @@ class Frame extends Component {
       <div
         className={
           this.state.visible
-            ? `Frame Frame--${this.state.orientation} Handle`
-            : `Frame Frame--${this.state.orientation} Frame--hidden  Handle`
+            ? `Frame ${this.state.frame} Handle`
+            : `Frame ${this.state.frame} Frame--hidden Handle`
         }
-        style={{
-          zIndex: this.state.zIndex,
-        }}
+        style={
+          this.state.width > 768
+            ? {
+                backgroundImage: `url(${frameImages[this.state.frame]})`,
+                backgroundSize: "100% 100%",
+                zIndex: this.state.zIndex,
+              }
+            : {
+                zIndex: this.state.zIndex,
+              }
+        }
       >
-        {this.state.description && (
-          <div
-            className={
-              this.state.showDetails ? "Details" : "Details Details--hidden"
-            }
-            style={{
-              zIndex: this.state.zIndex + 2,
-            }}
-          >
-            <div>
-              <p>
-                {ReactHTMLParser(this.state.description.artist)},{" "}
-                <em>{ReactHTMLParser(this.state.description.title)}</em>,{" "}
-                {ReactHTMLParser(this.state.description.materialsFormatYear)}
-              </p>
-              {this.state.description.photoCredit && (
-                <p>{ReactHTMLParser(this.state.description.photoCredit)}</p>
-              )}
-              <p>-----</p>
-              <p>{ReactHTMLParser(this.state.description.text)}</p>
-            </div>
-          </div>
-        )}
         <div
           className="Controls Controls--Top"
           style={{ zIndex: this.state.zIndex + 3 }}
@@ -158,11 +167,7 @@ class Frame extends Component {
           ></button>
         </div>
         <div
-          className={
-            this.state.orientation === "landscape"
-              ? "Carousel__Wrapper Carousel__Wrapper--Landscape Cursor--Default"
-              : "Carousel__Wrapper Carousel__Wrapper--Portrait Cursor--Default"
-          }
+          className={`Carousel__Wrapper ${this.state.frame} Cursor--Default`}
           style={
             this.state.maxWidth && this.state.width > 768
               ? {
@@ -171,6 +176,29 @@ class Frame extends Component {
               : {}
           }
         >
+          {this.state.description && (
+            <div
+              className={
+                this.state.showDetails ? "Details" : "Details Details--hidden"
+              }
+              style={{
+                zIndex: this.state.zIndex + 2,
+              }}
+            >
+              <div>
+                <p>
+                  {ReactHTMLParser(this.state.description.artist)},{" "}
+                  <em>{ReactHTMLParser(this.state.description.title)}</em>,{" "}
+                  {ReactHTMLParser(this.state.description.materialsFormatYear)}
+                </p>
+                {this.state.description.photoCredit && (
+                  <p>{ReactHTMLParser(this.state.description.photoCredit)}</p>
+                )}
+                <p>-----</p>
+                <p>{ReactHTMLParser(this.state.description.text)}</p>
+              </div>
+            </div>
+          )}
           <Carousel
             dynamicHeight={true}
             infiniteLoop={true}

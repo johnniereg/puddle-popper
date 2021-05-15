@@ -1,21 +1,25 @@
 .Frame {
-  background-color: #c7b2c6;
-  border-radius: 15px;
-  box-shadow: inset 0 0 5px 2px $bevel-shadow,
-    inset 0 0 5px 3px $bevel-highlight, inset 0 0 10px 3px $bevel-highlight2,
-    $shadow;
   cursor: $cursor-move;
   display: flex;
   flex-direction: column;
-  padding: 50px;
   position: absolute;
 
   @media screen and (max-width: 768px) {
+    background-color: #c7b2c6;
+    border-radius: 15px;
+    box-shadow: inset 0 0 5px 2px $bevel-shadow,
+      inset 0 0 5px 3px $bevel-highlight, inset 0 0 10px 3px $bevel-highlight2,
+      $shadow;
     left: 50%;
     padding: 25px;
     top: 50%;
     transform: translate(-50%, -50%);
     width: 90%;
+  }
+
+  @media screen and (min-width: 769px) {
+    filter: drop-shadow(3px 3px 1px #3f082f80);
+    -webkit-filter: drop-shadow(3px 3px 1px #3f082f80);
   }
 
   &--hidden {
@@ -27,8 +31,8 @@
     background-position: center;
     background-size: contain;
     cursor: $cursor-pointer;
-    height: 35px;
-    width: 35px;
+    height: 30px;
+    width: 30px;
 
     @media screen and (max-width: 768px) {
       width: 18px;
@@ -82,7 +86,7 @@
   transform: translateX(-50%);
 
   &--Top {
-    top: 7px;
+    top: 2.5%;
 
     @media screen and (max-width: 768px) {
       top: 3px;
@@ -90,7 +94,7 @@
   }
 
   &--Bottom {
-    bottom: 7px;
+    bottom: 2.5%;
 
     @media screen and (max-width: 768px) {
       bottom: 3px;
@@ -100,6 +104,8 @@
 
 .Details {
   background-color: #800000bf;
+  box-shadow: 0 0 5px 2px $bevel-shadow, 0 0 5px 3px $bevel-highlight2,
+    0 0 10px 3px $bevel-highlight;
   color: #fff;
   bottom: 0;
   display: flex;
@@ -109,7 +115,7 @@
   font-weight: 500;
   left: 0;
   line-height: 20px;
-  margin: 50px;
+  // margin: 50px;
   overflow-y: auto;
   padding: 15px;
   position: absolute;
