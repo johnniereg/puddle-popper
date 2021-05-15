@@ -121,7 +121,7 @@ class Frame extends Component {
     };
 
     const randomX = Math.random() * (150 - 20) + 10;
-    const randomY = Math.random() * (50 - 20) + 10;
+    const randomY = Math.random() * (20 - 5) + 5;
 
     const defaultPosition =
       this.state.width > 768 ? { x: randomX, y: randomY } : { x: 10, y: 10 };
@@ -140,8 +140,8 @@ class Frame extends Component {
       <div
         className={
           this.state.visible
-            ? `Frame ${this.state.frame} Handle`
-            : `Frame ${this.state.frame} Frame--hidden Handle`
+            ? `Frame ${this.state.frame} Handle Visible`
+            : `Frame ${this.state.frame} Handle Hidden`
         }
         style={
           this.state.width > 768
@@ -179,7 +179,7 @@ class Frame extends Component {
           {this.state.description && (
             <div
               className={
-                this.state.showDetails ? "Details" : "Details Details--hidden"
+                this.state.showDetails ? "Details" : "Details Details Hidden"
               }
               style={{
                 zIndex: this.state.zIndex + 2,
@@ -239,16 +239,20 @@ class Frame extends Component {
               sortedImages.map((image, index) => {
                 if (image.node.base.includes("spider")) {
                   return (
-                    <video autoPlay muted loop playsInline key={index}>
-                      <source src={spiderVideo} type="video/mp4"></source>
-                    </video>
+                    <div style={{}}>
+                      <video autoPlay muted loop playsInline key={index}>
+                        <source src={spiderVideo} type="video/mp4"></source>
+                      </video>
+                    </div>
                   );
                 }
                 if (image.node.base.includes("mel_easteregg1")) {
                   return (
-                    <video autoPlay muted loop playsInline key={index}>
-                      <source src={melVideo} type="video/mp4"></source>
-                    </video>
+                    <div style={{}}>
+                      <video autoPlay muted loop playsInline key={index}>
+                        <source src={melVideo} type="video/mp4"></source>
+                      </video>
+                    </div>
                   );
                 }
                 return (

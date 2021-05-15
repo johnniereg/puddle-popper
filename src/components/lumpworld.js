@@ -236,7 +236,7 @@ class LumpWorld extends Component {
     const lumpWorldEl = (
       <div
         className={
-          this.state.visible ? "LumpWorld" : "LumpWorld LumpWorld--hidden"
+          this.state.visible ? "LumpWorld Visible" : "LumpWorld Hidden"
         }
         style={{
           zIndex: this.state.zIndex,
@@ -322,7 +322,7 @@ class LumpWorld extends Component {
             {this.state.description && (
               <div
                 className={
-                  this.state.showDetails ? "Details" : "Details Details--hidden"
+                  this.state.showDetails ? "Details" : "Details Hidden"
                 }
                 style={{
                   zIndex: "100",

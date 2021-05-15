@@ -1,5 +1,14 @@
 .Hidden {
-  display: none !important;
+  visibility: hidden;
+  position: absolute;
+  opacity: 0;
+  transition: visibility 0s ease-out 300ms, opacity 400ms;
+}
+
+.Visible {
+  visibility: visible;
+  opacity: 1;
+  transition: visibility 0s ease-in 0s, opacity 400ms;
 }
 
 .Handle {

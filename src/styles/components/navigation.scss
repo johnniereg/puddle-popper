@@ -20,10 +20,7 @@
   list-style: none;
   max-width: 90%;
   padding: 0;
-
-  &.Hidden {
-    display: none;
-  }
+  position: relative;
 
   &--Mobile {
     background-image: url(../images/navigation/Mobile_Menu_Bar_2x_8bit.png);
@@ -84,7 +81,7 @@
   }
 
   & :nth-child(even):not(:first-of-type()) {
-    margin-top: 30px;
+    // margin-top: 30px;
   }
 }
 

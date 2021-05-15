@@ -22,10 +22,6 @@
     -webkit-filter: drop-shadow(3px 3px 1px #3f082f80);
   }
 
-  &--hidden {
-    display: none;
-  }
-
   &__Control {
     background-repeat: no-repeat;
     background-position: center;
@@ -115,7 +111,6 @@
   font-weight: 500;
   left: 0;
   line-height: 20px;
-  // margin: 50px;
   overflow-y: auto;
   padding: 15px;
   position: absolute;
@@ -124,10 +119,6 @@
 
   @media screen and (max-width: 768px) {
     margin: 25px;
-  }
-
-  &--hidden {
-    display: none;
   }
 
   p {

@@ -86,7 +86,7 @@ class About extends Component {
 
     const aboutEl = (
       <div
-        className={this.state.visible ? "About" : "About About--hidden"}
+        className={this.state.visible ? "About Visible" : "About Hidden"}
         style={{
           zIndex: this.state.zIndex,
         }}

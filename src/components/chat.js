@@ -242,7 +242,7 @@ class Chat extends Component {
 
     const chatFormEl = (
       <form
-        className={this.state.visible ? "Chat" : "Chat Chat--hidden"}
+        className={this.state.visible ? "Chat Visible" : "Chat Hidden"}
         onSubmit={this.onSubmit}
         style={{
           zIndex: this.state.zIndex,
