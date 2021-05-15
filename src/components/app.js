@@ -105,7 +105,7 @@ class App extends Component {
           images: this.exhibitImages["egg"],
           iconTitle: "Egg",
           description: {
-            artist: "Sonja Ratkay",
+            artist: "Sonja Ratkay, ",
             materialsFormatYear:
               "Ink drawing on paper, <span style='white-space; nowrap;'>9 x 12 in</span>, 2021 and <em>Soft Shell</em>, Ink drawing on paper, <span style='white-space; nowrap;'>9 x 12 in</span>, 2021",
             photoCredit: "Photography by Edwin Isford",
