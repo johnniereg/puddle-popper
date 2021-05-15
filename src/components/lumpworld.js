@@ -302,7 +302,7 @@ class LumpWorld extends Component {
                   <div
                     className={
                       obj.inPlay
-                        ? `LumpWorld__Object Cursor--Move`
+                        ? `LumpWorld__Object Cursor--Move Visible`
                         : `LumpWorld__Object Cursor--Move Hidden`
                     }
                     style={{
@@ -322,7 +322,7 @@ class LumpWorld extends Component {
             {this.state.description && (
               <div
                 className={
-                  this.state.showDetails ? "Details" : "Details Hidden"
+                  this.state.showDetails ? "Details Visible" : "Details Hidden"
                 }
                 style={{
                   zIndex: "100",

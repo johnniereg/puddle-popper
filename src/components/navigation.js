@@ -212,7 +212,7 @@ class Navigation extends Component {
             className={
               this.state.mobileMenuVisible
                 ? "Navigation__OpenMenu Hidden"
-                : "Navigation__OpenMenu"
+                : "Navigation__OpenMenu Visible"
             }
           >
             <div className="Navigation__ToggleWrapper">

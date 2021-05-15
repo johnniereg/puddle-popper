@@ -179,7 +179,9 @@ class Frame extends Component {
           {this.state.description && (
             <div
               className={
-                this.state.showDetails ? "Details" : "Details Details Hidden"
+                this.state.showDetails
+                  ? "Details Visible"
+                  : "Details Details Hidden"
               }
               style={{
                 zIndex: this.state.zIndex + 2,
