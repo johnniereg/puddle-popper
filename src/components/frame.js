@@ -263,6 +263,7 @@ class Frame extends Component {
                     backgroundColor={"#e0c8e0"}
                     className="Frame__Image"
                     image={image.node.childImageSharp.gatsbyImageData}
+                    loading={"eager"}
                     key={index}
                     draggable={false}
                   />
