@@ -187,8 +187,8 @@ class Frame extends Component {
             >
               <div>
                 <p>
-                  {ReactHTMLParser(this.state.description.artist)},{" "}
-                  <em>{ReactHTMLParser(this.state.description.title)}</em>,{" "}
+                  {ReactHTMLParser(this.state.description.artist)}
+                  <em>{ReactHTMLParser(this.state.description.title)}</em>
                   {ReactHTMLParser(this.state.description.materialsFormatYear)}
                 </p>
                 {this.state.description.photoCredit && (
