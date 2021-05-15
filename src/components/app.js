@@ -99,7 +99,7 @@ class App extends Component {
           description: {
             artist: "Sonja Ratkay",
             materialsFormatYear:
-              "Ink drawing on paper, <span style='white-space; nowrap;'>9 x 12 in</span>, 2021 and <em>Soft Shell</em>, Ink drawing on paper, in, 2021",
+              "Ink drawing on paper, <span style='white-space; nowrap;'>9 x 12 in</span>, 2021 and <em>Soft Shell</em>, Ink drawing on paper, <span style='white-space; nowrap;'>9 x 12 in</span>, 2021",
             photoCredit: "Photography by Edwin Isford",
             text: "Set of two black ink drawings on white paper, of identical dimensions. The first drawing depicts an abstracted squatting figure. Hand drawn text wraps through the figure’s legs and reads: “MOON LIT PLEATS PETAL DENTED SLEET”. The second drawing depicts an abstracted creature. Amoeba-like organs show through the creature’s body.",
             title: "Squatting Intuitive",
