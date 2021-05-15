@@ -150,7 +150,7 @@ class Navigation extends Component {
           <ul
             className={
               this.state.mobileMenuVisible
-                ? "Navigation__List Navigation__List--Mobile"
+                ? "Navigation__List Navigation__List--Mobile Visible"
                 : "Navigation__List Navigation__List--Mobile Hidden"
             }
           >
@@ -162,7 +162,7 @@ class Navigation extends Component {
           <ul
             className={
               this.state.mobileMenuVisible
-                ? "Navigation__List Navigation__List--Mobile"
+                ? "Navigation__List Navigation__List--Mobile Visible"
                 : "Navigation__List Navigation__List--Mobile Hidden"
             }
           >
@@ -174,7 +174,7 @@ class Navigation extends Component {
           <ul
             className={
               this.state.mobileMenuVisible
-                ? "Navigation__List Navigation__List--Mobile"
+                ? "Navigation__List Navigation__List--Mobile Visible"
                 : "Navigation__List Navigation__List--Mobile Hidden"
             }
           >
@@ -186,7 +186,7 @@ class Navigation extends Component {
           <ul
             className={
               this.state.mobileMenuVisible
-                ? "Navigation__List Navigation__List--Mobile"
+                ? "Navigation__List Navigation__List--Mobile Visible"
                 : "Navigation__List Navigation__List--Mobile Hidden"
             }
           >
@@ -234,7 +234,7 @@ class Navigation extends Component {
       );
     } else {
       return (
-        <nav className="Navigation Navigation--Desktop">
+        <nav className="Navigation Navigation--Desktop Visible">
           <ul className="Navigation__List Navigation__List--Desktop">
             {navItemsDesktop}
           </ul>
