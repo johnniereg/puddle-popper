@@ -5,53 +5,49 @@
 
   @media screen and (min-width: 768px) {
     &.Frame01 {
-      margin: 8%;
+      margin: 9%;
     }
 
     &.Frame02 {
-      margin: 12%;
+      margin: 15%;
     }
 
     &.Frame03 {
-      margin: 9%;
+      margin: 12%;
     }
 
     &.Frame04 {
-      margin: 8%;
-    }
-
-    &.Frame05 {
-      margin: 12%;
-    }
-
-    &.Frame06 {
-      margin: 11%;
-    }
-
-    &.Frame07 {
-      margin: 12%;
-    }
-
-    &.Frame08 {
       margin: 9%;
     }
 
-    &.Frame09 {
+    &.Frame05 {
+      margin: 13%;
+    }
+
+    &.Frame06 {
       margin: 12%;
     }
 
+    &.Frame07 {
+      margin: 13%;
+    }
+
+    &.Frame08 {
+      margin: 10%;
+    }
+
+    &.Frame09 {
+      margin: 13%;
+    }
+
     &.Frame10 {
-      margin: 13.5%;
+      margin: 14%;
     }
   }
 }
 
 .carousel {
-  box-shadow: 0 0 3px 0 $bevel-highlight;
-
-  @media screen and (min-width: 769px) {
-    box-shadow: none;
-  }
+  box-shadow: inset 0 0 3px 0 $bevel-highlight;
 
   &.carousel-slider {
     overflow: visible;

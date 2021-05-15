@@ -47,6 +47,10 @@
     &--ArrowLeft {
       left: -45px;
 
+      .landscape & {
+        left: -60px;
+      }
+
       @media screen and (max-width: 768px) {
         height: auto;
         left: -22px;
@@ -56,6 +60,10 @@
 
     &--ArrowRight {
       right: -45px;
+
+      .landscape & {
+        right: -60px;
+      }
 
       @media screen and (max-width: 768px) {
         height: auto;

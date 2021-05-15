@@ -13,16 +13,16 @@ import infoIcon from "../images/frame/info.png";
 import spiderVideo from "../images/exhibits/spider/spiderConvert.mp4";
 import melVideo from "../images/exhibits/easterEggs/mel_easteregg1.mp4";
 
-import Frame01 from "../images/frame/Frame01.png";
-import Frame02 from "../images/frame/Frame02.png";
-import Frame03 from "../images/frame/Frame03.png";
-import Frame04 from "../images/frame/Frame04.png";
-import Frame05 from "../images/frame/Frame05.png";
-import Frame06 from "../images/frame/Frame06.png";
-import Frame07 from "../images/frame/Frame07.png";
-import Frame08 from "../images/frame/Frame08.png";
-import Frame09 from "../images/frame/Frame09.png";
-import Frame10 from "../images/frame/Frame10.png";
+import Frame01 from "../images/frame/Frame01_May15.png";
+import Frame02 from "../images/frame/Frame02_May15.png";
+import Frame03 from "../images/frame/Frame03_May15.png";
+import Frame04 from "../images/frame/Frame04_May15.png";
+import Frame05 from "../images/frame/Frame05_May15.png";
+import Frame06 from "../images/frame/Frame06_May15.png";
+import Frame07 from "../images/frame/Frame07_May15.png";
+import Frame08 from "../images/frame/Frame08_May15.png";
+import Frame09 from "../images/frame/Frame09_May15.png";
+import Frame10 from "../images/frame/Frame10_May15.png";
 
 const frameImages = {
   Frame01: Frame01,
@@ -140,8 +140,8 @@ class Frame extends Component {
       <div
         className={
           this.state.visible
-            ? `Frame ${this.state.frame} Handle Visible`
-            : `Frame ${this.state.frame} Handle Hidden`
+            ? `Frame ${this.state.frame} ${this.state.orientation} Handle Visible`
+            : `Frame ${this.state.frame} ${this.state.orientation} Handle Hidden`
         }
         style={
           this.state.width > 768
@@ -260,6 +260,7 @@ class Frame extends Component {
                 return (
                   <GatsbyImage
                     alt={image.node.base.split(".")[0]} // only use section of the file extension with the filename
+                    backgroundColor={"#e0c8e0"}
                     className="Frame__Image"
                     image={image.node.childImageSharp.gatsbyImageData}
                     key={index}
