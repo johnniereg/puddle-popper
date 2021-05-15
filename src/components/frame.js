@@ -96,8 +96,8 @@ class Frame extends Component {
       zIndex: this.state.zIndex + 1,
     };
 
-    const randomX = Math.random() * (200 - 20) + 20;
-    const randomY = Math.random() * (100 - 20) + 20;
+    const randomX = Math.random() * (150 - 20) + 10;
+    const randomY = Math.random() * (50 - 20) + 10;
 
     const defaultPosition =
       this.state.width > 768 ? { x: randomX, y: randomY } : { x: 10, y: 10 };
@@ -162,6 +162,13 @@ class Frame extends Component {
             this.state.orientation === "landscape"
               ? "Carousel__Wrapper Carousel__Wrapper--Landscape Cursor--Default"
               : "Carousel__Wrapper Carousel__Wrapper--Portrait Cursor--Default"
+          }
+          style={
+            this.state.maxWidth && this.state.width > 768
+              ? {
+                  maxWidth: `${this.state.maxWidth}`,
+                }
+              : {}
           }
         >
           <Carousel

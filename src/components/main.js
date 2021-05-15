@@ -29,6 +29,7 @@ class Main extends Component {
           title: "Untitled",
         },
         orientation: "portrait",
+        maxWidth: "30vw",
       },
       mel_easteregg1: {
         description: {
@@ -39,6 +40,7 @@ class Main extends Component {
           title: "Friend",
         },
         orientation: "portrait",
+        maxWidth: "25vw",
       },
       mel_juli_easteregg1: {
         description: {
@@ -48,9 +50,11 @@ class Main extends Component {
           title: "Untitled",
         },
         orientation: "portrait",
+        maxWidth: "35vw",
       },
       PP_EasterEgg_Quote: {
         orientation: "portrait",
+        maxWidth: "35vw",
       },
       sarah_easteregg1: {
         description: {
@@ -61,6 +65,7 @@ class Main extends Component {
           title: "Thaw",
         },
         orientation: "landscape",
+        maxWidth: "60vw",
       },
       sarah_easteregg2: {
         description: {
@@ -71,6 +76,7 @@ class Main extends Component {
           title: "Leaf Tender",
         },
         orientation: "portrait",
+        maxWidth: "30vw",
       },
       sonja_easteregg1: {
         description: {
@@ -80,6 +86,7 @@ class Main extends Component {
           title: "",
         },
         orientation: "portrait",
+        maxWidth: "30vw",
       },
       sonja_easteregg2: {
         description: {
@@ -89,6 +96,7 @@ class Main extends Component {
           title: "",
         },
         orientation: "portrait",
+        maxWidth: "30vw",
       },
     };
 
@@ -102,6 +110,7 @@ class Main extends Component {
       },
       description: easterEggData[fileName].description,
       orientation: easterEggData[fileName].orientation,
+      maxWidth: easterEggData[fileName].maxWidth,
     };
 
     return data;

@@ -43,6 +43,7 @@ class App extends Component {
             title: "Camouflage as Organic Defence",
           },
           orientation: "landscape",
+          maxWidth: "65vw",
         },
         1: {
           key: 1,
@@ -59,6 +60,7 @@ class App extends Component {
             title: "Salad in the Bloodstream",
           },
           orientation: "portrait",
+          maxWidth: "30vw",
         },
         2: {
           key: 2,
@@ -74,6 +76,7 @@ class App extends Component {
             title: "Nest",
           },
           orientation: "landscape",
+          maxWidth: "65vw",
         },
         3: {
           key: 3,
@@ -89,6 +92,7 @@ class App extends Component {
             title: "Untitled",
           },
           orientation: "landscape",
+          maxWidth: "65vw",
         },
         4: {
           key: 4,
@@ -105,6 +109,7 @@ class App extends Component {
             title: "Squatting Intuitive",
           },
           orientation: "portrait",
+          maxWidth: "30vw",
         },
         5: {
           key: 5,
@@ -119,6 +124,7 @@ class App extends Component {
             title: "Illusionism",
           },
           orientation: "landscape",
+          maxWidth: "60vw",
         },
         6: {
           key: 6,
@@ -134,6 +140,7 @@ class App extends Component {
             title: "Friend",
           },
           orientation: "landscape",
+          maxWidth: "65vw",
         },
         7: {
           key: 7,
@@ -150,6 +157,7 @@ class App extends Component {
             title: "BIRDSTONETREE",
           },
           orientation: "portrait",
+          maxWidth: "30vw",
         },
         8: {
           key: 8,
@@ -165,6 +173,7 @@ class App extends Component {
             title: "Worm Brain Drawings",
           },
           orientation: "portrait",
+          maxWidth: "32vw",
         },
         9: {
           key: 9,
@@ -181,6 +190,7 @@ class App extends Component {
             title: "Seaweed Angelus",
           },
           orientation: "portrait",
+          maxWidth: "30vw",
         },
         10: {
           key: 10,
@@ -196,6 +206,7 @@ class App extends Component {
             title: "Web Lounge",
           },
           orientation: "landscape",
+          maxWidth: "65vw",
         },
         11: {
           key: 11,
@@ -211,6 +222,7 @@ class App extends Component {
             title: "Untitled",
           },
           orientation: "portrait",
+          maxWidth: "30vw",
         },
         12: {
           key: 12,
