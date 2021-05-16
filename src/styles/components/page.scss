@@ -1,8 +1,18 @@
 .Page {
+}
+
+.Page {
+  position: relative;
   background-image: url(../images/background-mobile.jpg);
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+  display: flex;
+  max-height: -webkit-fill-available;
+  max-width: -webkit-fill-available;
+  overflow-x: hidden;
+  width: 100vw;
+  height: 100vh;
 
   @media screen and (min-width: 769px) {
     background-image: url(../images/background.jpg);
