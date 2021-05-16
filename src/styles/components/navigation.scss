@@ -35,26 +35,38 @@
 
     :nth-child(1) .Navigation__Button {
       left: 12%;
-      top: 20%;
+      top: 16%;
       width: 60%;
     }
 
     :nth-child(2) .Navigation__Button {
-      left: 25%;
-      top: 50%;
+      bottom: 18%;
+      left: 20%;
       width: 55%;
     }
 
     :nth-child(3) .Navigation__Button {
-      left: 32%;
-      top: 22%;
+      left: 22%;
+      top: 16%;
       width: 60%;
     }
 
     :nth-child(4) .Navigation__Button {
-      left: 42%;
-      top: 50%;
+      bottom: 19%;
+      left: 30%;
       width: 55%;
+    }
+
+    .Navigation__Icon--burst {
+      margin-left: 3px;
+    }
+
+    .Navigation__Icon--heartFlower {
+      margin-left: 2px;
+    }
+
+    .Navigation__Icon--face {
+      margin-right: 1px;
     }
   }
 
@@ -79,10 +91,6 @@
       display: flex;
     }
   }
-
-  & :nth-child(even):not(:first-of-type()) {
-    // margin-top: 30px;
-  }
 }
 
 .Navigation__Item {
@@ -94,7 +102,7 @@
   -webkit-filter: drop-shadow(3px 3px 1px #3f082f80);
   justify-content: center;
   position: relative;
-  width: 24%;
+  width: 25%;
 
   @media screen and (min-width: 769px) {
     width: auto;
@@ -138,62 +146,62 @@
 
   @media screen and (min-width: 769px) {
     cursor: $cursor-pointer;
-  }
 
-  &--butterfly {
-    margin-bottom: 5px;
-    margin-left: 2px;
-  }
+    &--butterfly {
+      margin-bottom: 5px;
+      margin-left: 2px;
+    }
 
-  &--burst {
-    margin-left: 3px;
-  }
+    &--burst {
+      margin-left: 3px;
+    }
 
-  &--ribbon {
-    margin-bottom: 5px;
-    margin-left: 3px;
-  }
+    &--ribbon {
+      margin-bottom: 5px;
+      margin-left: 3px;
+    }
 
-  &--spider {
-    margin-bottom: 5px;
-    margin-right: 3px;
-  }
+    &--spider {
+      margin-bottom: 5px;
+      margin-right: 3px;
+    }
 
-  &--spiral {
-    margin-bottom: 2px;
-    margin-left: 2px;
-  }
+    &--spiral {
+      margin-bottom: 2px;
+      margin-left: 2px;
+    }
 
-  &--heartFlower {
-    margin-bottom: 5px;
-    margin-left: 3px;
-  }
+    &--heartFlower {
+      margin-bottom: 5px;
+      margin-left: 3px;
+    }
 
-  &--gourd {
-    margin-bottom: 1px;
-    margin-left: 3px;
-  }
+    &--gourd {
+      margin-bottom: 1px;
+      margin-left: 3px;
+    }
 
-  &--shell {
-    margin-bottom: 5px;
-    margin-left: 1px;
-  }
+    &--shell {
+      margin-bottom: 5px;
+      margin-left: 1px;
+    }
 
-  &--web {
-    margin-left: 1px;
-  }
+    &--web {
+      margin-left: 1px;
+    }
 
-  &--face {
-    margin-bottom: 5px;
-  }
+    &--face {
+      margin-bottom: 5px;
+    }
 
-  &--about {
-    margin-bottom: 5px;
-    margin-left: 2px;
-  }
+    &--about {
+      margin-bottom: 5px;
+      margin-left: 2px;
+    }
 
-  &--chat {
-    margin-left: 3px;
+    &--chat {
+      margin-left: 3px;
+    }
   }
 }
 
@@ -222,5 +230,5 @@
 .Navigation__Toggle {
   left: 25%;
   top: 50%;
-  width: 55%;
+  width: 75%;
 }
