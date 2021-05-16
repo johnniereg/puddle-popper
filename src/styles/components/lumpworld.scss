@@ -206,6 +206,10 @@
 .LumpWorld__Object {
   position: absolute;
 
+  @media screen and (max-width: 768px) {
+    max-width: 66%;
+  }
+
   img {
     height: auto;
     width: 100%;
