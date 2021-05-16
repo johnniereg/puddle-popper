@@ -282,7 +282,9 @@ class Frame extends Component {
                     alt={image.node.base.split(".")[0]} // only use section of the file extension with the filename
                     className="Frame__Image"
                     image={image.node.childImageSharp.gatsbyImageData}
-                    loading={"eager"}
+                    layout="fullWidth"
+                    loading="eager"
+                    placeholder="blurred"
                     key={index}
                     draggable={false}
                   />

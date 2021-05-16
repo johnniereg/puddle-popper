@@ -17,7 +17,7 @@ const IndexPage = () => {
           node {
             base
             childImageSharp {
-              gatsbyImageData(layout: CONSTRAINED)
+              gatsbyImageData(layout: CONSTRAINED, quality: 100)
             }
           }
         }
@@ -33,7 +33,7 @@ const IndexPage = () => {
           node {
             base
             childImageSharp {
-              gatsbyImageData(layout: CONSTRAINED)
+              gatsbyImageData(layout: CONSTRAINED, quality: 100)
             }
           }
         }
@@ -49,7 +49,7 @@ const IndexPage = () => {
           node {
             base
             childImageSharp {
-              gatsbyImageData(layout: CONSTRAINED)
+              gatsbyImageData(layout: CONSTRAINED, quality: 100)
             }
           }
         }
@@ -65,7 +65,7 @@ const IndexPage = () => {
           node {
             base
             childImageSharp {
-              gatsbyImageData(layout: CONSTRAINED)
+              gatsbyImageData(layout: CONSTRAINED, quality: 100)
             }
           }
         }
@@ -81,7 +81,7 @@ const IndexPage = () => {
           node {
             base
             childImageSharp {
-              gatsbyImageData(layout: CONSTRAINED)
+              gatsbyImageData(layout: CONSTRAINED, quality: 100)
             }
           }
         }
@@ -98,7 +98,7 @@ const IndexPage = () => {
             base
             publicURL
             childImageSharp {
-              gatsbyImageData(layout: CONSTRAINED)
+              gatsbyImageData(layout: CONSTRAINED, quality: 100)
             }
           }
         }
@@ -114,7 +114,7 @@ const IndexPage = () => {
           node {
             base
             childImageSharp {
-              gatsbyImageData(layout: CONSTRAINED)
+              gatsbyImageData(layout: CONSTRAINED, quality: 100)
             }
           }
         }
@@ -130,7 +130,7 @@ const IndexPage = () => {
           node {
             base
             childImageSharp {
-              gatsbyImageData(layout: CONSTRAINED)
+              gatsbyImageData(layout: CONSTRAINED, quality: 100)
             }
           }
         }
@@ -146,7 +146,7 @@ const IndexPage = () => {
           node {
             base
             childImageSharp {
-              gatsbyImageData(layout: CONSTRAINED)
+              gatsbyImageData(layout: CONSTRAINED, quality: 100)
             }
           }
         }
@@ -162,7 +162,7 @@ const IndexPage = () => {
           node {
             base
             childImageSharp {
-              gatsbyImageData(layout: CONSTRAINED)
+              gatsbyImageData(layout: CONSTRAINED, quality: 100)
             }
           }
         }
@@ -178,7 +178,7 @@ const IndexPage = () => {
           node {
             base
             childImageSharp {
-              gatsbyImageData(layout: CONSTRAINED)
+              gatsbyImageData(layout: CONSTRAINED, quality: 100)
             }
           }
         }
@@ -194,7 +194,7 @@ const IndexPage = () => {
           node {
             base
             childImageSharp {
-              gatsbyImageData(layout: CONSTRAINED)
+              gatsbyImageData(layout: CONSTRAINED, quality: 100)
             }
           }
         }
@@ -210,7 +210,7 @@ const IndexPage = () => {
           node {
             base
             childImageSharp {
-              gatsbyImageData(layout: CONSTRAINED)
+              gatsbyImageData(layout: CONSTRAINED, quality: 100)
             }
           }
         }
@@ -227,7 +227,7 @@ const IndexPage = () => {
             base
             publicURL
             childImageSharp {
-              gatsbyImageData(layout: CONSTRAINED)
+              gatsbyImageData(layout: CONSTRAINED, quality: 100)
             }
           }
         }
