@@ -42,12 +42,14 @@ class Frame extends Component {
     super(props);
     this.state = {
       ...this.props.data,
+      selectedSlide: 0,
       showDetails: false,
       visible: false,
       width: 0,
       zIndex: 2,
     };
 
+    this.carouselChange = this.carouselChange.bind(this);
     this.handleFrameClick = this.handleFrameClick.bind(this);
     this.hideFrame = this.hideFrame.bind(this);
     this.sendToBack = this.sendToBack.bind(this);
@@ -78,10 +80,19 @@ class Frame extends Component {
   }
 
   hideFrame() {
-    this.setState({
-      visible: false,
-      zIndex: 2,
-    });
+    this.setState(
+      {
+        visible: false,
+        zIndex: 2,
+      },
+      () => {
+        setTimeout(() => {
+          this.setState({
+            selectedSlide: 0,
+          });
+        }, 1000);
+      }
+    );
   }
 
   sendToBack(msg, data) {
@@ -113,6 +124,12 @@ class Frame extends Component {
 
   updateWindowDimensions() {
     this.setState({ width: window.innerWidth, height: window.innerHeight });
+  }
+
+  carouselChange(index) {
+    this.setState({
+      selectedSlide: index,
+    });
   }
 
   render() {
@@ -205,6 +222,7 @@ class Frame extends Component {
             centerMode={true}
             centerSlidePercentage={101}
             infiniteLoop={true}
+            onChange={this.carouselChange}
             renderArrowPrev={(onClickHandler, hasPrev, label) =>
               hasPrev && (
                 <button
@@ -232,6 +250,7 @@ class Frame extends Component {
                 </button>
               )
             }
+            selectedItem={this.state.selectedSlide}
             showIndicators={false}
             showStatus={false}
             showThumbs={false}
