@@ -273,6 +273,7 @@ class App extends Component {
       <div className="Page">
         <Helmet>
           <meta charSet="utf-8" />
+          <meta name="viewport" width="device-width" />
           <title>Puddle Popper Lounge</title>
           <link rel="canonical" href="https://lounge.puddlepopper.com" />
         </Helmet>
