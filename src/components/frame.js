@@ -281,6 +281,7 @@ class Frame extends Component {
                   <GatsbyImage
                     alt={image.node.base.split(".")[0]} // only use section of the file extension with the filename
                     className="Frame__Image"
+                    draggable="false"
                     image={image.node.childImageSharp.gatsbyImageData}
                     layout="fullWidth"
                     loading="eager"
