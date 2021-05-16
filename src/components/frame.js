@@ -283,9 +283,7 @@ class Frame extends Component {
                     className="Frame__Image"
                     draggable="false"
                     image={image.node.childImageSharp.gatsbyImageData}
-                    layout="fullWidth"
                     placeholder="blurred"
-                    quality={100}
                     key={index}
                     draggable={false}
                   />
