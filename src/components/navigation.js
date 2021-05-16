@@ -98,6 +98,7 @@ class Navigation extends Component {
           <img
             alt=""
             className="Navigation__Background"
+            draggable="false"
             src={bgImage}
             style={{ width: "100%", height: "auto" }}
           ></img>
@@ -110,6 +111,7 @@ class Navigation extends Component {
               <img
                 alt={exhibit.iconTitle}
                 className={`Navigation__Icon Navigation__Icon--${exhibit.id}`}
+                draggable="false"
                 src={exhibit.icon}
                 style={{ width: "100%", height: "auto" }}
               ></img>
@@ -133,6 +135,7 @@ class Navigation extends Component {
               <img
                 alt={exhibit.iconTitle}
                 className={`Navigation__Icon Navigation__Icon--${exhibit.id}`}
+                draggable="false"
                 src={exhibit.icon}
                 style={{ width: "100%", height: "auto" }}
               ></img>
@@ -202,6 +205,7 @@ class Navigation extends Component {
                 <img
                   alt="Close Mobile Menu"
                   className={`Navigation__Icon Navigation__Icon--mobileMenu`}
+                  draggable="false"
                   src={menuClose}
                   style={{ width: "100%", height: "auto" }}
                 ></img>
@@ -224,6 +228,7 @@ class Navigation extends Component {
                 <img
                   alt="Toggle Menu"
                   className="Navigation__Icon Navigation__Icon--showMenu"
+                  draggable="false"
                   src={menuOpen}
                   style={{ width: "100%", height: "auto" }}
                 ></img>

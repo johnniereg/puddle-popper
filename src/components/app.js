@@ -43,7 +43,7 @@ class App extends Component {
             title: "Camouflage as Organic Defence, ",
           },
           orientation: "landscape",
-          maxWidth: "65vw",
+          maxWidth: "60vw",
           frame: "Frame04",
         },
         1: {
@@ -78,7 +78,7 @@ class App extends Component {
             title: "Nest, ",
           },
           orientation: "landscape",
-          maxWidth: "65vw",
+          maxWidth: "60vw",
           frame: "Frame01",
         },
         3: {
@@ -95,7 +95,7 @@ class App extends Component {
             title: "Untitled, ",
           },
           orientation: "landscape",
-          maxWidth: "65vw",
+          maxWidth: "60vw",
           frame: "Frame01",
         },
         4: {
@@ -129,7 +129,7 @@ class App extends Component {
             title: "Illusionism, ",
           },
           orientation: "landscape",
-          maxWidth: "60vw",
+          maxWidth: "55vw",
           frame: "Frame03",
         },
         6: {
@@ -146,7 +146,7 @@ class App extends Component {
             title: "Friend, ",
           },
           orientation: "landscape",
-          maxWidth: "65vw",
+          maxWidth: "60vw",
           frame: "Frame01",
         },
         7: {
@@ -216,7 +216,7 @@ class App extends Component {
             title: "Web Lounge, ",
           },
           orientation: "landscape",
-          maxWidth: "65vw",
+          maxWidth: "60vw",
           frame: "Frame01",
         },
         11: {

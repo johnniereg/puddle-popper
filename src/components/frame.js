@@ -233,7 +233,7 @@ class Frame extends Component {
                   title={label}
                   style={{ ...arrowStyles }}
                 >
-                  <img alt="" src={leftIcon}></img>
+                  <img alt="" draggable="false" src={leftIcon}></img>
                 </button>
               )
             }
@@ -246,7 +246,7 @@ class Frame extends Component {
                   title={label}
                   style={{ ...arrowStyles }}
                 >
-                  <img alt="" src={rightIcon}></img>
+                  <img alt="" draggable="false" src={rightIcon}></img>
                 </button>
               )
             }

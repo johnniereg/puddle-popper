@@ -69,7 +69,7 @@ class Main extends Component {
           title: "Thaw, ",
         },
         orientation: "landscape",
-        maxWidth: "60vw",
+        maxWidth: "55vw",
         frame: "Frame08",
       },
       sarah_easteregg2: {
