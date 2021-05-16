@@ -285,7 +285,6 @@ class Frame extends Component {
                     image={image.node.childImageSharp.gatsbyImageData}
                     placeholder="blurred"
                     key={index}
-                    draggable={false}
                   />
                 );
               })}
