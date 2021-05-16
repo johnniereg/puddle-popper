@@ -47,28 +47,32 @@
     &--ArrowLeft {
       left: -45px;
 
-      .landscape & {
-        left: -60px;
-      }
-
       @media screen and (max-width: 768px) {
         height: auto;
         left: -22px;
         width: 18px;
+      }
+
+      @media screen and (min-width: 769px) {
+        .landscape & {
+          left: -60px;
+        }
       }
     }
 
     &--ArrowRight {
       right: -45px;
 
-      .landscape & {
-        right: -60px;
-      }
-
       @media screen and (max-width: 768px) {
         height: auto;
         right: -22px;
         width: 18px;
+      }
+
+      @media screen and (min-width: 769px) {
+        .landscape & {
+          right: -60px;
+        }
       }
     }
   }
