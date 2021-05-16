@@ -261,7 +261,7 @@ class Frame extends Component {
               sortedImages.map((image, index) => {
                 if (image.node.base.includes("spider")) {
                   return (
-                    <div style={{ backgroundColor: "#a59ce8" }}>
+                    <div key={index} style={{ backgroundColor: "#a59ce8" }}>
                       <video autoPlay muted loop playsInline key={index}>
                         <source src={spiderVideo} type="video/mp4"></source>
                       </video>
@@ -270,7 +270,7 @@ class Frame extends Component {
                 }
                 if (image.node.base.includes("mel_easteregg1")) {
                   return (
-                    <div style={{}}>
+                    <div key={index} style={{ backgroundColor: "#e0c8e0" }}>
                       <video autoPlay muted loop playsInline key={index}>
                         <source src={melVideo} type="video/mp4"></source>
                       </video>
@@ -280,7 +280,6 @@ class Frame extends Component {
                 return (
                   <GatsbyImage
                     alt={image.node.base.split(".")[0]} // only use section of the file extension with the filename
-                    backgroundColor={"#e0c8e0"}
                     className="Frame__Image"
                     image={image.node.childImageSharp.gatsbyImageData}
                     loading={"eager"}
