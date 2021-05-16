@@ -13,14 +13,6 @@ body {
   font-family: $font-primary;
 }
 
-.Page {
-  position: relative;
-  display: flex;
-  max-height: -webkit-fill-available;
-  width: 100vw;
-  height: 100vh;
-}
-
 main {
   position: absolute;
   top: 0;
