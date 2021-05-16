@@ -284,7 +284,6 @@ class Frame extends Component {
                     image={image.node.childImageSharp.gatsbyImageData}
                     layout="fullWidth"
                     loading="eager"
-                    outputPixelDensities={2}
                     placeholder="blurred"
                     quality={100}
                     key={index}
